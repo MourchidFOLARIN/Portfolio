@@ -387,6 +387,56 @@ document.addEventListener('DOMContentLoaded', () => {
             if (projectId) openProjectModal(projectId);
         });
     });
+    // --- Contact Form Submission ---
+    const contactForm = document.getElementById('contact-form');
+    const contactStatus = document.getElementById('contact-status');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Disable button and show loading state
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>Envoi en cours...</span>';
+
+            // Prepare for response
+            contactStatus.className = 'contact-status';
+            contactStatus.style.display = 'none';
+
+            try {
+                const formData = new FormData(contactForm);
+                const response = await fetch('process.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                contactStatus.textContent = result.message;
+                contactStatus.className = `contact-status ${result.success ? 'success' : 'error'}`;
+                
+                if (result.success) {
+                    contactForm.reset();
+                }
+            } catch (error) {
+                contactStatus.textContent = "Une erreur est survenue lors de l'envoi.";
+                contactStatus.className = 'contact-status error';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+                
+                // Animate status message
+                gsap.from(contactStatus, {
+                    y: 10,
+                    opacity: 0,
+                    duration: 0.4,
+                    ease: 'power2.out'
+                });
+            }
+        });
+    }
 
 }); // End of DOMContentLoaded
 

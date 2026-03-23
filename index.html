@@ -135,13 +135,13 @@
                             <p>Laravel, PHP, C++, Architecture Cloud</p>
                         </div>
                         <div class="stat-card">
-                             <h3>Intelligence Artificielle</h3>
-                             <p>Deep Learning, Vision par Ordinateur, Analyse Prédictive</p>
-                         </div>
-                         <div class="stat-card">
-                             <h3>Systèmes Embarqués</h3>
-                             <p>STM32, ESP32, Conception PCB, RTOS & Firmware C++</p>
-                         </div>
+                            <h3>Intelligence Artificielle</h3>
+                            <p>Deep Learning, Vision par Ordinateur, Analyse Prédictive</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Systèmes Embarqués</h3>
+                            <p>STM32, ESP32, Conception PCB, RTOS & Firmware C++</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -243,16 +243,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="300" data-project-id="stm32-controller">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="300"
+                        data-project-id="stm32-controller">
                         <div class="project-image">
                             <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
                                 alt="Contrôleur Industriel STM32">
                         </div>
                         <div class="project-info">
                             <h3>Contrôleur Industriel STM32</h3>
-                            <p>Système de contrôle temps réel pour l'automatisation industrielle, intégrant des protocoles de communication robustes.</p>
+                            <p>Système de contrôle temps réel pour l'automatisation industrielle, intégrant des
+                                protocoles de communication robustes.</p>
                             <div class="project-tags">
-                                <span>STM32</span>
                                 <span>C++</span>
                             </div>
                         </div>
@@ -260,11 +261,12 @@
                     <div class="project-card" data-aos="fade-up" data-aos-delay="400" data-project-id="academix">
                         <div class="project-image">
                             <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=800&q=80"
-                                 alt="AcademiX — Plateforme Éducative IA">
+                                alt="AcademiX — Plateforme Éducative IA">
                         </div>
                         <div class="project-info">
                             <h3>AcademiX — IA Éducative</h3>
-                            <p>Plateforme intelligente révolutionnant l'apprentissage avec des résumés IA et des fiches de révision automatisées.</p>
+                            <p>Plateforme intelligente révolutionnant l'apprentissage avec des résumés IA et des fiches
+                                de révision automatisées.</p>
                             <div class="project-tags">
                                 <span>IA Gen</span>
                                 <span>React</span>
@@ -365,7 +367,7 @@
                         <div class="info-item">
                             <h3>Contact rapide</h3>
                             <div class="quick-contact-btns">
-                                <a href="https://wa.me/229XXXXXXXX" target="_blank" class="btn-whatsapp">
+                                <a href="https://wa.me/22992554964" target="_blank" class="btn-whatsapp">
                                     <span>WhatsApp direct</span>
                                 </a>
                                 <a href="https://linkedin.com/in/mourchid-folarin" target="_blank" class="btn-linkedin">
@@ -374,16 +376,17 @@
                             </div>
                         </div>
                     </div>
-                    <form class="contact-form" data-aos="fade-left">
+                    <form id="contact-form" class="contact-form" data-aos="fade-left">
                         <div class="form-group">
-                            <input type="text" placeholder="Votre Nom" required>
+                            <input type="text" name="name" placeholder="Votre Nom" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Votre Email" required>
+                            <input type="email" name="email" placeholder="Votre Email" required>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Votre Message" rows="5" required></textarea>
+                            <textarea name="message" placeholder="Votre Message" rows="5" required></textarea>
                         </div>
+                        <div id="contact-status" class="contact-status"></div>
                         <button type="submit" class="btn btn-primary">Envoyer le message</button>
                     </form>
                 </div>
@@ -465,7 +468,8 @@
                         <div id="modal-project-tech" class="project-tags"></div>
                     </div>
                     <div class="modal-footer" style="margin-top: 2rem;">
-                        <a id="modal-project-link" href="#" target="_blank" class="btn btn-primary" style="display: none;">
+                        <a id="modal-project-link" href="#" target="_blank" class="btn btn-primary"
+                            style="display: none;">
                             <span>Voir le projet en direct</span>
                         </a>
                     </div>

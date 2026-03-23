@@ -1377,3 +1377,32 @@ span {
     font-style: italic;
     margin-top: 1rem;
 }
+
+/* Contact Status Messages */
+.contact-status {
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    display: none;
+    margin-bottom: 1rem;
+    animation: slideUp 0.3s ease-out;
+}
+
+.contact-status.success {
+    display: block;
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--clr-primary);
+    border: 1px solid var(--clr-primary);
+}
+
+.contact-status.error {
+    display: block;
+    background: rgba(249, 38, 114, 0.1);
+    color: #f92672;
+    border: 1px solid #f92672;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
