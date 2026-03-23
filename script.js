@@ -9,16 +9,16 @@ document.addEventListener('DOMContentLoaded', () => {
         duration: 2,
         ease: 'power2.inOut'
     })
-    .to('.loader-text', {
-        opacity: 0,
-        y: -20,
-        duration: 0.5
-    })
-    .to('.loader-overlay', {
-        opacity: 0,
-        display: 'none',
-        duration: 0.8
-    });
+        .to('.loader-text', {
+            opacity: 0,
+            y: -20,
+            duration: 0.5
+        })
+        .to('.loader-overlay', {
+            opacity: 0,
+            display: 'none',
+            duration: 0.8
+        });
 
     // Initialize AOS
     AOS.init({
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Custom Cursor
     const cursor = document.querySelector('.cursor');
     const follower = document.querySelector('.cursor-follower');
-    
+
     if (cursor && follower) {
         document.addEventListener('mousemove', (e) => {
             gsap.to(cursor, {
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cmdLine.className = 'terminal-line';
             cmdLine.innerHTML = `<span class="terminal-prompt">mourchid@portfolio:~$</span> <span class="typing"></span>`;
             terminalBody.insertBefore(cmdLine, terminalBody.lastElementChild);
-            
+
             let typingSpan = cmdLine.querySelector('.typing');
             for (let char of item.cmd) {
                 typingSpan.textContent += char;
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
             outputLine.style.opacity = '0';
             outputLine.textContent = item.output;
             terminalBody.insertBefore(outputLine, terminalBody.lastElementChild);
-            
+
             gsap.to(outputLine, { opacity: 0.7, duration: 0.5 });
             await new Promise(r => setTimeout(r, 800));
         }
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('mousemove', (e) => {
         const x = (e.clientX / window.innerWidth - 0.5) * 20;
         const y = (e.clientY / window.innerHeight - 0.5) * 20;
-        
+
         gsap.to('.grid-overlay', { x: x, y: y, duration: 1 });
         gsap.to('.gradient-sphere', { x: -x * 2, y: -y * 2, duration: 2 });
     });
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
         labConsole.innerHTML = '';
         labVisualizer.innerHTML = '';
         labBadge.className = 'lab-badge';
-        
+
         // Update Buttons
         document.querySelectorAll('.lab-btn').forEach(b => b.classList.remove('active'));
         if (btn) btn.classList.add('active');
@@ -168,12 +168,12 @@ document.addEventListener('DOMContentLoaded', () => {
     async function simulateML() {
         labVisualizer.innerHTML = '<div class="ml-chart"></div>';
         const chart = labVisualizer.querySelector('.ml-chart');
-        
+
         await addLog("Initializing TensorRT backend...");
         await addLog("Loading pre-trained model: predictive_maintenance_v3.h5");
-        
+
         const bars = [];
-        for(let i=0; i<8; i++) {
+        for (let i = 0; i < 8; i++) {
             let bar = document.createElement('div');
             bar.className = 'chart-bar';
             bar.style.height = '10px';
@@ -182,15 +182,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         await addLog("Streaming live sensor data...");
-        for(let i=0; i<10; i++) {
+        for (let i = 0; i < 10; i++) {
             bars.forEach(bar => {
                 const h = Math.random() * 80;
                 bar.style.height = `${h}px`;
                 bar.style.background = h > 60 ? '#f92672' : '#10b981';
             });
-            await addLog(`Processing Frame ${i+1}/10...`, "#a0a0a0", 200);
+            await addLog(`Processing Frame ${i + 1}/10...`, "#a0a0a0", 200);
         }
-        
+
         await addLog("Result: FAILURE_PROBABILITY = 12.4% (Healthy)", "#10b981");
     }
 
@@ -278,7 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Génération automatique de rapports de conformité"
             ],
             tech: ["Laravel", "C++", "MQTT", "TensorFlow"],
-            url: "https://team-d-excellence-hackbyifri-2026.vercel.app/landing"
+            url: "https://your-smart-fridge-demo.com"
         },
         'climatrack': {
             title: "ClimaTrack Bénin",
@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Historisation complète des données environnementales"
             ],
             tech: ["Linux", "Python", "React", "Architecture Cloud"],
-            url: "https://team-d-excellence-hackbyifri-2026.vercel.app/landing"
+            url: "https://climatrack-benin.bj"
         },
         'api-security': {
             title: "Sécurité API & Architecture",
@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Protection avancée contre SQLi, XSS et CSRF"
             ],
             tech: ["Laravel", "Sécurité", "Architecture", "JWT"],
-            url: "https://team-d-excellence-hackbyifri-2026.vercel.app/landing"
+            url: "https://api-security-demo.net"
         },
         'stm32-controller': {
             title: "Contrôleur Industriel STM32",
@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Interface Homme-Machine (HMI) sur écran OLED/TFT"
             ],
             tech: ["STM32", "C++/C", "FreeRTOS", "KiCad"],
-            url: "https://team-d-excellence-hackbyifri-2026.vercel.app/landing"
+            url: null
         },
         'academix': {
             title: "AcademiX — Plateforme Éducative IA",
@@ -332,11 +332,37 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             tech: ["React", "Laravel", "Python/GPT", "Tailwind", "Remotion"],
             url: "https://team-d-excellence-hackbyifri-2026.vercel.app/landing"
+        },
+        'le-twin': {
+            title: "Le TWIN — Streetwear E-commerce",
+            image: "https://images.unsplash.com/photo-1523381210434-27acb0f023ea?auto=format&fit=crop&w=800&q=80",
+            desc: "Le TWIN est une plateforme e-commerce moderne et minimaliste dédiée au streetwear urbain. Conçue pour offrir une expérience d'achat fluide et esthétique, elle met en avant l'essence du style urbain contemporain.",
+            features: [
+                "Interface utilisateur minimaliste et fluide",
+                "Système de recherche et filtrage dynamique",
+                "Gestion avancée du panier et des commandes",
+                "Design Premium optimisé pour la conversion"
+            ],
+            tech: ["Next.js", "Tailwind CSS", "Vercel", "E-commerce"],
+            url: "https://le-twin.vercel.app/"
+        },
+        'nightheart': {
+            title: "La Nuit du Cœur 2026",
+            image: "https://images.unsplash.com/photo-1514525253361-bee8a187449a?auto=format&fit=crop&w=800&q=80",
+            desc: "Site événementiel officiel pour 'La Nuit du Cœur', un gala annuel de chant célébrant l'amour et le talent. La plateforme gère la promotion, la billetterie et le soutien aux candidats nominés.",
+            features: [
+                "Compte à rebours dynamique avant l'événement",
+                "Gestion complète de la billetterie sécurisée",
+                "Présentation détaillée des nominés pour vote/soutien",
+                "Navigation thématique élégante (Or et Violet)"
+            ],
+            tech: ["PHP", "Tailwind CSS", "MySQL", "Hostinger"],
+            url: "https://nightheart.rf.gd/"
         }
     };
 
     const projectModal = document.getElementById('project-modal');
-    
+
     window.openProjectModal = (projectId) => {
         const data = projectsData[projectId];
         if (!data) return;
@@ -416,7 +442,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 contactStatus.textContent = result.message;
                 contactStatus.className = `contact-status ${result.success ? 'success' : 'error'}`;
-                
+
                 if (result.success) {
                     contactForm.reset();
                 }
@@ -426,7 +452,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnText;
-                
+
                 // Animate status message
                 gsap.from(contactStatus, {
                     y: 10,
@@ -452,15 +478,15 @@ function toggleVisitorIdentity() {
 async function startScan() {
     const scanning = document.getElementById('visitor-scanning');
     const dataSection = document.getElementById('visitor-data');
-    
+
     scanning.style.display = 'flex';
     dataSection.style.display = 'none';
-    
+
     // Fetch IP and Info
     try {
         const response = await fetch('https://ipapi.co/json/');
         const data = await response.json();
-        
+
         document.getElementById('v-ip').textContent = data.ip || 'UNKNOWN';
         document.getElementById('v-loc').textContent = `${data.city}, ${data.country_name}` || 'ANONYMOUS';
     } catch (e) {

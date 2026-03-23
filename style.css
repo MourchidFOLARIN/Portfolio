@@ -118,10 +118,6 @@ span {
     color: #fff;
 }
 
-.btn span {
-    color: #fff !important;
-}
-
 .btn-primary:hover {
     background-color: #0d9668;
     transform: translateY(-3px);
