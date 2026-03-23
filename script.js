@@ -278,7 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Génération automatique de rapports de conformité"
             ],
             tech: ["Laravel", "C++", "MQTT", "TensorFlow"],
-            url: "https://your-smart-fridge-demo.com"
+            url: "https://team-d-excellence-hackbyifri-2026.vercel.app/landing"
         },
         'climatrack': {
             title: "ClimaTrack Bénin",
@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Historisation complète des données environnementales"
             ],
             tech: ["Linux", "Python", "React", "Architecture Cloud"],
-            url: "https://climatrack-benin.bj"
+            url: "https://team-d-excellence-hackbyifri-2026.vercel.app/landing"
         },
         'api-security': {
             title: "Sécurité API & Architecture",
@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Protection avancée contre SQLi, XSS et CSRF"
             ],
             tech: ["Laravel", "Sécurité", "Architecture", "JWT"],
-            url: "https://api-security-demo.net"
+            url: "https://team-d-excellence-hackbyifri-2026.vercel.app/landing"
         },
         'stm32-controller': {
             title: "Contrôleur Industriel STM32",
@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Interface Homme-Machine (HMI) sur écran OLED/TFT"
             ],
             tech: ["STM32", "C++/C", "FreeRTOS", "KiCad"],
-            url: null
+            url: "https://team-d-excellence-hackbyifri-2026.vercel.app/landing"
         },
         'academix': {
             title: "AcademiX — Plateforme Éducative IA",
