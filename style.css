@@ -489,11 +489,31 @@ span {
 .code-overlay .func { color: #a6e22e; }
 .code-overlay .comment { color: #75715e; }
 
-/* Contact Form */
-.contact-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 5rem;
+.quick-contact-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn-whatsapp, .btn-linkedin, .btn-facebook {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    border: 1px solid var(--clr-border);
+}
+
+.btn-whatsapp { color: #25d366; }
+.btn-linkedin { color: #0077b5; }
+.btn-facebook { color: #1877f2; }
+
+.btn-whatsapp:hover, .btn-linkedin:hover, .btn-facebook:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(5px);
 }
 
 .contact-form {
