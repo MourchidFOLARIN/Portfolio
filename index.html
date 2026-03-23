@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mourchid Folarin | Portfolio Backend & IA</title>
+    <meta name="description"
+        content="Portfolio de Mourchid Folarin, développeur backend Laravel, passionné par l'IoT, l'IA et la cybersécurité. Étudiant en informatique au Bénin.">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- AOS for reveal animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Loader Overlay -->
+    <div class="loader-overlay">
+        <div class="loader-text">INITIALISATION_DU_SYSTÈME_BACKEND...</div>
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+    </div>
+
+    <!-- Background Elements -->
+    <div class="digital-bg"></div>
+    <div class="grid-overlay"></div>
+    <div class="scan-lines"></div>
+    <div class="data-stream">
+        <div class="stream-node" style="animation-delay: 0s;"></div>
+        <div class="stream-node" style="animation-delay: 1s;"></div>
+        <div class="stream-node" style="animation-delay: 2s;"></div>
+    </div>
+
+    <!-- System Status Dashboard -->
+    <div class="system-status">
+        <div class="status-item">
+            <div class="status-pulse"></div>
+            <span>NODE_STATUS : EN LIGNE</span>
+        </div>
+        <div class="status-item">
+            <span>Disponibilité : 99.9%</span>
+        </div>
+        <div class="status-item">
+            <span>Sécurité : AES-256</span>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo glitch-hover">M.<span>Folarin</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">À Propos</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-bg">
+                <div class="gradient-sphere"></div>
+            </div>
+            <div class="container">
+                <div class="hero-content" data-aos="fade-up">
+                    <span class="badge">Statut : Prêt pour la production</span>
+                    <h1 class="glitch-hover">Développeur <span>Backend</span> & Architecte de Solutions</h1>
+                    <p class="hero-desc">Passionné par l'innovation, je crée des systèmes robustes, sécurisés et
+                        intelligents pour relever les défis de demain.</p>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn btn-primary">Découvrir mes projets</a>
+                        <a href="CV_Mourchid_Folarin.pdf" class="btn btn-secondary" download>Télécharger mon CV</a>
+                    </div>
+                </div>
+                <div class="hero-image" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="photo-container">
+                        <div class="profile-photo" id="user-photo">
+                            <img src="Gemini_Generated_Image_ut7onbut7onbut7o.png" alt="Photo de Mourchid Folarin">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about section" id="about">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Biographie</span>
+                    <h2 class="section-title">À propos de <span>moi</span></h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text" data-aos="fade-right">
+                        <div class="json-block" data-aos="fade-in">
+                            <span class="json-bracket">{</span><br>
+                            &nbsp;&nbsp;<span class="json-key">"nom"</span>: <span class="json-string">"Mourchid
+                                Folarin"</span>,<br>
+                            &nbsp;&nbsp;<span class="json-key">"origine"</span>: <span
+                                class="json-string">"Bénin"</span>,<br>
+                            &nbsp;&nbsp;<span class="json-key">"role"</span>: <span class="json-string">"Développeur
+                                Backend & IA"</span>,<br>
+                            &nbsp;&nbsp;<span class="json-key">"passions"</span>: <span
+                                class="json-bracket">[</span><span class="json-string">"IoT"</span>, <span
+                                class="json-string">"Électronique Embarquée"</span>, <span
+                                class="json-string">"IA"</span><span class="json-bracket">]</span>,<br>
+                            &nbsp;&nbsp;<span class="json-key">"mission"</span>: <span class="json-string">"Résoudre des
+                                problèmes sociétaux concrets"</span><br>
+                            <span class="json-bracket">}</span>
+                        </div>
+                        <p style="margin-top: 2rem;">Je suis passionné par la conception de systèmes capables de
+                            fonctionner à grande échelle tout en garantissant performance, sécurité et fiabilité. Mon
+                            objectif est de transformer des idées complexes en solutions concrètes qui améliorent la vie
+                            quotidienne.</p>
+                    </div>
+                    <div class="about-stats" data-aos="fade-left">
+                        <div class="stat-card">
+                            <h3>Focus Technique</h3>
+                            <p>Laravel, PHP, C++, Architecture Cloud</p>
+                        </div>
+                        <div class="stat-card">
+                             <h3>Intelligence Artificielle</h3>
+                             <p>Deep Learning, Vision par Ordinateur, Analyse Prédictive</p>
+                         </div>
+                         <div class="stat-card">
+                             <h3>Systèmes Embarqués</h3>
+                             <p>STM32, ESP32, Conception PCB, RTOS & Firmware C++</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section - Terminal -->
+        <section class="skills section" id="skills">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Expertise</span>
+                    <h2 class="section-title">Compétences <span>Backend</span></h2>
+                </div>
+
+                <div class="terminal-container" data-aos="zoom-in">
+                    <div class="terminal-header">
+                        <div class="terminal-dot dot-red"></div>
+                        <div class="terminal-dot dot-yellow"></div>
+                        <div class="terminal-dot dot-green"></div>
+                        <span class="terminal-title">mourchid@backend-server:~</span>
+                    </div>
+                    <div class="terminal-body" id="skills-terminal">
+                        <div class="terminal-line"><span class="terminal-prompt">mourchid@portfolio:~$</span>
+                            fetch-skills --all</div>
+                        <div class="terminal-line"><span class="terminal-cursor"></span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects section" id="projects">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Portfolio</span>
+                    <h2 class="section-title">Mes <span>Projets</span> Clés</h2>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card" data-aos="fade-up" data-project-id="smart-fridge">
+                        <div class="code-overlay">
+                            <div class="line"><span class="comment">// Maintenance Prédictive Logic</span></div>
+                            <div class="line"><span class="keyword">class</span> <span class="func">CoolingSystem</span>
+                                {</div>
+                            <div class="line">&nbsp;&nbsp;<span class="keyword">public function</span> <span
+                                    class="func">predictAnomalies</span>() {</div>
+                            <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                                    class="func">$this</span>->ml_model->analyze();</div>
+                            <div class="line">&nbsp;&nbsp;}</div>
+                            <div class="line">}</div>
+                        </div>
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=800&q=80"
+                                alt="Système de réfrigération intelligente IoT">
+                        </div>
+                        <div class="project-info">
+                            <h3>Réfrigération Intelligente</h3>
+                            <p>Système IoT pour l'industrie agroalimentaire, surveillant température et humidité et
+                                intégrant la maintenance prédictive.</p>
+                            <div class="project-tags">
+                                <span>IoT</span>
+                                <span>IA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-project-id="climatrack">
+                        <div class="code-overlay">
+                            <div class="line"><span class="comment">// ClimaTrack Core Engine</span></div>
+                            <div class="line"><span class="keyword">while</span>(sensor.active) {</div>
+                            <div class="line">&nbsp;&nbsp;data = sensor.<span class="func">read</span>();</div>
+                            <div class="line">&nbsp;&nbsp;<span class="keyword">if</span>(data > threshold) <span
+                                    class="func">alert</span>();</div>
+                            <div class="line">}</div>
+                        </div>
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80"
+                                alt="ClimaTrack Bénin - Gestion microclimat">
+                        </div>
+                        <div class="project-info">
+                            <h3>ClimaTrack Bénin</h3>
+                            <p>Gestion intelligente du microclimat intérieur pour optimiser le confort thermique et
+                                réduire la consommation d'énergie.</p>
+                            <div class="project-tags">
+                                <span>Bénin</span>
+                                <span>Linux</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200" data-project-id="api-security">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&w=800&q=80"
+                                alt="Sécurité API et architecture backend">
+                        </div>
+                        <div class="project-info">
+                            <h3>Sécurité API & Architecture</h3>
+                            <p>Conception de services backend robustes avec authentification avancée et protection des
+                                données.</p>
+                            <div class="project-tags">
+                                <span>Laravel</span>
+                                <span>Sécurité</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="300" data-project-id="stm32-controller">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+                                alt="Contrôleur Industriel STM32">
+                        </div>
+                        <div class="project-info">
+                            <h3>Contrôleur Industriel STM32</h3>
+                            <p>Système de contrôle temps réel pour l'automatisation industrielle, intégrant des protocoles de communication robustes.</p>
+                            <div class="project-tags">
+                                <span>STM32</span>
+                                <span>C++</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="400" data-project-id="academix">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=800&q=80"
+                                 alt="AcademiX — Plateforme Éducative IA">
+                        </div>
+                        <div class="project-info">
+                            <h3>AcademiX — IA Éducative</h3>
+                            <p>Plateforme intelligente révolutionnant l'apprentissage avec des résumés IA et des fiches de révision automatisées.</p>
+                            <div class="project-tags">
+                                <span>IA Gen</span>
+                                <span>React</span>
+                                <span>PWA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Backend & ML Lab Section -->
+        <section class="lab section" id="lab">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Laboratoire d'Innovation</span>
+                    <h2 class="section-title">Backend & <span>Simulation ML</span></h2>
+                </div>
+
+                <div class="lab-grid" data-aos="fade-up">
+                    <div class="lab-controls">
+                        <button class="lab-btn active" onclick="runSimulation('laravel', this)">
+                            <span>Flux API Laravel</span>
+                            <span>Simuler une architecture API complète</span>
+                        </button>
+                        <button class="lab-btn" onclick="runSimulation('ml', this)">
+                            <span>Analyse ML</span>
+                            <span>Prédiction de maintenance IoT</span>
+                        </button>
+                        <button class="lab-btn" onclick="runSimulation('security', this)">
+                            <span>Audit de Sécurité</span>
+                            <span>Vérification des vulnérabilités SQLi/XSS</span>
+                        </button>
+                    </div>
+
+                    <div class="lab-display">
+                        <div id="lab-badge" class="lab-badge">COMPLÉTÉ</div>
+                        <div id="lab-visualizer" class="lab-visualizer">
+                            <span style="color: #444;">Sélectionnez une simulation pour démarrer</span>
+                        </div>
+                        <div id="lab-console" class="lab-console">
+                            <div class="line" style="color: var(--clr-text-muted);">// En attente d'entrée...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials section" id="testimonials">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Preuve Sociale</span>
+                    <h2 class="section-title">Ce qu'on dit de <span>Mourchid</span></h2>
+                </div>
+                <div class="testimonials-grid" data-aos="fade-up">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="quote-icon">"</div>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <p class="testimonial-text">Mourchid possède une capacité rare à transformer des concepts
+                            backend complexes en solutions fluides. Son expertise Laravel est impressionnante.</p>
+                        <div class="testimonial-author">
+                            <strong>Prof. Amadou S.</strong>
+                            <span>Expert IoT & Systèmes</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="quote-icon">"</div>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <p class="testimonial-text">Un développeur rigoureux qui ne transige jamais sur la sécurité. Son
+                            travail sur l'IA et le ML apporte une vraie valeur ajoutée.</p>
+                        <div class="testimonial-author">
+                            <strong>Ing. Koffi B.</strong>
+                            <span>Lead Developer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Contact</span>
+                    <h2 class="section-title">Travaillons <span>Ensemble</span></h2>
+                </div>
+                <div class="contact-wrapper">
+                    <div class="contact-info" data-aos="fade-right">
+                        <div class="info-item">
+                            <h3>Email Direct</h3>
+                            <p>contact@mourchid-folarin.bj</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Contact rapide</h3>
+                            <div class="quick-contact-btns">
+                                <a href="https://wa.me/229XXXXXXXX" target="_blank" class="btn-whatsapp">
+                                    <span>WhatsApp direct</span>
+                                </a>
+                                <a href="https://linkedin.com/in/mourchid-folarin" target="_blank" class="btn-linkedin">
+                                    <span>Profil LinkedIn</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form" data-aos="fade-left">
+                        <div class="form-group">
+                            <input type="text" placeholder="Votre Nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Votre Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Votre Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Mourchid Folarin. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Visitor Identity Toggle -->
+    <div class="visitor-toggle" title="Qui suis-je ?" onclick="toggleVisitorIdentity()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+                d="M12 11c0 3.517-1.009 6.799-2.753 9.571m0 0A9.994 9.994 0 014 12c0-5.523 4.477-10 10-10s10 4.477 10 10c0 2.
+            223-.725 4.277-1.957 5.942m-14.44-5.942a3.959 3.959 0 011.085-3.033A3.959 3.959 0 0112 8c1.01 0 1.932.378 2.626 1M12 11a3.485 3.485 0 00-1.007 2.45L11 17m4-7c.13.31.2.65.2 1 0 .966-.565 1.832-1.435 2.446l-.165.113M12 11c0 3.517 1.009 6.799 2.753 9.571m-2.753-9.571a9.994 9.994 0 002.753 9.571m2.753-9.571a9.994 9.994 0 01-2.753 9.571" />
+        </svg>
+    </div>
+
+    <!-- Visitor Information Modal -->
+    <div id="visitor-modal" class="visitor-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>INTEL::GATHERING</h3>
+                <button class="close-modal" onclick="toggleVisitorIdentity()">&times;</button>
+            </div>
+            <div id="visitor-scanning" class="visitor-scanning">
+                <div class="scanner-line"></div>
+                <p>SCANNING_IDENTITÉ_VISITEUR...</p>
+            </div>
+            <div id="visitor-data" class="visitor-data" style="display: none;">
+                <div class="data-item">
+                    <span class="label">ADRESSE_IP :</span>
+                    <span id="v-ip" class="value">COLLECTE...</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">LOCALISATION :</span>
+                    <span id="v-loc" class="value">ANONYME</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">PLATEFORME_OS :</span>
+                    <span id="v-os" class="value">DÉTECTION...</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">NAVIGATEUR :</span>
+                    <span id="v-browser" class="value">DÉTECTION...</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">NIVEAU_SÉCU :</span>
+                    <span class="value" style="color: var(--clr-primary);">CRYPTÉ</span>
+                </div>
+                <p class="data-note">// Données collectées uniquement à titre de démonstration. Aucun enregistrement.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="project-modal">
+        <div class="modal-overlay" onclick="closeProjectModal()"></div>
+        <div class="project-modal-content">
+            <button class="close-project-modal" onclick="closeProjectModal()">&times;</button>
+            <div class="modal-body">
+                <div class="project-modal-image">
+                    <img id="modal-project-img" src="" alt="">
+                </div>
+                <div class="project-modal-info">
+                    <h3 id="modal-project-title"></h3>
+                    <p id="modal-project-desc"></p>
+                    <div class="project-features">
+                        <h4>Points Clés :</h4>
+                        <ul id="modal-project-features"></ul>
+                    </div>
+                    <div class="project-tech-stack">
+                        <h4>Tech Stack :</h4>
+                        <div id="modal-project-tech" class="project-tags"></div>
+                    </div>
+                    <div class="modal-footer" style="margin-top: 2rem;">
+                        <a id="modal-project-link" href="#" target="_blank" class="btn btn-primary" style="display: none;">
+                            <span>Voir le projet en direct</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
