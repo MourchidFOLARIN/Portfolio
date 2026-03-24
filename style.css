@@ -322,6 +322,9 @@ span {
 .loader-text {
     font-size: 1.2rem;
     margin-bottom: 2rem;
+    text-align: center;
+    padding: 0 1.5rem;
+    width: 100%;
 }
 
 .loader-bar {
@@ -1537,5 +1540,12 @@ span {
     to {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+/* Responsive Loader */
+@media (max-width: 480px) {
+    .loader-text {
+        font-size: 0.85rem;
     }
 }
