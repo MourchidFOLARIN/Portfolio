@@ -60,12 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Terminal Animation Logic
     const terminalBody = document.getElementById('skills-terminal');
     const skillsData = [
-        { cmd: "ls expertise/", output: "backend/ ai/ systems/" },
+        { cmd: "ls expertise/", output: "backend/ ai/ security/" },
         { cmd: "cat expertise/backend/skills.txt", output: "> Laravel, PHP, API Architecture, SQL, Redis" },
-        { cmd: "cat expertise/ai/models.txt", output: "> Machine Learning, Deep Learning, TensorRT, CV" },
-        { cmd: "cat expertise/systems/iot.txt", output: "> Linux Admin, Embedded C++, Sensor Fusion" },
-        { cmd: "ls expertise/hardware/", output: "mcu/ pcb_design/ firmware/" },
-        { cmd: "cat expertise/hardware/mcu.list", output: "> STM32 (HAL/LL), ESP32-IDF, Arduino, FreeRTOS" },
+        { cmd: "ls expertise/security/", output: "network/ web_sec/ auditing/" },
+        { cmd: "nmap -sV 192.168.1.0/24", output: "> Scanning... Found 3 hosts. Port 80/443 OPEN." },
+        { cmd: "cat expertise/security/network.log", output: "> Packet Analysis, Firewall Config, IDS/IPS Tuning" },
         { cmd: "status --system", output: "All systems operational. Ready for deployment." }
     ];
 
@@ -137,6 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
             await simulateML();
         } else if (type === 'security') {
             await simulateSecurity();
+        } else if (type === 'network') {
+            await simulateNetwork();
         }
 
         isRunning = false;
@@ -201,9 +202,30 @@ document.addEventListener('DOMContentLoaded', () => {
         await addLog("Pattern Match: 'OR 1=1'... NOT_FOUND", "#10b981");
         await addLog("Checking for XSS payloads...");
         await addLog("Escape HTML Entities: OK");
-        await addLog("CORS Policy: Strict-Origin-When-Cross-Origin... CHECKED");
-        await addLog("Security Headers: Content-Security-Policy... OK", "#10b981");
+        await addLog("CORS Policy: Strict-Origin... CHECKED");
         await addLog("THREAT_LEVEL: 0 (Secure Architecture)", "#10b981");
+    }
+
+    async function simulateNetwork() {
+        labVisualizer.innerHTML = '<div class="network-viz"></div>';
+        const viz = labVisualizer.querySelector('.network-viz');
+        viz.style.padding = '10px';
+        viz.style.color = '#10b981';
+
+        await addLog("Initializing Wireshark-core packet capture...");
+        await addLog("Listening on interface eth0...");
+        
+        for (let i = 0; i < 5; i++) {
+            const protocols = ["TCP", "UDP", "TLSv1.3", "HTTP/2"];
+            const proto = protocols[Math.floor(Math.random() * protocols.length)];
+            const size = Math.floor(Math.random() * 1500);
+            await addLog(`Captured: ${proto} packet | Size: ${size} bytes`, "#fff", 300);
+        }
+        
+        await addLog("Analyzing traffic patterns for anomalies...");
+        await addLog("ALERT: Unusually high number of SYN packets detected!", "#f92672");
+        await addLog("Mitigation: Triggering Rate-Limiting rules...", "#3b82f6");
+        await addLog("Status: DDoS mitigated. Network stable.", "#10b981");
     }
 
     // Navbar scroll effect
@@ -217,10 +239,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Smooth scroll for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]:not(#modal-project-link)').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (!href || href === '#') return; // Do nothing for empty or plain # links
+
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector(href);
             if (target) {
                 window.scrollTo({
                     top: target.offsetTop - 80,
@@ -280,22 +305,10 @@ document.addEventListener('DOMContentLoaded', () => {
             tech: ["Laravel", "C++", "MQTT", "TensorFlow"],
             url: "https://your-smart-fridge-demo.com"
         },
-        'climatrack': {
-            title: "ClimaTrack Bénin",
-            image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80",
-            desc: "Un projet innovant visant à optimiser le confort thermique dans les bâtiments au Bénin. ClimaTrack utilise des données environnementales pour ajuster intelligemment les systèmes de ventilation.",
-            features: [
-                "Analyse du microclimat intérieur",
-                "Algorithmes d'optimisation énergétique",
-                "Interface de contrôle intuitive pour usagers",
-                "Historisation complète des données environnementales"
-            ],
-            tech: ["Linux", "Python", "React", "Architecture Cloud"],
-            url: "https://climatrack-benin.bj"
-        },
+
         'api-security': {
             title: "Sécurité API & Architecture",
-            image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&w=800&q=80",
+            image: "Top Device Security Tips_ Safeguard Your Digital Life.jpeg",
             desc: "Développement d'architectures backend ultra-sécurisées pour des applications critiques. Focus particulier sur la protection contre les attaques sophistiquées et la gestion fine des accès.",
             features: [
                 "Authentification multi-facteurs (MFA)",
@@ -321,7 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         'academix': {
             title: "AcademiX — Plateforme Éducative IA",
-            image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=800&q=80",
+            image: "Academix.png",
             desc: "AcademiX est une solution Visionnaire pour les étudiants, intégrant l'IA pour transformer des cours denses en outils de réussite. Développé pour un Hackathon (IFRI), le projet a cartonné par son approche UX et ses innovations IA.",
             features: [
                 "Smart Summary : Résumés automatiques de cours par IA générative",
@@ -335,7 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         'le-twin': {
             title: "Le TWIN — Streetwear E-commerce",
-            image: "https://images.unsplash.com/photo-1523381210434-27acb0f023ea?auto=format&fit=crop&w=800&q=80",
+            image: "LeTwin.jpg",
             desc: "Le TWIN est une plateforme e-commerce moderne et minimaliste dédiée au streetwear urbain. Conçue pour offrir une expérience d'achat fluide et esthétique, elle met en avant l'essence du style urbain contemporain.",
             features: [
                 "Interface utilisateur minimaliste et fluide",
@@ -343,12 +356,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Gestion avancée du panier et des commandes",
                 "Design Premium optimisé pour la conversion"
             ],
-            tech: ["Next.js", "Tailwind CSS", "Vercel", "E-commerce"],
+            tech: ["Laravel", "Tailwind CSS", "Vercel", "E-commerce"],
             url: "https://le-twin.vercel.app/"
         },
         'nightheart': {
             title: "La Nuit du Cœur 2026",
-            image: "https://images.unsplash.com/photo-1514525253361-bee8a187449a?auto=format&fit=crop&w=800&q=80",
+            image: "nuit de coeur.ico",
             desc: "Site événementiel officiel pour 'La Nuit du Cœur', un gala annuel de chant célébrant l'amour et le talent. La plateforme gère la promotion, la billetterie et le soutien aux candidats nominés.",
             features: [
                 "Compte à rebours dynamique avant l'événement",
