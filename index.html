@@ -81,6 +81,7 @@
             <ul class="nav-links">
                 <li><a href="#about">À Propos</a></li>
                 <li><a href="#skills">Compétences</a></li>
+                
                 <li><a href="#projects">Projets</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -100,7 +101,7 @@
             <div class="container">
                 <div class="hero-content" data-aos="fade-up">
                     <span class="badge">Statut : Prêt pour la production</span>
-                    <h1 class="glitch-hover">Développeur <span>Backend</span> & Architecte de Solutions</h1>
+                    <h1 class="glitch-hover"><span>Backend</span> & <span>Cybersécurité</span> | Architecte</h1>
                     <p class="hero-desc">Passionné par l'innovation, je crée des systèmes robustes, sécurisés et
                         intelligents, avec une expertise forte en architecture backend et cybersécurité réseau.</p>
                     <div class="hero-btns">
@@ -133,8 +134,7 @@
                                 Folarin"</span>,<br>
                             &nbsp;&nbsp;<span class="json-key">"origine"</span>: <span
                                 class="json-string">"Bénin"</span>,<br>
-                            &nbsp;&nbsp;<span class="json-key">"role"</span>: <span class="json-string">"Développeur
-                                Backend & IA orienté cybersécurité "</span> ,<br>
+                            &nbsp;&nbsp;<span class="json-key">"role"</span>: <span class="json-string">"Backend & Cybersécurité | Architecte"</span> ,<br>
                             &nbsp;&nbsp;<span class="json-key">"passions"</span>: <span
                                 class="json-bracket">[</span><span class="json-string">"IoT"</span>, <span
                                 class="json-string">"Sécurité Réseau"</span>, <span class="json-string">"IA"</span><span
@@ -175,17 +175,185 @@
                     <h2 class="section-title">Compétences <span>Backend</span></h2>
                 </div>
 
-                <div class="terminal-container" data-aos="zoom-in">
-                    <div class="terminal-header">
-                        <div class="terminal-dot dot-red"></div>
-                        <div class="terminal-dot dot-yellow"></div>
-                        <div class="terminal-dot dot-green"></div>
-                        <span class="terminal-title">mourchid@backend-server:~</span>
+                <div class="backend-grid" data-aos="fade-up">
+                    <div class="backend-terminal" data-aos="zoom-in">
+                        <div class="terminal-header">
+                            <div class="terminal-dot dot-red"></div>
+                            <div class="terminal-dot dot-yellow"></div>
+                            <div class="terminal-dot dot-green"></div>
+                            <span class="terminal-title">mourchid@backend-server:~</span>
+                        </div>
+                        <div class="terminal-body" id="skills-terminal">
+                            <div class="terminal-line"><span class="terminal-prompt">mourchid@backend:~$</span> fetch-skills --all</div>
+                            <div class="terminal-line"><span class="terminal-cursor"></span></div>
+                        </div>
                     </div>
-                    <div class="terminal-body" id="skills-terminal">
-                        <div class="terminal-line"><span class="terminal-prompt">mourchid@portfolio:~$</span>
-                            fetch-skills --all</div>
-                        <div class="terminal-line"><span class="terminal-cursor"></span></div>
+
+                    <div class="backend-cards">
+                        <div class="backend-card" data-aos="fade-right" data-aos-delay="100">
+                            <div class="card-icon">🏗️</div>
+                            <h3>Architecture & Microservices</h3>
+                            <p>Conception d'architectures scalables, patterns de microservices, Event-Driven Architecture</p>
+                            <ul class="skills-list">
+                                <li>Clean Architecture</li>
+                                <li>Microservices</li>
+                                <li>Design Patterns</li>
+                                <li>Message Queues</li>
+                            </ul>
+                        </div>
+
+                        <div class="backend-card" data-aos="fade-right" data-aos-delay="200">
+                            <div class="card-icon">💾</div>
+                            <h3>Bases de Données & Performance</h3>
+                            <p>Optimisation des requêtes, Indexation avancée, Caching, Réplication & Sharding</p>
+                            <ul class="skills-list">
+                                <li>SQL Optimization</li>
+                                <li>NoSQL Design</li>
+                                <li>Redis Caching</li>
+                                <li>Query Performance</li>
+                            </ul>
+                        </div>
+
+                        <div class="backend-card" data-aos="fade-right" data-aos-delay="300">
+                            <div class="card-icon">☁️</div>
+                            <h3>Cloud & DevOps</h3>
+                            <p>Déploiement cloud, Containerization, Infrastructure as Code, CI/CD Pipelines</p>
+                            <ul class="skills-list">
+                                <li>Docker & Kubernetes</li>
+                                <li>AWS & GCP</li>
+                                <li>CI/CD (GitHub Actions)</li>
+                                <li>Infrastructure as Code</li>
+                            </ul>
+                        </div>
+
+                        <div class="backend-card" data-aos="fade-right" data-aos-delay="400">
+                            <div class="card-icon">🔗</div>
+                            <h3>API & Intégration</h3>
+                            <p>Design RESTful/GraphQL, Authentification avancée, Rate Limiting, Versioning</p>
+                            <ul class="skills-list">
+                                <li>REST & GraphQL</li>
+                                <li>OAuth2 & JWT</li>
+                                <li>API Documentation</li>
+                                <li>Third-party Integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend Tools Section -->
+                <div class="backend-footer" data-aos="fade-up">
+                    <div class="tools-section">
+                        <h3>Outils & Frameworks</h3>
+                        <div class="tools-grid">
+                            <span class="tool-tag">Laravel</span>
+                            <span class="tool-tag">PHP</span>
+                            <span class="tool-tag">Node.js</span>
+                            <span class="tool-tag">Express.js</span>
+                            <span class="tool-tag">PostgreSQL</span>
+                            <span class="tool-tag">MySQL</span>
+                            <span class="tool-tag">MongoDB</span>
+                            <span class="tool-tag">Redis</span>
+                            <span class="tool-tag">Docker</span>
+                            <span class="tool-tag">Kubernetes</span>
+                            <span class="tool-tag">AWS</span>
+                            <span class="tool-tag">Google Cloud</span>
+                            <span class="tool-tag">Git</span>
+                            <span class="tool-tag">Jenkins</span>
+                            <span class="tool-tag">GitLab CI</span>
+                            <span class="tool-tag">Nginx</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cybersecurity Section -->
+        <section class="cybersecurity section" id="cybersecurity">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Expertise Avancée</span>
+                    <h2 class="section-title">Cybersécurité & <span>Sécurité Réseau</span></h2>
+                </div>
+
+                <div class="cybersec-grid" data-aos="fade-up">
+                    <div class="cybersec-terminal" data-aos="zoom-in">
+                        <div class="terminal-header">
+                            <div class="terminal-dot dot-red"></div>
+                            <div class="terminal-dot dot-yellow"></div>
+                            <div class="terminal-dot dot-green"></div>
+                            <span class="terminal-title">mourchid@security-ops:~</span>
+                        </div>
+                        <div class="terminal-body" id="cybersec-terminal">
+                            <div class="terminal-line"><span class="terminal-prompt">mourchid@security:~$</span> show-expertise --cybersec</div>
+                            <div class="terminal-line"><span class="terminal-cursor"></span></div>
+                        </div>
+                    </div>
+
+                    <div class="cybersec-cards">
+                        <div class="cybersec-card" data-aos="fade-left" data-aos-delay="100">
+                            <div class="card-icon">🔐</div>
+                            <h3>Sécurité des Réseaux</h3>
+                            <p>Analyse de paquets (Wireshark), Configuration pare-feu, Durcissement système, Protocoles SSL/TLS</p>
+                            <ul class="skills-list">
+                                <li>Packet Analysis</li>
+                                <li>Firewalls</li>
+                                <li>IDS/IPS</li>
+                                <li>VPN & Tunneling</li>
+                            </ul>
+                        </div>
+
+                        <div class="cybersec-card" data-aos="fade-left" data-aos-delay="200">
+                            <div class="card-icon">🛡️</div>
+                            <h3>Test d'Intrusion</h3>
+                            <p>Audits de sécurité, Exploitation de vulnérabilités, Pentesting Web & API, OWASP Top 10</p>
+                            <ul class="skills-list">
+                                <li>Penetration Testing</li>
+                                <li>Vulnerability Assessment</li>
+                                <li>SQLi & XSS Detection</li>
+                                <li>OWASP Compliance</li>
+                            </ul>
+                        </div>
+
+                        <div class="cybersec-card" data-aos="fade-left" data-aos-delay="300">
+                            <div class="card-icon">🔍</div>
+                            <h3>Analyse de Malware</h3>
+                            <p>Détection d'anomalies, Analyse statique/dynamique, Sandbox evaluation, Threat intelligence</p>
+                            <ul class="skills-list">
+                                <li>Malware Analysis</li>
+                                <li>Reverse Engineering</li>
+                                <li>Behavioral Analysis</li>
+                                <li>Threat Hunting</li>
+                            </ul>
+                        </div>
+
+                        <div class="cybersec-card" data-aos="fade-left" data-aos-delay="400">
+                            <div class="card-icon">⚔️</div>
+                            <h3>Sécurité Applicative</h3>
+                            <p>Secure coding, Protection des données sensibles, Authentification/Autorisation avancées, Cryptographie</p>
+                            <ul class="skills-list">
+                                <li>Secure Coding</li>
+                                <li>Cryptography (AES, RSA)</li>
+                                <li>OAuth2 & JWT</li>
+                                <li>Data Protection</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications & Tools -->
+                <div class="cybersec-footer" data-aos="fade-up">
+                    <div class="tools-section">
+                        <h3>Outils & Technologies</h3>
+                        <div class="tools-grid">
+                            <span class="tool-tag">Wireshark</span>
+                            <span class="tool-tag">Metasploit</span>
+                            <span class="tool-tag">Burp Suite</span>
+                            <span class="tool-tag">Kali Linux</span>
+                            <span class="tool-tag">OpenSSL</span>
+                            <span class="tool-tag">Nmap</span>
+                            <span class="tool-tag">Snort/Suricata</span>
+                            <span class="tool-tag">YARA</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -294,6 +462,49 @@
                             <div class="project-tags">
                                 <span>PHP</span>
                                 <span>Event</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="600" data-project-id="ever-after">
+                        <div class="code-overlay">
+                            <div class="line"><span class="comment">// Luxury Wedding Planning Engine</span></div>
+                            <div class="line"><span class="keyword">class</span> <span class="func">EverAfterEvents</span> {</div>
+                            <div class="line">&nbsp;&nbsp;<span class="keyword">function</span> <span class="func">designateMoment</span>() {</div>
+                            <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="func">createMagic</span>();</div>
+                            <div class="line">&nbsp;&nbsp;}</div>
+                            <div class="line">}</div>
+                        </div>
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Ever After Events - Wedding Planner de Luxe">
+                        </div>
+                        <div class="project-info">
+                            <h3>Ever After Events</h3>
+                            <p>Agence internationale de wedding planning et décoration de prestige. Portfolio d'événements luxueux conçus avec précision et élégance.</p>
+                            <div class="project-tags">
+                                <span>HTML/CSS</span>
+                                <span>JavaScript</span>
+                                <span>Design Luxe</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="700" data-project-id="excellencelink">
+                        <div class="code-overlay">
+                            <div class="line"><span class="comment">// Excellence Team Networking Platform</span></div>
+                            <div class="line"><span class="keyword">app</span>.<span class="func\">connect</span>({ <span class=\"json-string\">platform</span>: <span class=\"json-string\">ExellenceLink</span> })</div>
+                            <div class="line"><span class="keyword\">const</span> team = <span class="func\">buildSynergy</span>();</div>
+                            <div class="line"><span class="keyword\">return</span> <span class=\"func\">scale</span>(team, <span class=\"json-string\">worldwide</span>);</div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="ExellenceLink - Plateforme de Collaboration">
+                        </div>
+                        <div class="project-info">
+                            <h3>ExellenceLink</h3>
+                            <p>Plateforme collaborative innovante créée avec Excellence Team. Application de networking et gestion de projets pour fédérer les talents et optimiser la collaboration globale.</p>
+                            <div class="project-tags">
+                                <span>Full-Stack</span>
+                                <span>Render</span>
+                                <span>Collaboration</span>
                             </div>
                         </div>
                     </div>

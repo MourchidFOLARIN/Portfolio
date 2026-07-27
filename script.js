@@ -60,46 +60,105 @@ document.addEventListener('DOMContentLoaded', () => {
     // Terminal Animation Logic
     const terminalBody = document.getElementById('skills-terminal');
     const skillsData = [
-        { cmd: "ls expertise/", output: "backend/ ai/ security/" },
-        { cmd: "cat expertise/backend/skills.txt", output: "> Laravel, PHP, API Architecture, SQL, Redis" },
-        { cmd: "ls expertise/security/", output: "network/ web_sec/ auditing/" },
-        { cmd: "nmap -sV 192.168.1.0/24", output: "> Scanning... Found 3 hosts. Port 80/443 OPEN." },
-        { cmd: "cat expertise/security/network.log", output: "> Packet Analysis, Firewall Config, IDS/IPS Tuning" },
-        { cmd: "status --system", output: "All systems operational. Ready for deployment." }
+        { cmd: "composer require laravel/framework", output: "✓ Laravel 11.x framework installed successfully" },
+        { cmd: "php artisan migrate --seed", output: "✓ Database migration & seeding completed (0.45s)" },
+        { cmd: "docker-compose up -d", output: "✓ PostgreSQL, Redis, Nginx containers running" },
+        { cmd: "npm run build", output: "✓ Asset compilation complete (Vue/React components)" },
+        { cmd: "php artisan test --parallel", output: "✓ 847 tests passed (PASSED: 100%, Time: 3.28s)" },
+        { cmd: "git push origin main", output: "✓ Deployment to AWS EC2 initiated via GitHub Actions" }
     ];
 
+    let backendTypeStarted = false;
+
     async function typeTerminal() {
+        if (backendTypeStarted) return;
+        backendTypeStarted = true;
+
         for (const item of skillsData) {
             // Type Command
             let cmdLine = document.createElement('div');
             cmdLine.className = 'terminal-line';
-            cmdLine.innerHTML = `<span class="terminal-prompt">mourchid@portfolio:~$</span> <span class="typing"></span>`;
+            cmdLine.innerHTML = `<span class="terminal-prompt">mourchid@backend:~$</span> <span class="typing"></span>`;
             terminalBody.insertBefore(cmdLine, terminalBody.lastElementChild);
 
             let typingSpan = cmdLine.querySelector('.typing');
             for (let char of item.cmd) {
                 typingSpan.textContent += char;
-                await new Promise(r => setTimeout(r, 40));
+                await new Promise(r => setTimeout(r, 30));
             }
 
             // Show Output
             let outputLine = document.createElement('div');
             outputLine.className = 'terminal-line';
-            outputLine.style.color = '#fff';
+            outputLine.style.color = '#00ff41';
             outputLine.style.opacity = '0';
             outputLine.textContent = item.output;
             terminalBody.insertBefore(outputLine, terminalBody.lastElementChild);
 
-            gsap.to(outputLine, { opacity: 0.7, duration: 0.5 });
-            await new Promise(r => setTimeout(r, 800));
+            gsap.to(outputLine, { opacity: 0.8, duration: 0.5 });
+            await new Promise(r => setTimeout(r, 600));
         }
     }
 
     // Trigger terminal when in view
     ScrollTrigger.create({
-        trigger: ".terminal-container",
+        trigger: ".backend-terminal",
         start: "top 80%",
         onEnter: () => typeTerminal()
+    });
+
+    // ============================================
+    // Cybersecurity Terminal Animation
+    // ============================================
+    const cybersecTerminalBody = document.getElementById('cybersec-terminal');
+    const cybersecData = [
+        { cmd: "sudo nmap -sV 192.168.1.0/24", output: "Nmap 7.92 scan initiated..." },
+        { cmd: "cat /var/log/auth.log | grep 'Failed'", output: "> 12 failed login attempts detected" },
+        { cmd: "openssl s_client -connect server.com:443", output: "TLSv1.3 Connection Established ✓" },
+        { cmd: "wireshark -i eth0 -f 'tcp port 443'", output: "Capturing packets... 2847 packets captured" },
+        { cmd: "metasploit-framework --exploit detection", output: "Vulnerability scan: 3 CRITICAL found" },
+        { cmd: "burp-scanner --target webapp", output: "XSS vulnerability in login form... REMEDIATED" },
+        { cmd: "chkrootkit && aide --check", output: "System integrity: VERIFIED - No rootkits detected" },
+        { cmd: "iptables -L -n -v", output: "Firewall rules applied. DDoS protection: ACTIVE" }
+    ];
+
+    let cybersecTypeStarted = false;
+
+    async function typeTerminalCybersecurity() {
+        if (cybersecTypeStarted) return;
+        cybersecTypeStarted = true;
+
+        for (const item of cybersecData) {
+            // Type Command
+            let cmdLine = document.createElement('div');
+            cmdLine.className = 'terminal-line';
+            cmdLine.innerHTML = `<span class="terminal-prompt">mourchid@security:~$</span> <span class="typing"></span>`;
+            cybersecTerminalBody.insertBefore(cmdLine, cybersecTerminalBody.lastElementChild);
+
+            let typingSpan = cmdLine.querySelector('.typing');
+            for (let char of item.cmd) {
+                typingSpan.textContent += char;
+                await new Promise(r => setTimeout(r, 30));
+            }
+
+            // Show Output
+            let outputLine = document.createElement('div');
+            outputLine.className = 'terminal-line';
+            outputLine.style.color = '#00ff41';
+            outputLine.style.opacity = '0';
+            outputLine.textContent = item.output;
+            cybersecTerminalBody.insertBefore(outputLine, cybersecTerminalBody.lastElementChild);
+
+            gsap.to(outputLine, { opacity: 0.8, duration: 0.5 });
+            await new Promise(r => setTimeout(r, 600));
+        }
+    }
+
+    // Trigger cybersec terminal when in view
+    ScrollTrigger.create({
+        trigger: ".cybersec-terminal",
+        start: "top 80%",
+        onEnter: () => typeTerminalCybersecurity()
     });
 
     // Background Parallax
@@ -371,6 +430,36 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             tech: ["PHP", "Tailwind CSS", "MySQL", "Hostinger"],
             url: "https://nightheart.rf.gd/"
+        },
+        'ever-after': {
+            title: "Ever After Events",
+            image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80",
+            desc: "Ever After Events est une agence internationale spécialisée dans la conception, la planification et la scénographie de mariages d'exception et réceptions de prestige. Chaque événement est orchestré comme une symphonie, où chaque détail crée une expérience sensorielle immersive et inoubliable.",
+            features: [
+                "Portfolio de mariages luxueux avec galerie complète",
+                "Services sur mesure : L'Absolu, L'Esthétique, Le Jour J",
+                "Destination Management : châteaux, villas, lieux insolites",
+                "Coordination minutieuse et gestion décorée sophistiquée",
+                "Témoignages vidéo et avis clients en direct",
+                "Consultation réservable et planification personnalisée"
+            ],
+            tech: ["HTML/CSS", "JavaScript", "Design Luxe", "UX Premium"],
+            url: "https://mourchidfolarin.github.io/Ever_After/"
+        },
+        'excellencelink': {
+            title: "ExellenceLink",
+            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
+            desc: "ExellenceLink est une plateforme collaborative innovante conçue avec Excellence Team. C'est une application de networking et gestion de projets qui fédère les talents à l'échelle mondiale et optimise la collaboration inter-équipes.",
+            features: [
+                "Système de networking avancé et matchmaking intelligent",
+                "Gestion collaborative de projets en temps réel",
+                "Tableau de bord analytique pour suivre la progression",
+                "Communication intégrée : chat, visioconférence, partage de documents",
+                "Système d'accessibilité et d'invite personnalisée",
+                "Scalabilité cloud avec hébergement Render"
+            ],
+            tech: ["Full-Stack", "Node.js/Express", "React", "MongoDB", "Render"],
+            url: "https://link-ptne.onrender.com/"
         }
     };
 
