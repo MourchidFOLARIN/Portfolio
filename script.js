@@ -447,18 +447,18 @@ document.addEventListener('DOMContentLoaded', () => {
             url: "https://mourchidfolarin.github.io/Ever_After/"
         },
         'excellencelink': {
-            title: "ExellenceLink",
+            title: "ExcellenceLink",
             image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
-            desc: "ExellenceLink est une plateforme collaborative innovante conçue avec Excellence Team. C'est une application de networking et gestion de projets qui fédère les talents à l'échelle mondiale et optimise la collaboration inter-équipes.",
+            desc: "ExcellenceLink est une application de sauvegarde, d'organisation et de vérification de liens. Elle permet de centraliser les ressources importantes, d'éviter les liens éparpillés et d'analyser leur fiabilité afin de réduire les risques liés aux liens douteux ou malveillants.",
             features: [
-                "Système de networking avancé et matchmaking intelligent",
-                "Gestion collaborative de projets en temps réel",
-                "Tableau de bord analytique pour suivre la progression",
-                "Communication intégrée : chat, visioconférence, partage de documents",
-                "Système d'accessibilité et d'invite personnalisée",
-                "Scalabilité cloud avec hébergement Render"
+                "Sauvegarde centralisée des liens importants",
+                "Organisation des liens par catégories et priorités",
+                "Vérification de la fiabilité des URL avant ouverture",
+                "Réduction des risques liés aux liens suspects ou malveillants",
+                "Interface simple pour retrouver rapidement ses ressources",
+                "Déploiement cloud avec hébergement Render"
             ],
-            tech: ["Full-Stack", "Node.js/Express", "React", "MongoDB", "Render"],
+            tech: ["Full-Stack", "Node.js/Express", "React", "MongoDB", "Render", "Sécurité"],
             url: "https://link-ptne.onrender.com/"
         }
     };
