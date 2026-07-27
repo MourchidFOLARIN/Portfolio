@@ -171,6 +171,22 @@ span {
     letter-spacing: -2px;
 }
 
+
+.hero-desc {
+    max-width: 680px;
+}
+
+.hero-btns {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+
+.hero-btns .btn-secondary {
+    margin-left: 0;
+}
 .hero-image {
     position: relative;
     z-index: 1;
