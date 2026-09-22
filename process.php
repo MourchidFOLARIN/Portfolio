@@ -1,27 +1,17 @@
 <?php
-header('Content-Type: application/json');
+/**
+ * process.php — DÉPRÉCIÉ.
+ *
+ * L'envoi du formulaire de contact est désormais géré côté client
+ * par Web3Forms (voir la fonction initContactForm() dans script.js).
+ *
+ * Ce fichier est conservé uniquement pour compatibilité et ne traite
+ * plus aucune donnée. Il peut être supprimé sans risque.
+ */
 
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $name = trim($_POST['name'] ?? '');
-    $email = trim($_POST['email'] ?? '');
-    $message = trim($_POST['message'] ?? '');
-
-    if (empty($name) || empty($email) || empty($message)) {
-        echo json_encode(['success' => false, 'message' => 'Veuillez remplir tous les champs.']);
-        exit;
-    }
-
-    $to = "mourchidolawale@gmail.com";
-    $subject = "Nouveau message de $name (Portfolio)";
-    $body = "Nom: $name\nEmail: $email\n\nMessage:\n$message";
-    $headers = "From: $email";
-
-    if (mail($to, $subject, $body, $headers)) {
-        echo json_encode(['success' => true, 'message' => 'Message envoyé avec succès !']);
-    } else {
-        echo json_encode(['success' => false, 'message' => "Erreur lors de l'envoi du message."]);
-    }
-} else {
-    echo json_encode(['success' => false, 'message' => 'Méthode non autorisée.']);
-}
-?>
+header('Content-Type: application/json; charset=utf-8');
+http_response_code(410);
+echo json_encode([
+    'success' => false,
+    'message' => 'Ce point d\'entree est deprecie. Le formulaire utilise desormais l\'API Web3Forms.'
+], JSON_UNESCAPED_UNICODE);

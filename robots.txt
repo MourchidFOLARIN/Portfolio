@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://portfolio-production-3c70.up.railway.app/sitemap.xml
+Sitemap: https://mourchidfolarin.vercel.app/sitemap.xml

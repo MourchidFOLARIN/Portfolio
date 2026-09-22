@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets &amp; Réalisations | Mourchid FOLARIN — Backend, Cybersécurité, Réseaux</title>
+    <meta name="description"
+        content="Découvrez les 8 projets de Mourchid FOLARIN : architecture Backend Laravel, sécurité API, laboratoires CTF, prédiction IA, systèmes IoT et plateformes collaboratives.">
+    <meta name="author" content="Mourchid FOLARIN">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="icon" type="image/x-icon" href="nuit de coeur.ico">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        .page-header {
+            padding: 8.5rem 0 3rem;
+            position: relative;
+            text-align: center;
+        }
+
+        .page-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 999px;
+            padding: 0.4rem 1.2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--clr-primary);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .page-title {
+            font-family: var(--ff-heading);
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--clr-text);
+            margin-bottom: 1rem;
+        }
+
+        .page-title span {
+            color: var(--clr-primary);
+        }
+
+        .page-subtitle {
+            font-size: 1.15rem;
+            color: var(--clr-primary);
+            font-weight: 500;
+            max-width: 760px;
+            margin: 0 auto 1.2rem;
+        }
+
+        .page-intro {
+            font-size: 1.05rem;
+            color: var(--clr-text-muted);
+            max-width: 720px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Filter Tabs */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 2.5rem 0 3.5rem;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--clr-border);
+            border-radius: 50px;
+            padding: 0.6rem 1.3rem;
+            color: var(--clr-text-muted);
+            font-size: 0.88rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: rgba(16, 185, 129, 0.12);
+            border-color: var(--clr-primary);
+            color: var(--clr-primary);
+            font-weight: 600;
+        }
+
+        /* Card Actions */
+        .project-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .project-btn-detail {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--clr-primary);
+            border-radius: 8px;
+            padding: 0.45rem 0.9rem;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: var(--transition);
+        }
+
+        .project-btn-detail:hover {
+            background: var(--clr-primary);
+            color: #000;
+        }
+
+        .project-links-direct {
+            display: flex;
+            gap: 0.6rem;
+        }
+
+        .project-link-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--clr-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--clr-text-muted);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .project-link-icon:hover {
+            border-color: var(--clr-primary);
+            color: var(--clr-primary);
+            transform: translateY(-2px);
+        }
+
+        .project-link-icon svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        /* Section Derrière les projets */
+        .behind-projects-section {
+            padding: 5rem 0 3rem;
+        }
+
+        .behind-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(16, 185, 129, 0.04));
+            border: 1px solid var(--clr-border);
+            border-radius: 24px;
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .behind-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--clr-primary);
+        }
+
+        .behind-photo-wrapper {
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            background: #0d0d0d;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+
+        .behind-photo-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .behind-photo-wrapper:hover img {
+            transform: scale(1.04);
+        }
+
+        .behind-info h3 {
+            font-family: var(--ff-heading);
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            color: var(--clr-text);
+        }
+
+        .behind-info blockquote {
+            font-size: 1.08rem;
+            font-style: italic;
+            color: var(--clr-text);
+            line-height: 1.7;
+            margin: 0 0 1.5rem;
+            padding-left: 1.2rem;
+            border-left: 2px solid var(--clr-primary);
+        }
+
+        .behind-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .behind-stat {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .behind-stat-num {
+            font-family: var(--ff-heading);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--clr-primary);
+        }
+
+        .behind-stat-label {
+            font-size: 0.78rem;
+            color: var(--clr-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Next Steps CTA */
+        .next-links-card {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.06), rgba(0, 0, 0, 0.4));
+            border: 1px solid var(--clr-primary);
+            border-radius: 18px;
+            padding: 2.5rem;
+            text-align: center;
+            margin: 4rem 0 2rem;
+        }
+
+        .next-links-card h3 {
+            font-family: var(--ff-heading);
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .next-links-card p {
+            color: var(--clr-text-muted);
+            max-width: 600px;
+            margin: 0 auto 1.8rem;
+            font-size: 0.95rem;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 850px) {
+            .behind-card {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .behind-photo-wrapper {
+                max-width: 220px;
+                margin: 0 auto;
+            }
+
+            .behind-stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Elements -->
+    <div class="digital-bg"></div>
+    <div class="grid-overlay"></div>
+    <div class="scan-lines"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar scrolled">
+        <div class="container">
+            <a href="index.html" class="logo glitch-hover">M.<span>FOLARIN</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="a-propos.html">À Propos</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="projets.html" class="active">Projets</a></li>
+                <li><a href="parcours.html">Parcours</a></li>
+                <li><a href="distinctions.html">Distinctions</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="nav-available-badge">
+                <span class="available-dot"></span>
+                Disponible
+            </a>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Page Header -->
+        <header class="page-header">
+            <div class="container" data-aos="fade-up">
+                <div class="page-tag">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    Architecture · Sécurité · Implémentation
+                </div>
+                <h1 class="page-title">Mes <span>Projets &amp; Réalisations</span></h1>
+                <p class="page-subtitle">Backend robuste, protocoles d'API, sécurité offensive/défensive et modèles prédictifs</p>
+                <p class="page-intro">
+                    Chaque projet ci-dessous répond à une problématique concrète. Cliquez sur une carte pour inspecter le détail de l'architecture, les mécanismes de sécurité intégrés et accéder aux dépôts de code.
+                </p>
+
+                <!-- Filtres par catégorie -->
+                <div class="filter-container">
+                    <button class="filter-btn active" onclick="filterProjects('all', this)">Tous les projets (8)</button>
+                    <button class="filter-btn" onclick="filterProjects('backend', this)">Backend &amp; Laravel</button>
+                    <button class="filter-btn" onclick="filterProjects('cybersec', this)">Cybersécurité &amp; Pentest</button>
+                    <button class="filter-btn" onclick="filterProjects('ia', this)">IA &amp; Data</button>
+                    <button class="filter-btn" onclick="filterProjects('iot', this)">IoT &amp; Systèmes</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Projects Grid Section -->
+        <section class="projects section" style="padding-top: 0;">
+            <div class="container">
+                <div class="projects-grid">
+
+                    <!-- Projet 1 : Prédiction Réussite Scolaire (IA) -->
+                    <div class="project-card" data-category="ia" data-aos="fade-up" data-project-id="student-success">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80"
+                                alt="Prédiction de réussite scolaire par IA">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-category-tag">IA &amp; Data / Prédiction</div>
+                            <h3>Prédiction de Réussite Scolaire</h3>
+                            <p class="project-problem"><strong>Problème résolu :</strong> Détecter précocement les risques de décrochage académique en analysant les indicateurs comportementaux et notes pour aider les encadrants pédagogiques.</p>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>Random Forest</span>
+                                <span>Streamlit</span>
+                                <span>MySQL</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="project-btn-detail" onclick="openProjectModal('student-success')">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                                    Voir détails
+                                </button>
+                                <div class="project-links-direct">
+                                    <a href="https://github.com/MourchidFOLARIN" target="_blank" rel="noopener" class="project-link-icon" title="Code GitHub">
+                                        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 2 : Fraud Guard AI (Cybersec + IA) -->
+                    <div class="project-card" data-category="ia cybersec" data-aos="fade-up" data-aos-delay="100" data-project-id="fraud-guard">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80"
+                                alt="Fraud Guard AI - Détection de transactions suspectes">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-category-tag">Cybersécurité &amp; Machine Learning</div>
+                            <h3>Fraud Guard AI</h3>
+                            <p class="project-problem"><strong>Problème résolu :</strong> Identifier les comportements anormaux et transactions financières suspectes grâce à un modèle supervisé et une classification du risque en temps réel.</p>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>Random Forest</span>
+                                <span>Streamlit</span>
+                                <span>MySQL</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="project-btn-detail" onclick="openProjectModal('fraud-guard')">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                                    Voir détails
+                                </button>
+                                <div class="project-links-direct">
+                                    <a href="https://github.com/MourchidFOLARIN" target="_blank" rel="noopener" class="project-link-icon" title="Code GitHub">
+                                        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 3 : Sécurité API & Architecture Backend Laravel -->
+                    <div class="project-card" data-category="backend cybersec" data-aos="fade-up" data-aos-delay="200" data-project-id="api-security">
+                        <div class="code-overlay">
+                            <div class="line"><span class="comment">// Secure API Middleware</span></div>
+                            <div class="line"><span class="keyword">class</span> <span class="func">JwtAuth</span> {</div>
+                            <div class="line">&nbsp;&nbsp;<span class="keyword">public function</span> <span class="func">handle</span>($req) {</div>
+                            <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="func">verifyToken</span>();</div>
+                            <div class="line">&nbsp;&nbsp;}</div>
+                            <div class="line">}</div>
+                        </div>
+                        <div class="project-image">
+                            <img src="Top Device Security Tips_ Safeguard Your Digital Life.jpeg"
+                                alt="Sécurité API et architecture backend Laravel">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-category-tag">Backend &amp; Sécurité Applicative</div>
+                            <h3>Sécurité API &amp; Architecture Laravel</h3>
+                            <p class="project-problem"><strong>Problème résolu :</strong> Construire un socle d'API REST robuste, protégé contre les failles courantes (SQLi, brute force, falsification de tokens) avec contrôle d'accès granulaire.</p>
+                            <div class="project-tags">
+                                <span>Laravel</span>
+                                <span>PHP</span>
+                                <span>MySQL</span>
+                                <span>JWT</span>
+                                <span>REST API</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="project-btn-detail" onclick="openProjectModal('api-security')">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                                    Voir détails
+                                </button>
+                                <div class="project-links-direct">
+                                    <a href="https://github.com/MourchidFOLARIN" target="_blank" rel="noopener" class="project-link-icon" title="Code GitHub">
+                                        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 4 : Laboratoire Cybersécurité & CTF -->
+                    <div class="project-card" data-category="cybersec" data-aos="fade-up" data-aos-delay="300" data-project-id="cybersec-ctf">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80"
+                                alt="Laboratoire de Cybersécurité et résolution CTF">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-category-tag">Cybersécurité &amp; Réseaux (Labo)</div>
+                            <h3>Laboratoire Pentest Web &amp; CTF</h3>
+                            <p class="project-problem"><strong>Problème résolu :</strong> Pratiquer l'audit éthique en environnement contrôlé : cartographie des réseaux, détection de failles OWASP Top 10 et rédaction de rapports de remédiation.</p>
+                            <div class="project-tags">
+                                <span>Linux</span>
+                                <span>Kali</span>
+                                <span>Burp Suite</span>
+                                <span>Nmap</span>
+                                <span>Wireshark</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="project-btn-detail" onclick="openProjectModal('cybersec-ctf')">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                                    Voir détails
+                                </button>
+                                <div class="project-links-direct">
+                                    <a href="https://github.com/MourchidFOLARIN" target="_blank" rel="noopener" class="project-link-icon" title="Code GitHub">
+                                        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 5 : AcademiX -->
+                    <div class="project-card" data-category="backend" data-aos="fade-up" data-aos-delay="400" data-project-id="academix">
+                        <div class="project-image">
+                            <img src="Academix.png" alt="AcademiX — Plateforme Éducative">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-category-tag">Backend &amp; Hackathon (IFRI)</div>
+                            <h3>AcademiX — Plateforme Éducative</h3>
+                            <p class="project-problem"><strong>Problème résolu :</strong> Aider les étudiants universitaires à synthétiser et réviser leurs cours grâce à une plateforme collaborative développée lors d'un Hackathon.</p>
+                            <div class="project-tags">
+                                <span>Laravel</span>
+                                <span>React</span>
+                                <span>MySQL</span>
+                                <span>API REST</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="project-btn-detail" onclick="openProjectModal('academix')">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                                    Voir détails
+                                </button>
+                                <div class="project-links-direct">
+                                    <a href="https://team-d-excellence-hackbyifri-2026.vercel.app/landing" target="_blank" rel="noopener" class="project-link-icon" title="Démo en ligne">
+                                        <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                    </a>
+                                    <a href="https://github.com/MourchidFOLARIN" target="_blank" rel="noopener" class="project-link-icon" title="Code GitHub">
+                                        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 6 : ExcellenceLink -->
+                    <div class="project-card" data-category="backend cybersec" data-aos="fade-up" data-aos-delay="500" data-project-id="excellencelink">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="ExcellenceLink - Sauvegarde sécurisée de ressources">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-category-tag">Outil Web &amp; Sécurité</div>
+                            <h3>ExcellenceLink — Gestionnaire Sécurisé</h3>
+                            <p class="project-problem"><strong>Problème résolu :</strong> Centraliser et organiser les ressources web d'une équipe tout en vérifiant la fiabilité et la sécurité basique des liens avant partage.</p>
+                            <div class="project-tags">
+                                <span>Node.js</span>
+                                <span>Express</span>
+                                <span>React</span>
+                                <span>Sécurité Web</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="project-btn-detail" onclick="openProjectModal('excellencelink')">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                                    Voir détails
+                                </button>
+                                <div class="project-links-direct">
+                                    <a href="https://link-ptne.onrender.com/" target="_blank" rel="noopener" class="project-link-icon" title="Démo en ligne">
+                                        <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                    </a>
+                                    <a href="https://github.com/MourchidFOLARIN" target="_blank" rel="noopener" class="project-link-icon" title="Code GitHub">
+                                        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 7 : Contrôleur Industriel STM32 (Système) -->
+                    <div class="project-card" data-category="iot" data-aos="fade-up" data-aos-delay="600" data-project-id="stm32-controller">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+                                alt="Contrôleur Industriel STM32">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-category-tag">Systèmes Embarqués &amp; C++</div>
+                            <h3>Contrôleur Industriel STM32</h3>
+                            <p class="project-problem"><strong>Problème résolu :</strong> Acquisition de données de capteurs en temps réel et communication sécurisée pour des applications d'automatisation industrielle.</p>
+                            <div class="project-tags">
+                                <span>C++</span>
+                                <span>STM32</span>
+                                <span>Capteurs</span>
+                                <span>Protocoles Série</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="project-btn-detail" onclick="openProjectModal('stm32-controller')">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                                    Voir détails
+                                </button>
+                                <div class="project-links-direct">
+                                    <a href="https://github.com/MourchidFOLARIN" target="_blank" rel="noopener" class="project-link-icon" title="Code GitHub">
+                                        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 8 : Réfrigération Intelligente IoT -->
+                    <div class="project-card" data-category="iot backend" data-aos="fade-up" data-aos-delay="700" data-project-id="smart-fridge">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=800&q=80"
+                                alt="Système de réfrigération intelligente IoT">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-category-tag">IoT &amp; Backend de Données</div>
+                            <h3>Système IoT &amp; Suivi de Température</h3>
+                            <p class="project-problem"><strong>Problème résolu :</strong> Suivi des variations thermiques dans la chaîne du froid alimentaire avec remontée des mesures et alertes en cas de dépassement critique.</p>
+                            <div class="project-tags">
+                                <span>IoT</span>
+                                <span>PHP</span>
+                                <span>C++</span>
+                                <span>MQTT</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="project-btn-detail" onclick="openProjectModal('smart-fridge')">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                                    Voir détails
+                                </button>
+                                <div class="project-links-direct">
+                                    <a href="https://github.com/MourchidFOLARIN" target="_blank" rel="noopener" class="project-link-icon" title="Code GitHub">
+                                        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Stratégique "Derrière les projets" avec photo -->
+        <section class="behind-projects-section">
+            <div class="container">
+                <div class="behind-card" data-aos="fade-up">
+                    <div class="behind-photo-wrapper">
+                        <img src="Mourchid code.jpeg" alt="Mourchid FOLARIN"
+                            onerror="this.src='mourchid.jpeg'">
+                    </div>
+                    <div class="behind-info">
+                        <h3>Derrière les projets : Philosophie &amp; Exigence</h3>
+                        <blockquote>
+                            "Chaque projet représente une occasion de résoudre un problème concret, de tester de nouveaux concepts d'architecture et de renforcer la sécurité des échanges. De la modélisation de base de données à la protection contre les failles OWASP, je conçois mes applications pour qu'elles soient fiables et maintenables."
+                        </blockquote>
+                        <div class="behind-stats-grid">
+                            <div class="behind-stat">
+                                <div class="behind-stat-num">8</div>
+                                <div class="behind-stat-label">Projets Documentés</div>
+                            </div>
+                            <div class="behind-stat">
+                                <div class="behind-stat-num">6</div>
+                                <div class="behind-stat-label">Podiums &amp; Distinctions</div>
+                            </div>
+                            <div class="behind-stat">
+                                <div class="behind-stat-num">100%</div>
+                                <div class="behind-stat-label">Code Pratique &amp; Testé</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation contextuelle -->
+                <div class="next-links-card" data-aos="zoom-in">
+                    <h3>Explorez l'impact et la reconnaissance de ces travaux</h3>
+                    <p>Découvrez les compétitions universitaires et hackathons où ces compétences ont été primées, ou contactez-moi pour un projet freelance.</p>
+                    <div class="cta-group">
+                        <a href="distinctions.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none;">
+                            <span>Voir mes distinctions &amp; CTF →</span>
+                        </a>
+                        <a href="parcours.html" class="btn btn-outline" style="border: 1px solid var(--clr-border); padding: 1rem 1.8rem; border-radius: 50px; color: var(--clr-text); text-decoration: none; font-size: 0.95rem;">
+                            <span>Mon parcours complet →</span>
+                        </a>
+                        <a href="contact.html" class="btn btn-outline" style="border: 1px solid var(--clr-border); padding: 1rem 1.8rem; border-radius: 50px; color: var(--clr-text); text-decoration: none; font-size: 0.95rem;">
+                            <span>Prendre rendez-vous →</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Détails Projet -->
+    <div id="project-modal" class="project-modal">
+        <div class="modal-overlay" onclick="closeProjectModal()"></div>
+        <div class="project-modal-content">
+            <button class="close-project-modal" onclick="closeProjectModal()">&times;</button>
+            <div class="modal-body">
+                <div class="project-modal-image">
+                    <img id="modal-project-img" src="" alt="">
+                </div>
+                <div class="project-modal-info">
+                    <h3 id="modal-project-title"></h3>
+                    <p id="modal-project-desc"></p>
+                    <div class="modal-section">
+                        <h4>Fonctionnalités Clés</h4>
+                        <ul id="modal-project-features"></ul>
+                    </div>
+                    <div class="modal-section">
+                        <h4>Technologies Utilisées</h4>
+                        <div id="modal-project-tech" class="project-tags"></div>
+                    </div>
+                    <div class="modal-footer" style="margin-top: 2rem;">
+                        <a id="modal-project-link" href="" target="_blank" class="btn btn-primary"
+                            style="display: none; margin-right: 1rem;">Voir le Projet</a>
+                        <a id="modal-project-github" href="" target="_blank" class="btn btn-outline"
+                            style="display: none;">Code Source</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Standardisé -->
+    <footer class="footer">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--clr-border);">
+                <div>
+                    <h4 style="font-family: var(--ff-heading); font-size: 1.15rem; color: var(--clr-text); margin-bottom: 0.2rem;">Mourchid FOLARIN</h4>
+                    <p style="font-size: 0.85rem; color: var(--clr-primary); margin: 0;">Développeur Backend orienté Cybersécurité &amp; Réseaux</p>
+                </div>
+                <div style="display: flex; gap: 1.5rem; font-size: 0.9rem;">
+                    <a href="https://github.com/mourchidfolarin" target="_blank" rel="noopener" style="color: var(--clr-text-muted); text-decoration: none; transition: var(--transition);">GitHub</a>
+                    <a href="https://www.linkedin.com/in/mourchid-folarin-283181347/" target="_blank" rel="noopener" style="color: var(--clr-text-muted); text-decoration: none; transition: var(--transition);">LinkedIn</a>
+                    <a href="contact.html" style="color: var(--clr-text-muted); text-decoration: none; transition: var(--transition);">Contact</a>
+                </div>
+            </div>
+            <div style="text-align: center; padding-top: 1.5rem; font-size: 0.82rem; color: var(--clr-text-muted);">
+                &copy; 2026 Mourchid FOLARIN. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // Custom Cursor
+        const cursor = document.querySelector('.cursor');
+        const follower = document.querySelector('.cursor-follower');
+        if (cursor && follower) {
+            document.addEventListener('mousemove', (e) => {
+                gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
+                gsap.to(follower, { x: e.clientX, y: e.clientY, duration: 0.3 });
+            });
+        }
+
+        // Mobile Nav Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                navToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Project Filter Function
+        function filterProjects(category, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                const cats = card.getAttribute('data-category') || '';
+                if (category === 'all' || cats.includes(category)) {
+                    card.style.display = 'block';
+                    card.style.opacity = '1';
+                } else {
+                    card.style.display = 'none';
+                    card.style.opacity = '0';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

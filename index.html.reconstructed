@@ -1,0 +1,712 @@
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mourchid FOLARIN | Portfolio Backend & cybersécurité </title>
+     <meta name="description"
+        content="Portfolio de Mourchid FOLARIN, développeur backend Laravel, spécialiste en cybersécurité réseau et IA. Découvrez mes projets IoT et mes solutions d'architecture sécurisées.">
+     <meta name="keywords"
+        content="Mourchid FOLARIN, Développeur Backend, Laravel, Cybersécurité, Réseau, IoT, Bénin, Intelligence Artificielle, PHP">
+     <meta name="author" content="Mourchid FOLARIN">
+ 
+     <!-- Open Graph / Facebook -->
+     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://portfolio-production-3c70.up.railway.app/">
+    <!-- À adapter avec votre domaine -->
+    <meta property="og:title" content="Mourchid FOLARIN | Portfolio Backend & Cybersécurité">
+     <meta property="og:description"
+        content="Développeur backend passionné par la sécurité et l'innovation technologique.">
+    <meta property="og:image" content="Gemini_Generated_Image_ut7onbut7onbut7o.png">
+ 
+     <!-- Twitter -->
+     <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Mourchid FOLARIN | Portfolio Backend & Cybersécurité">
+     <meta property="twitter:description"
+        content="Développeur backend passionné par la sécurité et l'innovation technologique.">
+    <meta property="twitter:image" content="Gemini_Generated_Image_ut7onbut7onbut7o.png">
+     <!-- Fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+         rel="stylesheet">
+     <!-- CSS -->
+     <link rel="stylesheet" href="style.css">
+    <!-- AOS for reveal animations -->
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+ </head>
+ 
+ <body>
+    <!-- Loader Overlay -->
+    <div class="loader-overlay">
+        <div class="loader-text">INITIALISATION_DU_SYSTÈME_BACKEND...</div>
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+    </div>
+
+     <!-- Background Elements -->
+     <div class="digital-bg"></div>
+     <div class="grid-overlay"></div>
+     <div class="scan-lines"></div>
+    <div class="data-stream">
+        <div class="stream-node" style="animation-delay: 0s;"></div>
+        <div class="stream-node" style="animation-delay: 1s;"></div>
+        <div class="stream-node" style="animation-delay: 2s;"></div>
+    </div>
+ 
+     <!-- System Status Dashboard -->
+     <div class="system-status">
+         <div class="status-item">
+             <div class="status-pulse"></div>
+            <span>NODE_STATUS : EN LIGNE</span>
+         </div>
+         <div class="status-item">
+            <span>Disponibilité : 99.9%</span>
+         </div>
+         <div class="status-item">
+            <span>Sécurité : AES-256</span>
+         </div>
+     </div>
+ 
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <nav class="navbar">
+         <div class="container">
+            <a href="#" class="logo glitch-hover">M.<span>FOLARIN</span></a>
+             <ul class="nav-links">
+                <li><a href="#about">À Propos</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+             </ul>
+             <div class="nav-toggle">
+                 <span></span>
+                 <span></span>
+     </nav>
+ 
+     <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-bg">
+                <div class="gradient-sphere"></div>
+            </div>
+             <div class="container">
+                <div class="hero-content" data-aos="fade-up">
+                    <h1 class="glitch-hover"><span>Backend</span> & <span>Cybersécurité</span> | Architecte</h1>
+                    <p class="hero-desc">Passionné par l'innovation, je crée des systèmes robustes, sécurisés et
+                        intelligents, avec une expertise forte en architecture backend et cybersécurité réseau.</p>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn btn-primary">Découvrir mes projets</a>
+                        <a href="CV_Mourchid_Folarin.pdf" class="btn btn-secondary" download>Télécharger mon CV</a>
+                    </div>
+                </div>
+                <div class="hero-image" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="photo-container">
+                        <div class="profile-photo" id="user-photo">
+                            <img src="Gemini_Generated_Image_ut7onbut7onbut7o.png" alt="Photo de Mourchid Folarin">
+                         </div>
+                     </div>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- About Section -->
+        <section class="about section" id="about">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Biographie</span>
+                    <h2 class="section-title">À propos de <span>moi</span></h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text" data-aos="fade-right">
+                        <div class="json-block" data-aos="fade-in">
+                            <span class="json-bracket">{</span><br>
+                            &nbsp;&nbsp;<span class="json-key">"nom"</span>: <span class="json-string">"Mourchid
+                                Folarin"</span>,<br>
+                            &nbsp;&nbsp;<span class="json-key">"origine"</span>: <span
+                                class="json-string">"Bénin"</span>,<br>
+                            &nbsp;&nbsp;<span class="json-key">"role"</span>: <span class="json-string">"Backend & Cybersécurité | Architecte"</span> ,<br>
+                            &nbsp;&nbsp;<span class="json-key">"passions"</span>: <span
+                                class="json-bracket">[</span><span class="json-string">"IoT"</span>, <span
+                                class="json-string">"Sécurité Réseau"</span>, <span class="json-string">"IA"</span><span
+                                class="json-bracket">]</span>,<br>
+                            &nbsp;&nbsp;<span class="json-key">"mission"</span>: <span class="json-string">"Résoudre des
+                                problèmes sociétaux concrets"</span><br>
+                            <span class="json-bracket">}</span>
+                        </div>
+                        <p style="margin-top: 2rem;">Je suis passionné par la conception de systèmes capables de
+                            fonctionner à grande échelle tout en garantissant performance, sécurité et fiabilité. Mon
+                            objectif est de transformer des idées complexes en solutions concrètes qui améliorent la vie
+                            quotidienne.</p>
+                    </div>
+                    <div class="about-stats" data-aos="fade-left">
+                        <div class="stat-card">
+                            <h3>Focus Technique</h3>
+                            <p> Html , Css, JavaScript, Laravel, PHP, C++, Architecture Cloud , Python , Bash ,SQL , Git
+                                ,Docker </p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Intelligence Artificielle</h3>
+                            <p>Deep Learning, Vision par Ordinateur, Analyse Prédictive</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Sécurité & Réseau</h3>
+                            <p>Test d'intrusion, Analyse de paquets, Durcissement système & Surveillance IDS</p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </section>
+ 
+        <!-- Skills Section - Terminal -->
+        <section class="skills section" id="skills">
+             <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Expertise</span>
+                    <h2 class="section-title">Compétences <span>Backend</span></h2>
+                </div>
+
+                <div class="backend-grid" data-aos="fade-up">
+                    <div class="backend-terminal" data-aos="zoom-in">
+                        <div class="terminal-header">
+                            <div class="terminal-dot dot-red"></div>
+                            <div class="terminal-dot dot-yellow"></div>
+                            <div class="terminal-dot dot-green"></div>
+                            <span class="terminal-title">mourchid@backend-server:~</span>
+                        </div>
+                        <div class="terminal-body" id="skills-terminal">
+                            <div class="terminal-line"><span class="terminal-prompt">mourchid@backend:~$</span> fetch-skills --all</div>
+                            <div class="terminal-line"><span class="terminal-cursor"></span></div>
+                         </div>
+                     </div>
+
+                    <div class="backend-cards">
+                        <div class="backend-card" data-aos="fade-right" data-aos-delay="100">
+                            <div class="card-icon">🏗️</div>
+                            <h3>Architecture & Microservices</h3>
+                            <p>Conception d'architectures scalables, patterns de microservices, Event-Driven Architecture</p>
+                            <ul class="skills-list">
+                                <li>Clean Architecture</li>
+                                <li>Microservices</li>
+                                <li>Design Patterns</li>
+                                <li>Message Queues</li>
+                            </ul>
+                        </div>
+
+                        <div class="backend-card" data-aos="fade-right" data-aos-delay="200">
+                            <div class="card-icon">💾</div>
+                            <h3>Bases de Données & Performance</h3>
+                            <p>Optimisation des requêtes, Indexation avancée, Caching, Réplication & Sharding</p>
+                            <ul class="skills-list">
+                                <li>SQL Optimization</li>
+                                <li>NoSQL Design</li>
+                                <li>Redis Caching</li>
+                                <li>Query Performance</li>
+                            </ul>
+                        </div>
+
+                        <div class="backend-card" data-aos="fade-right" data-aos-delay="300">
+                            <div class="card-icon">☁️</div>
+                            <h3>Cloud & DevOps</h3>
+                            <p>Déploiement cloud, Containerization, Infrastructure as Code, CI/CD Pipelines</p>
+                            <ul class="skills-list">
+                                <li>Docker & Kubernetes</li>
+                                <li>AWS & GCP</li>
+                                <li>CI/CD (GitHub Actions)</li>
+                                <li>Infrastructure as Code</li>
+                            </ul>
+                        </div>
+
+                        <div class="backend-card" data-aos="fade-right" data-aos-delay="400">
+                            <div class="card-icon">🔗</div>
+                            <h3>API & Intégration</h3>
+                            <p>Design RESTful/GraphQL, Authentification avancée, Rate Limiting, Versioning</p>
+                            <ul class="skills-list">
+                                <li>REST & GraphQL</li>
+                                <li>OAuth2 & JWT</li>
+                                <li>API Documentation</li>
+                                <li>Third-party Integration</li>
+                            </ul>
+                         </div>
+                    </div>
+                </div>
+
+                <!-- Backend Tools Section -->
+                <div class="backend-footer" data-aos="fade-up">
+                    <div class="tools-section">
+                        <h3>Outils & Frameworks</h3>
+                        <div class="tools-grid">
+                            <span class="tool-tag">Laravel</span>
+                            <span class="tool-tag">PHP</span>
+                            <span class="tool-tag">Node.js</span>
+                            <span class="tool-tag">Express.js</span>
+                            <span class="tool-tag">PostgreSQL</span>
+                            <span class="tool-tag">MySQL</span>
+                            <span class="tool-tag">MongoDB</span>
+                            <span class="tool-tag">Redis</span>
+                            <span class="tool-tag">Docker</span>
+                            <span class="tool-tag">Kubernetes</span>
+                            <span class="tool-tag">AWS</span>
+                            <span class="tool-tag">Google Cloud</span>
+                            <span class="tool-tag">Git</span>
+                            <span class="tool-tag">Jenkins</span>
+                            <span class="tool-tag">GitLab CI</span>
+                            <span class="tool-tag">Nginx</span>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </section>
+ 
+        <!-- Cybersecurity Section -->
+        <section class="cybersecurity section" id="cybersecurity">
+             <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Expertise Avancée</span>
+                    <h2 class="section-title">Cybersécurité & <span>Sécurité Réseau</span></h2>
+                </div>
+
+                <div class="cybersec-grid" data-aos="fade-up">
+                    <div class="cybersec-terminal" data-aos="zoom-in">
+                        <div class="terminal-header">
+                            <div class="terminal-dot dot-red"></div>
+                            <div class="terminal-dot dot-yellow"></div>
+                            <div class="terminal-dot dot-green"></div>
+                            <span class="terminal-title">mourchid@security-ops:~</span>
+                        </div>
+                        <div class="terminal-body" id="cybersec-terminal">
+                            <div class="terminal-line"><span class="terminal-prompt">mourchid@security:~$</span> show-expertise --cybersec</div>
+                            <div class="terminal-line"><span class="terminal-cursor"></span></div>
+                         </div>
+                     </div>
+
+                    <div class="cybersec-cards">
+                        <div class="cybersec-card" data-aos="fade-left" data-aos-delay="100">
+                            <div class="card-icon">🔐</div>
+                            <h3>Sécurité des Réseaux</h3>
+                            <p>Analyse de paquets (Wireshark), Configuration pare-feu, Durcissement système, Protocoles SSL/TLS</p>
+                            <ul class="skills-list">
+                                <li>Packet Analysis</li>
+                                <li>Firewalls</li>
+                                <li>IDS/IPS</li>
+                                <li>VPN & Tunneling</li>
+                            </ul>
+                         </div>
+
+                        <div class="cybersec-card" data-aos="fade-left" data-aos-delay="200">
+                            <div class="card-icon">🛡️</div>
+                            <h3>Test d'Intrusion</h3>
+                            <p>Audits de sécurité, Exploitation de vulnérabilités, Pentesting Web & API, OWASP Top 10</p>
+                            <ul class="skills-list">
+                                <li>Penetration Testing</li>
+                                <li>Vulnerability Assessment</li>
+                                <li>SQLi & XSS Detection</li>
+                                <li>OWASP Compliance</li>
+                            </ul>
+                        </div>
+
+                        <div class="cybersec-card" data-aos="fade-left" data-aos-delay="300">
+                            <div class="card-icon">🔍</div>
+                            <h3>Analyse de Malware</h3>
+                            <p>Détection d'anomalies, Analyse statique/dynamique, Sandbox evaluation, Threat intelligence</p>
+                            <ul class="skills-list">
+                                <li>Malware Analysis</li>
+                                <li>Reverse Engineering</li>
+                                <li>Behavioral Analysis</li>
+                                <li>Threat Hunting</li>
+                            </ul>
+                        </div>
+
+                        <div class="cybersec-card" data-aos="fade-left" data-aos-delay="400">
+                            <div class="card-icon">⚔️</div>
+                            <h3>Sécurité Applicative</h3>
+                            <p>Secure coding, Protection des données sensibles, Authentification/Autorisation avancées, Cryptographie</p>
+                            <ul class="skills-list">
+                                <li>Secure Coding</li>
+                                <li>Cryptography (AES, RSA)</li>
+                                <li>OAuth2 & JWT</li>
+                                <li>Data Protection</li>
+                            </ul>
+                         </div>
+                    </div>
+                </div>
+
+                <!-- Certifications & Tools -->
+                <div class="cybersec-footer" data-aos="fade-up">
+                    <div class="tools-section">
+                        <h3>Outils & Technologies</h3>
+                        <div class="tools-grid">
+                            <span class="tool-tag">Wireshark</span>
+                            <span class="tool-tag">Metasploit</span>
+                            <span class="tool-tag">Burp Suite</span>
+                            <span class="tool-tag">Kali Linux</span>
+                            <span class="tool-tag">OpenSSL</span>
+                            <span class="tool-tag">Nmap</span>
+                            <span class="tool-tag">Snort/Suricata</span>
+                            <span class="tool-tag">YARA</span>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </section>
+ 
+        <!-- Projects Section -->
+        <section class="projects section" id="projects">
+             <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Portfolio</span>
+                    <h2 class="section-title">Mes <span>Projets</span> Clés</h2>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card" data-aos="fade-up" data-project-id="smart-fridge">
+                        <div class="code-overlay">
+                            <div class="line"><span class="comment"> Maintenance Prédictive Logic</span></div>
+                            <div class="line"><span class="keyword">class</span> <span class="func">CoolingSystem</span>
+                                {</div>
+                            <div class="line">&nbsp;&nbsp;<span class="keyword">public function</span> <span
+                                    class="func">predictAnomalies</span>() {</div>
+                            <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                                    class="func">$this</span>->ml_model->analyze();</div>
+                            <div class="line">&nbsp;&nbsp;}</div>
+                            <div class="line">}</div>
+                        </div>
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=800&q=80"
+                                alt="Système de réfrigération intelligente IoT">
+                        </div>
+                        <div class="project-info">
+                            <h3>Réfrigération Intelligente</h3>
+                            <p>Système IoT pour l'industrie agroalimentaire, surveillant température et humidité et
+                                intégrant la maintenance prédictive.</p>
+                            <div class="project-tags">
+                                <span>IoT</span>
+                                <span>IA</span>
+                             </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-project-id="api-security">
+                        <div class="project-image">
+                            <img src="Top Device Security Tips_ Safeguard Your Digital Life.jpeg"
+                                alt="Sécurité API et architecture backend">
+                        </div>
+                        <div class="project-info">
+                            <h3>Sécurité API & Architecture</h3>
+                            <p>Conception de services backend robustes avec authentification avancée et protection des
+                                données.</p>
+                            <div class="project-tags">
+                                <span>Laravel</span>
+                                <span>Sécurité</span>
+                             </div>
+                         </div>
+                     </div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200"
+                        data-project-id="stm32-controller">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+                                alt="Contrôleur Industriel STM32">
+                        </div>
+                        <div class="project-info">
+                            <h3>Contrôleur Industriel STM32</h3>
+                            <p>Système de contrôle temps réel pour l'automatisation industrielle, intégrant des
+                                protocoles de communication robustes.</p>
+                            <div class="project-tags">
+                                <span>C++</span>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="300" data-project-id="academix">
+                        <div class="project-image">
+                            <img src="Academix.png" alt="AcademiX — Plateforme Éducative IA">
+                        </div>
+                        <div class="project-info">
+                            <h3>AcademiX — IA Éducative</h3>
+                            <p>Plateforme intelligente révolutionnant l'apprentissage avec des résumés IA et des fiches
+                                de révision automatisées.</p>
+                            <div class="project-tags">
+                                <span>IA Gen</span>
+                                <span>React</span>
+                                <span>PWA</span>
+                             </div>
+                         </div>
+                    </div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="400" data-project-id="le-twin">
+                        <div class="project-image">
+                            <img src="LeTwin.jpg" alt="Le TWIN — Streetwear E-commerce">
+                        </div>
+                        <div class="project-info">
+                            <h3>Le TWIN</h3>
+                            <p>Plateforme e-commerce moderne dédiée au streetwear urbain minimaliste.</p>
+                            <div class="project-tags">
+                                <span>Next.js</span>
+                                <span>E-commerce</span>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="500" data-project-id="nightheart">
+                        <div class="project-image">
+                            <img src="nuit de coeur.ico" alt="La Nuit du Cœur 2026">
+                        </div>
+                        <div class="project-info">
+                            <h3>La Nuit du Cœur</h3>
+                            <p>Site officiel et billetterie du gala annuel de chant célébrant l'amour.</p>
+                            <div class="project-tags">
+                                <span>PHP</span>
+                                <span>Event</span>
+                             </div>
+                         </div>
+                    </div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="600" data-project-id="ever-after">
+                        <div class="code-overlay">
+                            <div class="line"><span class="comment">// Luxury Wedding Planning Engine</span></div>
+                            <div class="line"><span class="keyword">class</span> <span class="func">EverAfterEvents</span> {</div>
+                            <div class="line">&nbsp;&nbsp;<span class="keyword">function</span> <span class="func">designateMoment</span>() {</div>
+                            <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="func">createMagic</span>();</div>
+                            <div class="line">&nbsp;&nbsp;}</div>
+                            <div class="line">}</div>
+                        </div>
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Ever After Events - Wedding Planner de Luxe">
+                        </div>
+                        <div class="project-info">
+                            <h3>Ever After Events</h3>
+                            <p>Agence internationale de wedding planning et décoration de prestige. Portfolio d'événements luxueux conçus avec précision et élégance.</p>
+                            <div class="project-tags">
+                                <span>HTML/CSS</span>
+                                <span>JavaScript</span>
+                                <span>Design Luxe</span>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="700" data-project-id="excellencelink">
+                        <div class="code-overlay">
+                            <div class="line"><span class="comment">// ExcellenceLink Secure Link Vault</span></div>
+                            <div class="line"><span class="keyword">app</span>.<span class="func">save</span>({ <span class="json-string">platform</span>: <span class="json-string">ExcellenceLink</span> })</div>
+                            <div class="line"><span class="keyword">const</span> link = <span class="func">verifyUrl</span>();</div>
+                            <div class="line"><span class="keyword">return</span> <span class="func">organize</span>(link, <span class="json-string">secureVault</span>);</div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="ExcellenceLink - Application de sauvegarde de liens">
+                        </div>
+                        <div class="project-info">
+                            <h3>ExcellenceLink</h3>
+                            <p>Application de sauvegarde et d'organisation de liens conçue pour centraliser les ressources importantes, éviter les liens éparpillés et vérifier leur fiabilité avant utilisation.</p>
+                            <div class="project-tags">
+                                <span>Link Manager</span>
+                                <span>Render</span>
+                                <span>Sécurité</span>
+                             </div>
+                         </div>
+                     </div>
+             </div>
+         </section>
+ 
+        <!-- Backend & ML Lab Section -->
+        <section class="lab section" id="lab">
+             <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Laboratoire d'Innovation</span>
+                    <h2 class="section-title">Backend , <span>Simulation ML</span> , <span>Sécurité</span> ,
+                        Réseau</h2>
+                </div>
+
+                <div class="lab-grid" data-aos="fade-up">
+                    <div class="lab-controls">
+                        <button class="lab-btn active" onclick="runSimulation('laravel', this)">
+                            <span>Flux API Laravel</span>
+                            <span>Simuler une architecture API complète</span>
+                        </button>
+                        <button class="lab-btn" onclick="runSimulation('ml', this)">
+                            <span>Analyse ML</span>
+                            <span>Prédiction de maintenance IoT</span>
+                        </button>
+                        <button class="lab-btn" onclick="runSimulation('security', this)">
+                            <span>Audit de Sécurité</span>
+                            <span>Vérification des vulnérabilités SQLi/XSS</span>
+                        </button>
+                        <button class="lab-btn" onclick="runSimulation('network', this)">
+                            <span>Analyse Réseau</span>
+                            <span>Détection d'intrusion & Analyse Wireshark</span>
+                        </button>
+                    </div>
+
+                    <div class="lab-display">
+                        <div id="lab-badge" class="lab-badge">COMPLÉTÉ</div>
+                        <div id="lab-visualizer" class="lab-visualizer">
+                            <span style="color: #444;">Sélectionnez une simulation pour démarrer</span>
+                        </div>
+                        <div id="lab-console" class="lab-console">
+                            <div class="line" style="color: var(--clr-text-muted);">// En attente d'entrée...</div>
+                         </div>
+                     </div>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- Testimonials Section -->
+        <section class="testimonials section" id="testimonials">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Preuve Sociale</span>
+                    <h2 class="section-title">Ce qu'on dit de <span>Mourchid</span></h2>
+                </div>
+                <div class="testimonials-grid" data-aos="fade-up">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="quote-icon">"</div>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <p class="testimonial-text">Mourchid possède une capacité rare à transformer des concepts
+                            backend complexes en solutions fluides. Son expertise Laravel est impressionnante.</p>
+                        <div class="testimonial-author">
+                            <strong>Prof. Amadou S.</strong>
+                            <span>Expert IoT & Systèmes</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="quote-icon">"</div>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <p class="testimonial-text">Un développeur rigoureux qui ne transige jamais sur la sécurité. Son
+                            travail sur l'IA et le ML apporte une vraie valeur ajoutée.</p>
+                        <div class="testimonial-author">
+                            <strong>Ing. Koffi B.</strong>
+                            <span>Lead Developer</span>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </section>
+ 
+        <!-- Contact Section -->
+        <section class="contact section" id="contact">
+             <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Contact</span>
+                    <h2 class="section-title">Travaillons <span>Ensemble</span></h2>
+                </div>
+                <div class="contact-wrapper">
+                    <div class="contact-info" data-aos="fade-right">
+                        <div class="info-item">
+                            <h3>Email Direct</h3>
+                            <a href="mailto:mourchidolawale@gmail.com" style="color:#10b981;text-decoration: none;"
+                                target="_blank">mourchidolawale@gmail.com</a>
+                        </div>
+                        <div class="info-item">
+                            <h3>Contact rapide</h3>
+                            <div class="quick-contact-btns">
+                                <a href="https://wa.me/22992554964" target="_blank" class="btn-whatsapp">
+                                    <span>WhatsApp direct</span>
+                                </a>
+                                <a href="https://www.linkedin.com/in/mourchid-folarin-60b711374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                    target="_blank" class="btn-linkedin">
+                                    <span>Profil LinkedIn</span>
+                                </a>
+                            </div>
+                        </div>
+                     </div>
+                    <form id="contact-form" class="contact-form" data-aos="fade-left">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Votre Nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Votre Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Votre Message" rows="5" required></textarea>
+                        </div>
+                        <div id="contact-status" class="contact-status"></div>
+                        <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                    </form>
+                 </div>
+             </div>
+         </section>
+     </main>
+ 
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Mourchid FOLARIN. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Visitor Identity Toggle -->
+    <div class="visitor-toggle" title="Qui suis-je ?" onclick="toggleVisitorIdentity()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+                d="M12 11c0 3.517-1.009 6.799-2.753 9.571m0 0A9.994 9.994 0 014 12c0-5.523 4.477-10 10-10s10 4.477 10 10c0 2.
+            223-.725 4.277-1.957 5.942m-14.44-5.942a3.959 3.959 0 011.085-3.033A3.959 3.959 0 0112 8c1.01 0 1.932.378 2.626 1M12 11a3.485 3.485 0 00-1.007 2.45L11 17m4-7c.13.31.2.65.2 1 0 .966-.565 1.832-1.435 2.446l-.165.113M12 11c0 3.517 1.009 6.799 2.753 9.571m-2.753-9.571a9.994 9.994 0 002.753 9.571m2.753-9.571a9.994 9.994 0 01-2.753 9.571" />
+        </svg>
+    </div>
+
+    <!-- Visitor Information Modal -->
+    <div id="visitor-modal" class="visitor-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>INTEL::GATHERING</h3>
+                <button class="close-modal" onclick="toggleVisitorIdentity()">&times;</button>
+            </div>
+            <div id="visitor-scanning" class="visitor-scanning">
+                <div class="scanner-line"></div>
+                <p>SCANNING_IDENTITÉ_VISITEUR...</p>
+            </div>
+            <div id="visitor-data" class="visitor-data" style="display: none;">
+                <div class="data-item">
+                    <span class="label">ADRESSE_IP :</span>
+                    <span id="v-ip" class="value">COLLECTE...</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">LOCALISATION :</span>
+                    <span id="v-loc" class="value">ANONYME</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">PLATEFORME_OS :</span>
+                    <span id="v-os" class="value">DÉTECTION...</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">NAVIGATEUR :</span>
+                    <span id="v-browser" class="value">DÉTECTION...</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">NIVEAU_SÉCU :</span>
+                    <span class="value" style="color: var(--clr-primary);">CRYPTÉ</span>
+                </div>
+                <p class="data-note">// Données collectées uniquement à titre de démonstration. Aucun enregistrement.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Details Modal -->
+     <div id="project-modal" class="project-modal">
+         <div class="modal-overlay" onclick="closeProjectModal()"></div>
+         <div class="project-modal-content">
+                         <ul id="modal-project-features"></ul>
+                     </div>
+                     <div class="project-tech-stack">
+                        <h4>Tech Stack :</h4>
+                         <div id="modal-project-tech" class="project-tags"></div>
+                     </div>
+                     <div class="modal-footer" style="margin-top: 2rem;">
+                         <a id="modal-project-link" href="" target="_blank" class="btn btn-primary"
+                            style="display: none;">
+                            <span>Voir le projet en direct</span>
+                         </a>
+                     </div>
+                 </div>
+         </div>
+     </div>
+ 
+     <!-- Scripts -->
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+     <script src="script.js"></script>
+ </body>
+ 
+ </html>
+\ No newline at end of file

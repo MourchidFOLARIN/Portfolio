@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Parcours &amp; Leadership | Mourchid FOLARIN</title>
+    <meta name="description"
+        content="Parcours académique, leadership étudiant, engagements associatifs et vision entrepreneuriale de Mourchid FOLARIN — INSTI Lokossa, Excellence Team, Digital Innovation Club.">
+    <meta name="author" content="Mourchid FOLARIN">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="icon" type="image/x-icon" href="nuit de coeur.ico">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* Styles spécifiques à la page Parcours */
+        .page-header {
+            padding: 9rem 0 4rem;
+            position: relative;
+            text-align: center;
+        }
+
+        .page-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 999px;
+            padding: 0.4rem 1.2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--clr-primary);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .page-title {
+            font-family: var(--ff-heading);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--clr-text);
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--clr-primary);
+            font-weight: 500;
+            max-width: 780px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .page-intro {
+            font-size: 1.05rem;
+            color: var(--clr-text-muted);
+            max-width: 720px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Section Portrait & Piliers */
+        .portrait-section {
+            padding: 3rem 0 6rem;
+        }
+
+        .portrait-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(16, 185, 129, 0.02));
+            border: 1px solid var(--clr-border);
+            border-radius: 24px;
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 3.5rem;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portrait-card::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.15), transparent 70%);
+            pointer-events: none;
+        }
+
+        .portrait-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            background: #0d0d0d;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .portrait-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .portrait-image-wrapper:hover img {
+            transform: scale(1.03);
+        }
+
+        .portrait-info h2 {
+            font-family: var(--ff-heading);
+            font-size: 2.2rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .portrait-role {
+            font-size: 1.1rem;
+            color: var(--clr-primary);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .portrait-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
+        }
+
+        .portrait-badge-item {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 999px;
+            padding: 0.35rem 0.95rem;
+            font-size: 0.82rem;
+            color: var(--clr-text-muted);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .portrait-badge-item svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--clr-primary);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .portrait-badge-item:hover {
+            border-color: var(--clr-primary);
+            color: var(--clr-text);
+            background: rgba(16, 185, 129, 0.06);
+        }
+
+        .three-pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--clr-border);
+        }
+
+        .pillar-item {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.2rem;
+        }
+
+        .pillar-title {
+            font-family: var(--ff-heading);
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--clr-primary);
+            margin-bottom: 0.4rem;
+        }
+
+        .pillar-desc {
+            font-size: 0.85rem;
+            color: var(--clr-text-muted);
+            line-height: 1.5;
+        }
+
+        /* Timeline Interactive */
+        .timeline-section {
+            padding: 5rem 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 900px;
+            margin: 3.5rem auto 0;
+            padding-left: 2.5rem;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 10px;
+            bottom: 10px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--clr-primary), rgba(16, 185, 129, 0.2) 90%, transparent);
+        }
+
+        .timeline-entry {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-node {
+            position: absolute;
+            left: -2.5rem;
+            top: 4px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #050505;
+            border: 3px solid var(--clr-primary);
+            box-shadow: 0 0 12px rgba(16, 185, 129, 0.6);
+            transition: var(--transition);
+        }
+
+        .timeline-entry:hover .timeline-node {
+            transform: scale(1.3);
+            background: var(--clr-primary);
+        }
+
+        .timeline-card {
+            background: var(--clr-surface);
+            border: 1px solid var(--clr-border);
+            border-radius: 16px;
+            padding: 1.8rem 2rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .timeline-card:hover {
+            border-color: rgba(16, 185, 129, 0.4);
+            transform: translateX(6px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .timeline-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .timeline-year {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--clr-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            padding: 0.2rem 0.7rem;
+            border-radius: 6px;
+        }
+
+        .timeline-title {
+            font-family: var(--ff-heading);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--clr-text);
+        }
+
+        .timeline-subtitle {
+            font-size: 0.95rem;
+            color: var(--clr-primary);
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+        }
+
+        .timeline-body {
+            color: var(--clr-text-muted);
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        .timeline-highlight {
+            margin-top: 1rem;
+            padding: 0.7rem 1rem;
+            background: rgba(16, 185, 129, 0.05);
+            border-left: 3px solid var(--clr-primary);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.88rem;
+            color: var(--clr-text);
+        }
+
+        .timeline-highlight strong {
+            color: var(--clr-primary);
+        }
+
+        /* Cartes de Responsabilités & Leadership */
+        .responsibilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .resp-card {
+            background: var(--clr-surface);
+            border: 1px solid var(--clr-border);
+            border-radius: 18px;
+            padding: 2.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .resp-card:hover {
+            border-color: var(--clr-primary);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        .resp-role-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--clr-primary);
+        }
+
+        .resp-card h3 {
+            font-family: var(--ff-heading);
+            font-size: 1.25rem;
+            color: var(--clr-text);
+            line-height: 1.3;
+        }
+
+        .resp-org {
+            font-size: 0.9rem;
+            color: var(--clr-text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .resp-desc {
+            color: var(--clr-text-muted);
+            font-size: 0.9rem;
+            line-height: 1.65;
+        }
+
+        .resp-tasks-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--clr-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .resp-tasks {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .resp-tasks li {
+            font-size: 0.85rem;
+            color: var(--clr-text-muted);
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .resp-tasks li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--clr-primary);
+            font-size: 0.9rem;
+        }
+
+        /* Section Pédagogie / Robotique */
+        .pedagogy-card {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.04), var(--clr-surface));
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        /* Banner CTA Distinctions */
+        .distinctions-banner {
+            margin: 5rem 0 2rem;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(0, 0, 0, 0.4));
+            border: 1px solid var(--clr-primary);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .distinctions-banner h3 {
+            font-family: var(--ff-heading);
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .distinctions-banner p {
+            color: var(--clr-text-muted);
+            max-width: 600px;
+            margin: 0 auto 1.8rem;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .portrait-card {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .portrait-image-wrapper {
+                max-width: 260px;
+                margin: 0 auto;
+            }
+
+            .three-pillars {
+                grid-template-columns: 1fr;
+            }
+
+            .pedagogy-card {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Elements -->
+    <div class="digital-bg"></div>
+    <div class="grid-overlay"></div>
+    <div class="scan-lines"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar scrolled">
+        <div class="container">
+            <a href="index.html" class="logo glitch-hover">M.<span>FOLARIN</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="a-propos.html">À Propos</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="projets.html">Projets</a></li>
+                <li><a href="parcours.html" class="active">Parcours</a></li>
+                <li><a href="distinctions.html">Distinctions</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="nav-available-badge">
+                <span class="available-dot"></span>
+                Disponible
+            </a>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Page Header -->
+        <header class="page-header">
+            <div class="container" data-aos="fade-up">
+                <div class="page-tag">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    Trajectoire · Leadership · Évolution
+                </div>
+                <h1 class="page-title">Mon <span>parcours</span></h1>
+                <p class="page-subtitle">De l'étudiant passionné au développeur Backend orienté Cybersécurité &amp; Réseaux</p>
+                <p class="page-intro">
+                    Au-delà du code, mon parcours s'est construit à travers la formation, le leadership étudiant, les projets, les compétitions technologiques et la création d'initiatives numériques.
+                </p>
+            </div>
+        </header>
+
+        <!-- Section Portrait & Piliers d'identité -->
+        <section class="portrait-section">
+            <div class="container">
+                <div class="portrait-card" data-aos="fade-up">
+                    <div class="portrait-image-wrapper">
+                        <img src="mourchid.jpeg" alt="Mourchid FOLARIN"
+                            onerror="this.src='Mourchid-removebg-preview.png'">
+                    </div>
+                    <div class="portrait-info">
+                        <h2>Mourchid <span>FOLARIN</span></h2>
+                        <div class="portrait-role">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--clr-primary)" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            Développeur Backend · Cybersécurité · Réseaux
+                        </div>
+                        <div class="portrait-badges">
+                            <span class="portrait-badge-item">
+                                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                Co-fondateur &amp; DG — Excellence Team
+                            </span>
+                            <span class="portrait-badge-item">
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                Vice-Président — DIC INSTI
+                            </span>
+                            <span class="portrait-badge-item">
+                                <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                                Étudiant — Informatique &amp; Télécommunications
+                            </span>
+                            <span class="portrait-badge-item">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                                Lauréat de compétitions technologiques
+                            </span>
+                        </div>
+
+                        <!-- 3 Piliers de mon profil -->
+                        <div class="three-pillars">
+                            <div class="pillar-item">
+                                <div class="pillar-title">1. Technique</div>
+                                <div class="pillar-desc">Backend (Laravel, PHP, MySQL) · Cybersécurité (OWASP, Pentest Web) · Réseaux &amp; Linux · IA</div>
+                            </div>
+                            <div class="pillar-item">
+                                <div class="pillar-title">2. Leadership</div>
+                                <div class="pillar-desc">Excellence Team · Vice-Président DIC · Responsable de classe · Club RFI Lokossa</div>
+                            </div>
+                            <div class="pillar-item">
+                                <div class="pillar-title">3. Innovation</div>
+                                <div class="pillar-desc">Podiums Hackathons · CTF Cybersécurité · Projets concrets · Pédagogie &amp; Robotique</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section À Propos Narratif -->
+        <section class="section" id="apropos" style="padding-top: 0;">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Vision Personnelle</span>
+                    <h2 class="section-title">Construire un profil <span>équilibré</span></h2>
+                </div>
+                <div style="max-width: 860px; margin: 0 auto; background: var(--clr-surface); border: 1px solid var(--clr-border); border-radius: 20px; padding: 2.5rem; line-height: 1.8; color: var(--clr-text-muted); font-size: 1.05rem;" data-aos="fade-up">
+                    <p style="margin-bottom: 1.2rem;">
+                        Je suis étudiant en Informatique et Télécommunications à l'<strong>INSTI de Lokossa</strong>, avec un intérêt particulier pour le développement Backend, les réseaux et la cybersécurité.
+                    </p>
+                    <p style="margin-bottom: 1.2rem;">
+                        Mon parcours ne se limite pas au développement technique. J'ai progressivement pris des responsabilités dans ma communauté étudiante, participé à des compétitions technologiques et contribué à la création et au développement d'initiatives numériques.
+                    </p>
+                    <p style="color: var(--clr-text); font-weight: 500;">
+                        Aujourd'hui, je cherche à construire un profil combinant <strong>expertise technique</strong>, <strong>capacité à travailler en équipe</strong>, <strong>leadership</strong> et <strong>résolution pragmatique de problèmes</strong>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Grande Timeline Interactive -->
+        <section class="timeline-section" id="timeline">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Chronologie</span>
+                    <h2 class="section-title">Les étapes clés de mon <span>évolution</span></h2>
+                    <p class="section-desc">Un fil conducteur fondé sur l'exigence académique, la prise de responsabilité collective et la confrontation concrète au terrain.</p>
+                </div>
+
+                <div class="timeline-container">
+
+                    <!-- Étape 1 : 2024 BAC F3 -->
+                    <div class="timeline-entry" data-aos="fade-up">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header-row">
+                                <h3 class="timeline-title">Baccalauréat F3 — Systèmes Électrotechniques</h3>
+                                <span class="timeline-year">2024</span>
+                            </div>
+                            <div class="timeline-subtitle">Lycée Technique et Professionnel de Kpondéhou</div>
+                            <p class="timeline-body">
+                                Formation technique approfondie en électricité, électrotechnique, logique câblée et systèmes industriels. Cette rigueur m'a transmis des bases solides en logique, physique des systèmes et modélisation.
+                            </p>
+                            <div class="timeline-highlight">
+                                <strong>Résultat officiel documenté :</strong> 16,739 / 20 — Mention Très Bien <em>(Résultats officiels du Baccalauréat 2024 du Bénin)</em>.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Étape 2 : 2024–2025 INSTI Lokossa -->
+                    <div class="timeline-entry" data-aos="fade-up">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header-row">
+                                <h3 class="timeline-title">Licence Informatique et Télécommunications</h3>
+                                <span class="timeline-year">2024 – 2025</span>
+                            </div>
+                            <div class="timeline-subtitle">INSTI de Lokossa (Institut National Supérieur de Technologie Industrielle)</div>
+                            <p class="timeline-body">
+                                Entrée dans l'enseignement supérieur technologique. Approfondissement des piliers fondamentaux : programmation, structures de données, architecture des ordinateurs, systèmes d'exploitation et protocoles réseaux.
+                            </p>
+                            <div class="timeline-highlight">
+                                <strong>Statut académique :</strong> Étudiant en Licence 2 / passage vers la Licence 3.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Étape 3 : 2025 Responsabilités Étudiantes -->
+                    <div class="timeline-entry" data-aos="fade-up">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header-row">
+                                <h3 class="timeline-title">Premiers Engagements &amp; Responsabilités</h3>
+                                <span class="timeline-year">2025</span>
+                            </div>
+                            <div class="timeline-subtitle">Représentation étudiante &amp; Vie associative</div>
+                            <p class="timeline-body">
+                                Élection en tant que <strong>Responsable de classe</strong> à l'INSTI pour faire le lien entre la promotion et l'administration, et nomination comme <strong>2ᵉ Organisateur Général Adjoint</strong> du Club RFI Lokossa pour animer la vie culturelle et citoyenne.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Étape 4 : 2025–2026 Digital Innovation Club -->
+                    <div class="timeline-entry" data-aos="fade-up">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header-row">
+                                <h3 class="timeline-title">Vice-Président — Digital Innovation Club (DIC)</h3>
+                                <span class="timeline-year">2025 – 2026</span>
+                            </div>
+                            <div class="timeline-subtitle">INSTI de Lokossa</div>
+                            <p class="timeline-body">
+                                Prise de fonction au sein du principal club technologique de l'institut. Animation d'ateliers pratiques pour les étudiants, vulgarisation des bonnes pratiques en développement, cybersécurité, réseaux, IA et systèmes embarqués.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Étape 5 : 2025–2026 Hackathons & CTF -->
+                    <div class="timeline-entry" data-aos="fade-up">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header-row">
+                                <h3 class="timeline-title">Compétitions Technologiques &amp; Podiums</h3>
+                                <span class="timeline-year">2025 – 2026</span>
+                            </div>
+                            <div class="timeline-subtitle">Hackathons nationaux &amp; Challenges CTF</div>
+                            <p class="timeline-body">
+                                Participation intensive à des compétitions d'innovation et de cybersécurité : <strong>2ᵉ prix Technova</strong>, <strong>2ᵉ prix EPITNET/ITNET</strong>, <strong>demi-finaliste HackByIFRI</strong>, <strong>finaliste MIABE</strong>, <strong>3ᵉ place GENEB</strong> et <strong>3ᵉ place Opération Nova CTF</strong>.
+                            </p>
+                            <div style="margin-top: 1rem;">
+                                <a href="distinctions.html" style="color: var(--clr-primary); font-size: 0.88rem; font-weight: 600; text-decoration: none;">
+                                    Consulter le détail de mes distinctions &amp; projets primés →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Étape 6 : 2026 Excellence Team -->
+                    <div class="timeline-entry" data-aos="fade-up">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header-row">
+                                <h3 class="timeline-title">Co-fondateur &amp; Directeur Général — Excellence Team</h3>
+                                <span class="timeline-year">2026 – En cours</span>
+                            </div>
+                            <div class="timeline-subtitle">Initiative numérique collaborative &amp; Services IT</div>
+                            <p class="timeline-body">
+                                Impulsion et direction opérationnelle d'Excellence Team : structuration de l'équipe, pilotage des projets web et backend, développement des partenariats et transition progressive vers une activité formalisée de prestations numériques.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Étape 7 : 2026 Spécialisation Technique -->
+                    <div class="timeline-entry" data-aos="fade-up">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header-row">
+                                <h3 class="timeline-title">Consolidation Backend, Cybersécurité &amp; Réseaux</h3>
+                                <span class="timeline-year">Aujourd'hui</span>
+                            </div>
+                            <div class="timeline-subtitle">Préparation Licence 3 &amp; Missions Freelance / Projets</div>
+                            <p class="timeline-body">
+                                Pratique continue du développement Laravel, sécurisation des API selon les normes OWASP, manipulation des protocoles réseaux et durcissement des systèmes Linux.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Leadership & Responsabilités -->
+        <section class="section" id="responsabilites">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Gouvernance &amp; Engagement</span>
+                    <h2 class="section-title">Leadership &amp; <span>Responsabilités</span></h2>
+                    <p class="section-desc">Des rôles concrets assumés au sein de ma promotion, de clubs universitaires et de projets collectifs.</p>
+                </div>
+
+                <div class="responsibilities-grid">
+
+                    <!-- Rôle 1 : Excellence Team -->
+                    <div class="resp-card" data-aos="fade-up">
+                        <div>
+                            <span class="resp-role-badge">Direction &amp; Co-fondation</span>
+                            <h3 style="margin-top: 0.4rem;">Directeur Général &amp; Co-fondateur</h3>
+                            <div class="resp-org">
+                                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="var(--clr-primary)" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                <span>Excellence Team · 2026 à aujourd'hui</span>
+                            </div>
+                        </div>
+                        <p class="resp-desc">
+                            Co-fondateur et Directeur Général d'Excellence Team, une initiative étudiante évoluant avec rigueur vers une structure orientée services numériques et accompagnement technologique.
+                        </p>
+                        <div>
+                            <div class="resp-tasks-title">Missions &amp; Responsabilités :</div>
+                            <ul class="resp-tasks">
+                                <li>Définition de la vision et de la feuille de route stratégique</li>
+                                <li>Coordination globale de l'équipe et pilotage des projets</li>
+                                <li>Développement de solutions numériques &amp; architecture Backend</li>
+                                <li>Orientation cybersécurité et bonnes pratiques de code</li>
+                                <li>Préparation et coordination des participations aux hackathons</li>
+                                <li>Recherche d'opportunités et développement de partenariats</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Rôle 2 : DIC INSTI -->
+                    <div class="resp-card" data-aos="fade-up" data-aos-delay="100">
+                        <div>
+                            <span class="resp-role-badge">Bureau Exécutif Universitaire</span>
+                            <h3 style="margin-top: 0.4rem;">Vice-Président</h3>
+                            <div class="resp-org">
+                                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="var(--clr-primary)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                <span>Digital Innovation Club (DIC) · INSTI Lokossa (2025–2026)</span>
+                            </div>
+                        </div>
+                        <p class="resp-desc">
+                            Organisation étudiante dédiée à la pratique informatique, au partage de connaissances techniques, aux projets d'innovation et aux technologies émergentes.
+                        </p>
+                        <div>
+                            <div class="resp-tasks-title">Missions &amp; Responsabilités :</div>
+                            <ul class="resp-tasks">
+                                <li>Participation active à la coordination générale du club</li>
+                                <li>Organisation et planification d'ateliers techniques hebdomadaires</li>
+                                <li>Accompagnement et mise à niveau des étudiants débutants</li>
+                                <li>Contribution aux activités axées cybersécurité et réseaux</li>
+                                <li>Animation de sessions autour de l'IA, de la data et de l'embarqué</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Rôle 3 : Responsable de Classe -->
+                    <div class="resp-card" data-aos="fade-up" data-aos-delay="200">
+                        <div>
+                            <span class="resp-role-badge">Représentation Étudiante</span>
+                            <h3 style="margin-top: 0.4rem;">Responsable de Classe</h3>
+                            <div class="resp-org">
+                                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="var(--clr-primary)" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path></svg>
+                                <span>INSTI de Lokossa · 2024–2025</span>
+                            </div>
+                        </div>
+                        <p class="resp-desc">
+                            Mandat de confiance pour la représentation et la coordination quotidienne des étudiants de ma promotion auprès de l'administration et des enseignants.
+                        </p>
+                        <div>
+                            <div class="resp-tasks-title">Missions &amp; Responsabilités :</div>
+                            <ul class="resp-tasks">
+                                <li>Interface de communication directe étudiants &amp; administration</li>
+                                <li>Transmission rapide et fiabilisée des consignes académiques</li>
+                                <li>Coordination générale et médiation au sein de la classe</li>
+                                <li>Organisation logistique des activités collectives et révisions</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Rôle 4 : Club RFI -->
+                    <div class="resp-card" data-aos="fade-up" data-aos-delay="300">
+                        <div>
+                            <span class="resp-role-badge">Organisation &amp; Vie Associative</span>
+                            <h3 style="margin-top: 0.4rem;">2ᵉ Organisateur Général Adjoint</h3>
+                            <div class="resp-org">
+                                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="var(--clr-primary)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                <span>Club RFI Lokossa · 2024–2025</span>
+                            </div>
+                        </div>
+                        <p class="resp-desc">
+                            Participation à l'organisation, à la logistique et au déploiement des événements socioculturels et éducatifs portés par le Club Radio France Internationale de Lokossa.
+                        </p>
+                        <div>
+                            <div class="resp-tasks-title">Missions &amp; Responsabilités :</div>
+                            <ul class="resp-tasks">
+                                <li>Planification logistique des conférences et débats</li>
+                                <li>Mobilisation des participants et gestion de l'accueil</li>
+                                <li>Travail en équipe au sein du comité d'organisation</li>
+                                <li>Communication et relais d'informations auprès du public</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Expériences Pédagogiques & Robotique -->
+        <section class="section" id="initiatives" style="background: rgba(0, 0, 0, 0.2);">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Transmission &amp; Électronique</span>
+                    <h2 class="section-title">Expériences &amp; <span>Initiatives</span></h2>
+                </div>
+
+                <div class="pedagogy-card" data-aos="fade-up">
+                    <div>
+                        <span class="resp-role-badge">Transmission &amp; Pédagogie</span>
+                        <h3 style="font-family: var(--ff-heading); font-size: 1.6rem; color: var(--clr-text); margin: 0.5rem 0 1rem;">
+                            Formateur en Robotique &amp; Électronique
+                        </h3>
+                        <p style="color: var(--clr-primary); font-weight: 600; margin-bottom: 1rem;">TechLab — Porto-Novo</p>
+                        <p style="color: var(--clr-text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.2rem;">
+                            Formation et accompagnement pratique de jeunes de moins de 15 ans dans la découverte de la robotique, des circuits électroniques et des bases de la programmation.
+                        </p>
+                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                            <span class="tool-tag">Arduino</span>
+                            <span class="tool-tag">ESP32</span>
+                            <span class="tool-tag">Capteurs &amp; Servomoteurs</span>
+                            <span class="tool-tag">Pédagogie</span>
+                            <span class="tool-tag">IoT</span>
+                        </div>
+                    </div>
+                    <div style="background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 1.8rem;">
+                        <h4 style="font-family: var(--ff-heading); font-size: 1.05rem; color: var(--clr-text); margin-bottom: 1rem;">Projets concrets réalisés par les apprenants :</h4>
+                        <ul class="resp-tasks" style="gap: 0.7rem;">
+                            <li><strong>Poubelle intelligente :</strong> ouverture automatique par détection ultrasonique et servomoteur.</li>
+                            <li><strong>Système radar :</strong> détection d'obstacles à balayage angulaire avec affichage visuel.</li>
+                            <li><strong>Poste de péage automatisé :</strong> barrière levante pilotée par capteurs et affichage d'état.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bannière vers Distinctions -->
+                <div class="distinctions-banner" data-aos="zoom-in">
+                    <h3>Envie de découvrir mes 6 compétitions et projets primés ?</h3>
+                    <p>Technova Challenge, EPITNET Hackathon, HackByIFRI, MIABE, GENEB et Opération Nova CTF.</p>
+                    <a href="distinctions.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none;">
+                        <span>Voir les Compétitions &amp; Distinctions →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Standardisé -->
+    <footer class="footer">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--clr-border);">
+                <div>
+                    <h4 style="font-family: var(--ff-heading); font-size: 1.15rem; color: var(--clr-text); margin-bottom: 0.2rem;">Mourchid FOLARIN</h4>
+                    <p style="font-size: 0.85rem; color: var(--clr-primary); margin: 0;">Développeur Backend orienté Cybersécurité &amp; Réseaux</p>
+                </div>
+                <div style="display: flex; gap: 1.5rem; font-size: 0.9rem;">
+                    <a href="https://github.com/mourchidfolarin" target="_blank" rel="noopener" style="color: var(--clr-text-muted); text-decoration: none; transition: var(--transition);">GitHub</a>
+                    <a href="https://www.linkedin.com/in/mourchid-folarin-283181347/" target="_blank" rel="noopener" style="color: var(--clr-text-muted); text-decoration: none; transition: var(--transition);">LinkedIn</a>
+                    <a href="contact.html" style="color: var(--clr-text-muted); text-decoration: none; transition: var(--transition);">Contact</a>
+                </div>
+            </div>
+            <div style="text-align: center; padding-top: 1.5rem; font-size: 0.82rem; color: var(--clr-text-muted);">
+                &copy; 2026 Mourchid FOLARIN. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        AOS.init({ duration: 900, once: true });
+
+        // Custom Cursor
+        const cursor = document.querySelector('.cursor');
+        const follower = document.querySelector('.cursor-follower');
+        if (cursor && follower) {
+            document.addEventListener('mousemove', (e) => {
+                gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
+                gsap.to(follower, { x: e.clientX, y: e.clientY, duration: 0.3 });
+            });
+        }
+
+        // Mobile Nav Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                navToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+
+</html>
+

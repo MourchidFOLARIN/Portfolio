@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact &amp; Rendez-vous | Mourchid FOLARIN</title>
+    <meta name="description"
+        content="Contactez Mourchid FOLARIN pour vos opportunités professionnelles, projets en freelance, développement Backend Laravel, audit applicatif ou réservez un créneau en direct via Cal.com.">
+    <meta name="author" content="Mourchid FOLARIN">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="icon" type="image/x-icon" href="nuit de coeur.ico">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        .page-header {
+            padding: 8.5rem 0 3rem;
+            position: relative;
+            text-align: center;
+        }
+
+        .page-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 999px;
+            padding: 0.4rem 1.2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--clr-primary);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .page-title {
+            font-family: var(--ff-heading);
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--clr-text);
+            margin-bottom: 1rem;
+        }
+
+        .page-title span {
+            color: var(--clr-primary);
+        }
+
+        .page-subtitle {
+            font-size: 1.15rem;
+            color: var(--clr-primary);
+            font-weight: 500;
+            max-width: 760px;
+            margin: 0 auto 1.2rem;
+        }
+
+        .page-intro {
+            font-size: 1.05rem;
+            color: var(--clr-text-muted);
+            max-width: 720px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Section Travaillons ensemble */
+        .collab-banner {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(16, 185, 129, 0.04));
+            border: 1px solid var(--clr-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 4rem;
+            display: grid;
+            grid-template-columns: 140px 1fr auto;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .collab-avatar {
+            width: 130px;
+            height: 130px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid rgba(16, 185, 129, 0.4);
+            background: #0d0d0d;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            flex-shrink: 0;
+        }
+
+        .collab-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .collab-text h3 {
+            font-family: var(--ff-heading);
+            font-size: 1.6rem;
+            color: var(--clr-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .collab-text p {
+            color: var(--clr-text-muted);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .cal-booking-btn {
+            background: var(--clr-primary);
+            color: #000;
+            font-family: var(--ff-heading);
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 1.1rem 2rem;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            transition: var(--transition);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.25);
+            white-space: nowrap;
+        }
+
+        .cal-booking-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.45);
+            background: #14d696;
+        }
+
+        .cal-booking-btn svg {
+            width: 20px;
+            height: 20px;
+            stroke: #000;
+            fill: none;
+            stroke-width: 2.2;
+        }
+
+        /* Direct Channels Grid */
+        .channels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .channel-card {
+            background: var(--clr-surface);
+            border: 1px solid var(--clr-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .channel-card:hover {
+            border-color: var(--clr-primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .channel-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--clr-primary);
+        }
+
+        .channel-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .channel-info h4 {
+            font-family: var(--ff-heading);
+            font-size: 1rem;
+            color: var(--clr-text);
+            margin: 0 0 0.2rem;
+        }
+
+        .channel-info p {
+            font-size: 0.84rem;
+            color: var(--clr-text-muted);
+            margin: 0;
+        }
+
+        @media (max-width: 900px) {
+            .collab-banner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .collab-avatar {
+                margin: 0 auto;
+            }
+
+            .cal-booking-btn {
+                justify-content: center;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Elements -->
+    <div class="digital-bg"></div>
+    <div class="grid-overlay"></div>
+    <div class="scan-lines"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar scrolled">
+        <div class="container">
+            <a href="index.html" class="logo glitch-hover">M.<span>FOLARIN</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="a-propos.html">À Propos</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="projets.html">Projets</a></li>
+                <li><a href="parcours.html">Parcours</a></li>
+                <li><a href="distinctions.html">Distinctions</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="nav-available-badge">
+                <span class="available-dot"></span>
+                Disponible
+            </a>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Page Header -->
+        <header class="page-header">
+            <div class="container" data-aos="fade-up">
+                <div class="page-tag">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    Contact · Prise de Rendez-vous · Échanges
+                </div>
+                <h1 class="page-title">Entrons en <span>Contact</span></h1>
+                <p class="page-subtitle">Projets freelance, opportunités professionnelles ou échanges techniques</p>
+                <p class="page-intro">
+                    Que ce soit pour le développement d'une architecture Backend avec Laravel, la sécurisation d'une API, un projet réseau ou une collaboration technique, je suis à votre écoute.
+                </p>
+            </div>
+        </header>
+
+        <!-- Section Principale Contact -->
+        <section class="contact-main" style="padding-bottom: 6rem;">
+            <div class="container">
+
+                <!-- Section Travaillons Ensemble & Cal.com (Haute Valeur) -->
+                <div class="collab-banner" data-aos="fade-up">
+                    <div class="collab-avatar">
+                        <img src="Mourchid2.jpeg" alt="Mourchid FOLARIN"
+                            onerror="this.src='mourchid.jpeg'">
+                    </div>
+                    <div class="collab-text">
+                        <h3>Travaillons ensemble</h3>
+                        <p>
+                            "Vous avez un projet, une opportunité ou souhaitez simplement échanger autour du développement Backend, de la cybersécurité ou des réseaux ?"
+                        </p>
+                    </div>
+                    <div>
+                        <!-- Bouton officiel Cal.com avec popup -->
+                        <button class="cal-booking-btn" 
+                                data-cal-link="excellence-team-baw7ji" 
+                                data-cal-namespace="excellence-team-baw7ji" 
+                                data-cal-config='{"layout":"month_view"}'>
+                            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            <span>Prendre rendez-vous (Cal.com)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Grille des canaux directs -->
+                <div class="channels-grid" data-aos="fade-up">
+                    <a href="https://wa.me/22992554964" target="_blank" rel="noopener" class="channel-card">
+                        <div class="channel-icon">
+                            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                        </div>
+                        <div class="channel-info">
+                            <h4>WhatsApp Direct</h4>
+                            <p>+229 92 55 49 64</p>
+                        </div>
+                    </a>
+
+                    <a href="mailto:mourchidolawale@gmail.com" class="channel-card">
+                        <div class="channel-icon">
+                            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </div>
+                        <div class="channel-info">
+                            <h4>Email Professionnel</h4>
+                            <p>mourchidolawale@gmail.com</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/mourchid-folarin-283181347/" target="_blank" rel="noopener" class="channel-card">
+                        <div class="channel-icon">
+                            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </div>
+                        <div class="channel-info">
+                            <h4>LinkedIn</h4>
+                            <p>Mourchid FOLARIN</p>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/mourchidfolarin" target="_blank" rel="noopener" class="channel-card">
+                        <div class="channel-icon">
+                            <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </div>
+                        <div class="channel-info">
+                            <h4>GitHub</h4>
+                            <p>@mourchidfolarin</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Formulaire de contact et badges disponibilité -->
+                <div class="contact-wrapper" style="margin-top: 2rem;">
+                    <div class="contact-info" data-aos="fade-right">
+                        <div class="contact-meta-badges">
+                            <div class="contact-meta-badge">
+                                <span class="meta-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--clr-primary)" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg></span>
+                                <span>Statut : <strong>Licence 3 · INSTI Lokossa</strong></span>
+                            </div>
+                            <div class="contact-meta-badge">
+                                <span class="meta-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--clr-primary)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+                                <span>Disponibilité : <strong>Freelance, Projets &amp; Stages</strong></span>
+                            </div>
+                            <div class="contact-meta-badge">
+                                <span class="meta-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--clr-primary)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                                <span>Mode de travail : <strong>Remote &amp; Présentiel (Bénin)</strong></span>
+                            </div>
+                            <div class="contact-meta-badge">
+                                <span class="meta-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--clr-primary)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                <span>Délai de réponse : <strong>Sous 24h ouvrées</strong></span>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(16, 185, 129, 0.04); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 14px;">
+                            <h4 style="font-family: var(--ff-heading); font-size: 1.05rem; color: var(--clr-text); margin-bottom: 0.5rem;">Conseil : Pour un échange direct de 30 min</h4>
+                            <p style="font-size: 0.88rem; color: var(--clr-text-muted); line-height: 1.6; margin: 0;">
+                                Utilisez le bouton <strong>Prendre rendez-vous</strong> en haut pour choisir immédiatement le créneau qui vous convient le mieux sur mon agenda synchronisé.
+                            </p>
+                        </div>
+                    </div>
+
+                    <form id="contact-form" class="contact-form" data-aos="fade-left">
+                        <!-- Honeypot anti-spam (invisible pour les humains) -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none !important;" tabindex="-1" autocomplete="off">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Votre Nom complet ou Organisation" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Votre Adresse Email de contact" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" placeholder="Sujet (Mission freelance, stage, collaboration, échange...)">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Détaillez votre projet, vos besoins techniques ou votre proposition..." rows="6" required></textarea>
+                        </div>
+                        <div id="contact-status" class="contact-status"></div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <span>Envoyer le message sécurisé</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Standardisé -->
+    <footer class="footer">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--clr-border);">
+                <div>
+                    <h4 style="font-family: var(--ff-heading); font-size: 1.15rem; color: var(--clr-text); margin-bottom: 0.2rem;">Mourchid FOLARIN</h4>
+                    <p style="font-size: 0.85rem; color: var(--clr-primary); margin: 0;">Développeur Backend orienté Cybersécurité &amp; Réseaux</p>
+                </div>
+                <div style="display: flex; gap: 1.5rem; font-size: 0.9rem;">
+                    <a href="https://github.com/mourchidfolarin" target="_blank" rel="noopener" style="color: var(--clr-text-muted); text-decoration: none; transition: var(--transition);">GitHub</a>
+                    <a href="https://www.linkedin.com/in/mourchid-folarin-283181347/" target="_blank" rel="noopener" style="color: var(--clr-text-muted); text-decoration: none; transition: var(--transition);">LinkedIn</a>
+                    <a href="contact.html" style="color: var(--clr-primary); text-decoration: none; font-weight: 600;">Contact</a>
+                </div>
+            </div>
+            <div style="text-align: center; padding-top: 1.5rem; font-size: 0.82rem; color: var(--clr-text-muted);">
+                &copy; 2026 Mourchid FOLARIN. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Intégration Officielle Cal.com Embed Popup -->
+    <script type="text/javascript">
+        (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+        Cal("init", "excellence-team-baw7ji", { origin: "https://cal.com" });
+
+        Cal.ns["excellence-team-baw7ji"]("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
+    </script>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // Custom Cursor
+        const cursor = document.querySelector('.cursor');
+        const follower = document.querySelector('.cursor-follower');
+        if (cursor && follower) {
+            document.addEventListener('mousemove', (e) => {
+                gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
+                gsap.to(follower, { x: e.clientX, y: e.clientY, duration: 0.3 });
+            });
+        }
+
+        // Mobile Nav Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                navToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+
+</html>

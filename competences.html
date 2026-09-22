@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compétences Techniques | Mourchid FOLARIN — Backend, Cybersécurité, Réseaux</title>
+    <meta name="description"
+        content="Compétences techniques détaillées de Mourchid FOLARIN : PHP, Laravel, API REST, OWASP Top 10, Secure Coding, Linux, TCP/IP, Wireshark, Python Machine Learning et simulateur de laboratoire interactif.">
+    <meta name="author" content="Mourchid FOLARIN">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="icon" type="image/x-icon" href="nuit de coeur.ico">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        .page-header {
+            padding: 8.5rem 0 3.5rem;
+            position: relative;
+            text-align: center;
+        }
+
+        .page-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 999px;
+            padding: 0.4rem 1.2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--clr-primary);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .header-avatar-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 50px;
+            padding: 0.35rem 1.2rem 0.35rem 0.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .header-avatar-img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1.5px solid var(--clr-primary);
+        }
+
+        .header-avatar-text {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--clr-text-muted);
+        }
+
+        .header-avatar-text strong {
+            color: var(--clr-text);
+        }
+
+        .page-title {
+            font-family: var(--ff-heading);
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--clr-text);
+            margin-bottom: 1rem;
+        }
+
+        .page-title span {
+            color: var(--clr-primary);
+        }
+
+        .page-subtitle {
+            font-size: 1.15rem;
+            color: var(--clr-primary);
+            font-weight: 500;
+            max-width: 760px;
+            margin: 0 auto 1.2rem;
+        }
+
+        .page-intro {
+            font-size: 1.05rem;
+            color: var(--clr-text-muted);
+            max-width: 720px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Next Steps CTA */
+        .next-links-card {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.06), rgba(0, 0, 0, 0.4));
+            border: 1px solid var(--clr-primary);
+            border-radius: 18px;
+            padding: 2.5rem;
+            text-align: center;
+            margin: 5rem 0 2rem;
+        }
+
+        .next-links-card h3 {
+            font-family: var(--ff-heading);
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .next-links-card p {
+            color: var(--clr-text-muted);
+            max-width: 600px;
+            margin: 0 auto 1.8rem;
+            font-size: 0.95rem;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Elements -->
+    <div class="digital-bg"></div>
+    <div class="grid-overlay"></div>
+    <div class="scan-lines"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar scrolled">
+        <div class="container">
+            <a href="index.html" class="logo glitch-hover">M.<span>FOLARIN</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="a-propos.html">À Propos</a></li>
+                <li><a href="competences.html" class="active">Compétences</a></li>
+                <li><a href="projets.html">Projets</a></li>
+                <li><a href="parcours.html">Parcours</a></li>
+                <li><a href="distinctions.html">Distinctions</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="nav-available-badge">
+                <span class="available-dot"></span>
+                Disponible
+            </a>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Page Header -->
+        <header class="page-header">
+            <div class="container" data-aos="fade-up">
+                <!-- Avatar Header Minimaliste & Professionnel -->
+                
+                <div class="page-tag" style="display:block; margin: 0 auto 1.5rem; width: fit-content;">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    Backend · Cybersécurité · Réseaux · IA
+                </div>
+                <h1 class="page-title">Mes compétences<span> techniques</span></h1>
+                <p class="page-subtitle">Ce que je pratique et perfectionne au quotidien à travers mes projets et mes labs</p>
+                <p class="page-intro">
+                    Une évaluation transparente et honnête : chaque brique technologique ci-dessous reflète une maîtrise pratique, éprouvée sur des applications réelles, des compétitions CTF ou des environnements de test.
+                </p>
+            </div>
+        </header>
+
+        <!-- Section Compétences Détaillées -->
+        <section class="skills section" style="padding-top: 1rem;">
+            <div class="container">
+
+                <!-- 1. Backend & API -->
+                <div class="skills-category-block" data-aos="fade-up">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="var(--clr-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                        </div>
+                        <div>
+                            <h3 class="category-title">1. <span>Backend </span> &amp; Conception d'API</h3>
+                            <p class="category-desc">Conception de services fiables, structuration d'API RESTful et gestion rigoureuse des bases de données relationnelles.</p>
+                        </div>
+                    </div>
+                    <div class="backend-grid">
+                        <div class="backend-terminal" data-aos="zoom-in">
+                            <div class="terminal-header">
+                                <div class="terminal-dot dot-red"></div>
+                                <div class="terminal-dot dot-yellow"></div>
+                                <div class="terminal-dot dot-green"></div>
+                                <span class="terminal-title">mourchid@backend-dev:~</span>
+                            </div>
+                            <div class="terminal-body" id="skills-terminal">
+                                <div class="terminal-line"><span class="terminal-prompt">mourchid@backend:~$</span> php artisan --version</div>
+                                <div class="terminal-line"><span class="terminal-cursor"></span></div>
+                            </div>
+                        </div>
+
+                        <div class="backend-cards">
+                            <div class="backend-card" data-aos="fade-left" data-aos-delay="100">
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="var(--clr-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                                </div>
+                                <h3>PHP &amp; Laravel</h3>
+                                <p>Développement orienté objet, architecture MVC, migrations, seeders, Eloquent ORM et logique métier modulaire.</p>
+                                <ul class="skills-list">
+                                    <li>PHP 8+ (POO, Typage strict)</li>
+                                    <li>Framework Laravel</li>
+                                    <li>Architecture MVC &amp; Services</li>
+                                    <li>Eloquent ORM &amp; Relations</li>
+                                </ul>
+                            </div>
+
+                            <div class="backend-card" data-aos="fade-left" data-aos-delay="200">
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="var(--clr-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                                </div>
+                                <h3>API REST &amp; Sécurité</h3>
+                                <p>Création d'endpoints standardisés, authentification sécurisée par JWT, gestion d'erreurs HTTP et validation FormRequest.</p>
+                                <ul class="skills-list">
+                                    <li>Design d'API RESTful</li>
+                                    <li>Tokens JWT &amp; Sessions</li>
+                                    <li>Validation stricte des inputs</li>
+                                    <li>Gestion des codes HTTP &amp; Exceptions</li>
+                                </ul>
+                            </div>
+
+                            <div class="backend-card" data-aos="fade-left" data-aos-delay="300">
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="var(--clr-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+                                </div>
+                                <h3>Bases de Données &amp; SQL</h3>
+                                <p>Modélisation entité-relation, requêtes SQL optimisées, jointures, transactions et intégrité référentielle.</p>
+                                <ul class="skills-list">
+                                    <li>MySQL (InnoDB)</li>
+                                    <li>Requêtes SQL &amp; Indexation</li>
+                                    <li>Contraintes de clés étrangères</li>
+                                    <li>Transactions ACID</li>
+                                </ul>
+                            </div>
+
+                            <div class="backend-card" data-aos="fade-left" data-aos-delay="400">
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="var(--clr-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                                </div>
+                                <h3>Outils &amp; Intégration</h3>
+                                <p>Gestion de versions collaborative, intégration web front-end standard et programmation bas niveau complémentaire.</p>
+                                <ul class="skills-list">
+                                    <li>Git &amp; GitHub (branches, PR)</li>
+                                    <li>HTML5 / CSS3 / JavaScript</li>
+                                    <li>Postman (Tests d'API)</li>
+                                    <li>C / C++ (programmation système)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Cybersécurité & Sécurité Web -->
+                <div class="skills-category-block" style="margin-top: 5rem;" data-aos="fade-up">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="var(--clr-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="category-title">2. <span> Cybersécurité</span> &amp; Sécurité Applicative</h3>
+                            <p class="category-desc">Pratique de la sécurité Web et du pentesting en laboratoire et CTF, axée sur les principes du Secure Coding.</p>
+                        </div>
+                    </div>
+                    <div class="cybersec-grid">
+                        <div class="cybersec-terminal" data-aos="zoom-in">
+                            <div class="terminal-header">
+                                <div class="terminal-dot dot-red"></div>
+                                <div class="terminal-dot dot-yellow"></div>
+                                <div class="terminal-dot dot-green"></div>
+                                <span class="terminal-title">mourchid@security-lab:~</span>
+                            </div>
+                            <div class="terminal-body" id="cybersec-terminal">
+                                <div class="terminal-line"><span class="terminal-prompt">mourchid@security:~$</span> ./run-security-checks.sh</div>
+                                <div class="terminal-line"><span class="terminal-cursor"></span></div>
+                            </div>
+                        </div>
+
+                        <div class="cybersec-cards">
+                            <div class="cybersec-card" data-aos="fade-left" data-aos-delay="100">
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="var(--clr-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                                </div>
+                                <h3>OWASP Top 10 &amp; Vulnérabilités</h3>
+                                <p>Identification, test offensif et remédiation des principales failles web sur des environnements d'entraînement dédiés.</p>
+                                <ul class="skills-list">
+                                    <li>Injections SQL (SQLi) &amp; Blind SQLi</li>
+                                    <li>Cross-Site Scripting (Reflected/Stored XSS)</li>
+                                    <li>Broken Authentication &amp; Sessions</li>
+                                    <li>CSRF &amp; Mauvaises configurations</li>
+                                </ul>
+                            </div>
+
+                            <div class="cybersec-card" data-aos="fade-left" data-aos-delay="200">
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="var(--clr-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                                </div>
+                                <h3>Secure Coding &amp; Cryptographie</h3>
+                                <p>Intégration systématique des règles de sécurité dès l'écriture du code source applicatif.</p>
+                                <ul class="skills-list">
+                                    <li>Requêtes préparées PDO &amp; ORM</li>
+                                    <li>Hachage robuste (bcrypt, Argon2)</li>
+                                    <li>Protection CSRF tokens &amp; CORS</li>
+                                    <li>Gestion sécurisée des secrets (.env)</li>
+                                </ul>
+                            </div>
+
+                            <div class="cybersec-card" data-aos="fade-left" data-aos-delay="300">
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="var(--clr-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="22" y1="12" x2="18" y2="12"></line><line x1="6" y1="12" x2="2" y2="12"></line><line x1="12" y1="6" x2="12" y2="2"></line><line x1="12" y1="22" x2="12" y2="18"></line></svg>
+                                </div>
+                                <h3>Pentest Web (Lab &amp; CTF)</h3>
+                                <p>Audit offensif éthique, utilisation d'outils d'interception et résolution d'épreuves de sécurité informatique.</p>
+                                <ul class="skills-list">
+                                    <li>Burp Suite (Proxy, Repeater, Intruder)</li>
+                                    <li>Kali Linux (Suite d'outils)</li>
+                                    <li>Compétitions CTF (3e place Opération Nova)</li>
+                                    <li>Rédaction de notes de remédiation</li>
+                                </ul>
+                            </div>
+
+                            <div class="cybersec-card" data-aos="fade-left" data-aos-delay="400">
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="var(--clr-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                </div>
+                                <h3>Protection des API &amp; Flux</h3>
+                                <p>Verrouillage des points d'accès distants et durcissement des communications inter-services.</p>
+                                <ul class="skills-list">
+                                    <li>Rate Limiting &amp; Protection anti-bruteforce</li>
+                                    <li>Contrôle d'accès par rôles (RBAC)</li>
+                                    <li>En-têtes HTTP de sécurité (CSP, HSTS)</li>
+                                    <li>Validation et sérialisation des payloads</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Réseaux & Systèmes Linux & 4. IA & Data -->
+                <div class="skills-dual-grid" style="margin-top: 5rem;" data-aos="fade-up">
+                    <!-- Catégorie 3 : Réseaux & Systèmes -->
+                    <div class="skills-card-group">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="var(--clr-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                            </div>
+                            <div>
+                                <h3 class="category-title">3. <span>Réseaux </span> &amp; Systèmes Linux</h3>
+                                <p class="category-desc">Administration Linux en ligne de commande et analyse approfondie des flux protocolaires.</p>
+                            </div>
+                        </div>
+                        <div class="sub-skills-grid">
+                            <div class="sub-skill-box">
+                                <h4>Linux &amp; Automatisation Bash</h4>
+                                <p>Utilisation quotidienne de distributions Linux (Debian, Ubuntu, Kali), administration via terminal, gestion des droits/permissions, processus et écriture de scripts Bash pour automatiser des tâches d'administration.</p>
+                                <div class="tool-tags-mini">
+                                    <span class="tool-tag">Linux Debian/Ubuntu</span>
+                                    <span class="tool-tag">Bash Scripting</span>
+                                    <span class="tool-tag">SSH &amp; Clés publiques</span>
+                                    <span class="tool-tag">Systemd &amp; Logs</span>
+                                </div>
+                            </div>
+                            <div class="sub-skill-box">
+                                <h4>Protocoles &amp; Analyse Réseau</h4>
+                                <p>Compréhension structurée de la pile TCP/IP, des protocoles essentiels (DNS, DHCP, HTTP/S, SSH, ICMP), cartographie réseau avec Nmap et dissection de trames avec Wireshark.</p>
+                                <div class="tool-tags-mini">
+                                    <span class="tool-tag">Pile TCP/IP</span>
+                                    <span class="tool-tag">DNS &amp; Routage</span>
+                                    <span class="tool-tag">Nmap</span>
+                                    <span class="tool-tag">Wireshark</span>
+                                    <span class="tool-tag">Sécurité périmétrique</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Catégorie 4 : IA & Data -->
+                    <div class="skills-card-group">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="var(--clr-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                            </div>
+                            <div>
+                                <h3 class="category-title">4. <span>IA</span>  &amp; Data Science Appliquée</h3>
+                                <p class="category-desc">Pratique concrète de Python pour le traitement de données et les modèles de prédiction supervisée.</p>
+                            </div>
+                        </div>
+                        <div class="sub-skills-grid">
+                            <div class="sub-skill-box">
+                                <h4>Machine Learning (Scikit-Learn)</h4>
+                                <p>Développement de modèles supervisés appliqués à des cas concrets (comme la détection préventive de risques cardiovasculaires avec Random Forest), évaluation des métriques (Accuracy, Recall) et gestion du surapprentissage.</p>
+                                <div class="tool-tags-mini">
+                                    <span class="tool-tag">Python 3</span>
+                                    <span class="tool-tag">Random Forest</span>
+                                    <span class="tool-tag">Scikit-Learn</span>
+                                    <span class="tool-tag">Matrice de confusion</span>
+                                </div>
+                            </div>
+                            <div class="sub-skill-box">
+                                <h4>Traitement de Données &amp; Streamlit</h4>
+                                <p>Nettoyage et structuration de données avec Pandas et NumPy, connexion aux bases SQL et création d'interfaces web interactives et réactives avec Streamlit.</p>
+                                <div class="tool-tags-mini">
+                                    <span class="tool-tag">Pandas &amp; NumPy</span>
+                                    <span class="tool-tag">Streamlit</span>
+                                    <span class="tool-tag">MySQL Connector</span>
+                                    <span class="tool-tag">Visualisation Data</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Section En Apprentissage Transparent -->
+                <div class="currently-learning-block" style="margin-top: 4.5rem;" data-aos="fade-up">
+                    <div class="learning-header">
+                        <span class="learning-badge" style="display:inline-flex; align-items:center; gap:0.4rem;">
+                            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+                            Veille &amp; Progression Active
+                        </span>
+                        <h3 style="font-family: var(--ff-heading); margin-top: 0.5rem; font-size: 1.35rem;">Technologies &amp; Notions en cours d'apprentissage</h3>
+                        <p style="color: var(--clr-text-muted); font-size: 0.92rem; margin-top: 0.3rem;">Des briques que j'étudie activement pour élargir mon spectre d'ingénierie, avec humilité et rigueur :</p>
+                    </div>
+                    <div class="learning-grid">
+                        <div class="learning-item">
+                            <span class="learning-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--clr-primary)" stroke-width="2"><rect x="3" y="10" width="4" height="4"></rect><rect x="8" y="10" width="4" height="4"></rect><rect x="13" y="10" width="4" height="4"></rect><path d="M3 14c2 0 3 2 5 2s3-2 5-2 3 2 5 2 3-2 5-2"></path></svg></span>
+                            <strong>Docker</strong>
+                            <p>Conteneurisation de services, Dockerfile, docker-compose et environnements de tests isolés.</p>
+                        </div>
+                        <div class="learning-item">
+                            <span class="learning-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--clr-primary)" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg></span>
+                            <strong>PostgreSQL</strong>
+                            <p>Fonctionnalités avancées, types de données JSON/UUID et requêtes complexes.</p>
+                        </div>
+                        <div class="learning-item">
+                            <span class="learning-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--clr-primary)" stroke-width="2"><circle cx="7.5" cy="15.5" r="5.5"></circle><path d="m21 2-9.6 9.6"></path><path d="m15.5 7.5 3 3"></path></svg></span>
+                            <strong>OAuth2 &amp; OpenID</strong>
+                            <p>Protocoles de délégation d'accès, gestion des tokens d'actualisation et flux multi-clients.</p>
+                        </div>
+                        <div class="learning-item">
+                            <span class="learning-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--clr-primary)" stroke-width="2"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"></path></svg></span>
+                            <strong>CI/CD &amp; Automatisation</strong>
+                            <p>Pipelines d'intégration continue via GitHub Actions et tests automatiques au push.</p>
+                        </div>
+                        <div class="learning-item">
+                            <span class="learning-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--clr-primary)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></span>
+                            <strong>Nginx &amp; Reverse Proxy</strong>
+                            <p>Configuration de serveur web, équilibrage de charge basique et certificats SSL/TLS.</p>
+                        </div>
+                        <div class="learning-item">
+                            <span class="learning-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--clr-primary)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span>
+                            <strong>Sécurité Réseau Avancée</strong>
+                            <p>Pare-feu UFW/iptables, segmentation VLAN et durcissement des configurations système.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section Laboratoire Technique Interactif (Démonstrateur en direct) -->
+        <section class="lab section" id="lab" style="background: rgba(0,0,0,0.3); border-top: 1px solid var(--clr-border); border-bottom: 1px solid var(--clr-border);">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Démonstrations Interactives</span>
+                    <h2 class="section-title">Laboratoire Technique : <span>Testez mes concepts en direct</span></h2>
+                    <p class="section-desc">Cliquez ci-dessous pour simuler l'exécution en temps réel des flux applicatifs, algorithmes et protocoles que je manipule.</p>
+                </div>
+
+                <div class="lab-grid" data-aos="fade-up">
+                    <div class="lab-controls">
+                        <button class="lab-btn active" onclick="runSimulation('laravel', this)">
+                            <span>Flux API REST Laravel</span>
+                            <span>Cycle requête -> middleware -> ORM -> JWT -> réponse 200</span>
+                        </button>
+                        <button class="lab-btn" onclick="runSimulation('ml', this)">
+                            <span>Prédiction Random Forest (ML)</span>
+                            <span>Classification supervisée Python Scikit-Learn</span>
+                        </button>
+                        <button class="lab-btn" onclick="runSimulation('security', this)">
+                            <span>Vérification Sécurité OWASP</span>
+                            <span>Test SQLi préparé, encodage XSS &amp; en-têtes</span>
+                        </button>
+                        <button class="lab-btn" onclick="runSimulation('network', this)">
+                            <span>Analyse Réseau &amp; Trames</span>
+                            <span>Capture de paquets TCP/IP et détection de protocoles</span>
+                        </button>
+                    </div>
+
+                    <div class="lab-display">
+                        <div id="lab-badge" class="lab-badge">PRÊT</div>
+                        <div id="lab-visualizer" class="lab-visualizer">
+                            <span style="color: #666;">Sélectionnez une simulation pour lancer l'exécution</span>
+                        </div>
+                        <div id="lab-console" class="lab-console">
+                            <div class="line" style="color: var(--clr-text-muted);">// En attente d'instruction... Cliquez sur un test à gauche.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation contextuelle -->
+                <div class="next-links-card" data-aos="zoom-in">
+                    <h3>Passez de la compétence à la réalisation</h3>
+                    <p>Découvrez comment ces compétences sont appliquées concrètement dans mes 8 projets ou lors de mes participations aux compétitions d'innovation.</p>
+                    <div class="cta-group">
+                        <a href="projets.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none;">
+                            <span>Voir mes projets concrets (8) →</span>
+                        </a>
+                        <a href="distinctions.html" class="btn btn-outline" style="border: 1px solid var(--clr-border); padding: 1rem 1.8rem; border-radius: 50px; color: var(--clr-text); text-decoration: none; font-size: 0.95rem;">
+                            <span>Voir mes compétitions &amp; CTF →</span>
+                        </a>
+                        <a href="contact.html" class="btn btn-outline" style="border: 1px solid var(--clr-border); padding: 1rem 1.8rem; border-radius: 50px; color: var(--clr-text); text-decoration: none; font-size: 0.95rem;">
+                            <span>Prendre contact →</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Standardisé -->
+    <footer class="footer">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--clr-border);">
+                <div>
+                    <h4 style="font-family: var(--ff-heading); font-size: 1.15rem; color: var(--clr-text); margin-bottom: 0.2rem;">Mourchid FOLARIN</h4>
+                    <p style="font-size: 0.85rem; color: var(--clr-primary); margin: 0;">Développeur Backend orienté Cybersécurité &amp; Réseaux</p>
+                </div>
+                <div style="display: flex; gap: 1.5rem; font-size: 0.9rem;">
+                    <a href="https://github.com/mourchidfolarin" target="_blank" rel="noopener" style="color: var(--clr-text-muted); text-decoration: none; transition: var(--transition);">GitHub</a>
+                    <a href="https://www.linkedin.com/in/mourchid-folarin-283181347/" target="_blank" rel="noopener" style="color: var(--clr-text-muted); text-decoration: none; transition: var(--transition);">LinkedIn</a>
+                    <a href="contact.html" style="color: var(--clr-text-muted); text-decoration: none; transition: var(--transition);">Contact</a>
+                </div>
+            </div>
+            <div style="text-align: center; padding-top: 1.5rem; font-size: 0.82rem; color: var(--clr-text-muted);">
+                &copy; 2026 Mourchid FOLARIN. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // Custom Cursor
+        const cursor = document.querySelector('.cursor');
+        const follower = document.querySelector('.cursor-follower');
+        if (cursor && follower) {
+            document.addEventListener('mousemove', (e) => {
+                gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
+                gsap.to(follower, { x: e.clientX, y: e.clientY, duration: 0.3 });
+            });
+        }
+
+        // Mobile Nav Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                navToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+
+</html>
+

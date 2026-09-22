@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos | Mourchid FOLARIN — Développeur Backend orienté Cybersécurité &amp; Réseaux</title>
+    <meta name="description"
+        content="Découvrez le profil, la philosophie, la méthodologie d'apprentissage et la vision technique de Mourchid FOLARIN, étudiant en Licence 3 Informatique &amp; Télécoms à l'INSTI Lokossa.">
+    <meta name="author" content="Mourchid FOLARIN">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="icon" type="image/x-icon" href="nuit de coeur.ico">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        .page-header {
+            padding: 8.5rem 0 3.5rem;
+            position: relative;
+            text-align: center;
+        }
+
+        .page-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 999px;
+            padding: 0.4rem 1.2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--clr-primary);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .page-title {
+            font-family: var(--ff-heading);
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--clr-text);
+            margin-bottom: 1rem;
+        }
+
+        .page-title span {
+            color: var(--clr-primary);
+        }
+
+        .page-subtitle {
+            font-size: 1.15rem;
+            color: var(--clr-primary);
+            font-weight: 500;
+            max-width: 760px;
+            margin: 0 auto 1.2rem;
+        }
+
+        .page-intro {
+            font-size: 1.05rem;
+            color: var(--clr-text-muted);
+            max-width: 720px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Bio Layout 2 colonnes */
+        .about-main-section {
+            padding: 3rem 0 5rem;
+        }
+
+        .about-bio-grid {
+            display: grid;
+            grid-template-columns: 360px 1fr;
+            gap: 3.5rem;
+            align-items: start;
+        }
+
+        .about-photo-wrapper {
+            position: sticky;
+            top: 100px;
+        }
+
+        .photo-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(16, 185, 129, 0.03));
+            border: 1px solid var(--clr-border);
+            border-radius: 20px;
+            padding: 1.2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+        }
+
+        .photo-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--clr-primary), transparent);
+        }
+
+        .photo-frame {
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            background: #0a0a0a;
+            position: relative;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .photo-frame:hover img {
+            transform: scale(1.03);
+        }
+
+        .photo-meta {
+            margin-top: 1.2rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+        }
+
+        .photo-meta h3 {
+            font-family: var(--ff-heading);
+            font-size: 1.2rem;
+            color: var(--clr-text);
+            margin-bottom: 0.2rem;
+        }
+
+        .photo-meta p {
+            font-size: 0.82rem;
+            color: var(--clr-primary);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .photo-status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 50px;
+            padding: 0.3rem 0.8rem;
+            font-size: 0.78rem;
+            color: var(--clr-primary);
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--clr-primary);
+            box-shadow: 0 0 8px var(--clr-primary);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.2); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Bio Content */
+        .bio-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .bio-block {
+            background: var(--clr-surface);
+            border: 1px solid var(--clr-border);
+            border-radius: 16px;
+            padding: 2.2rem;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .bio-block:hover {
+            border-color: rgba(16, 185, 129, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .bio-block-header {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .bio-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--clr-primary);
+            flex-shrink: 0;
+        }
+
+        .bio-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--clr-primary);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .bio-block h2, .bio-block h3 {
+            font-family: var(--ff-heading);
+            font-size: 1.35rem;
+            color: var(--clr-text);
+            margin: 0;
+        }
+
+        .bio-block p {
+            color: var(--clr-text-muted);
+            font-size: 0.98rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .bio-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .bio-block strong {
+            color: var(--clr-text);
+        }
+
+        .bio-highlight {
+            padding: 1rem 1.2rem;
+            background: rgba(16, 185, 129, 0.05);
+            border-left: 3px solid var(--clr-primary);
+            border-radius: 0 8px 8px 0;
+            margin: 1.2rem 0;
+            color: var(--clr-text);
+            font-size: 0.92rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
+            margin-top: 1.2rem;
+        }
+
+        .value-card {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.2rem;
+        }
+
+        .value-card h4 {
+            font-family: var(--ff-heading);
+            font-size: 0.95rem;
+            color: var(--clr-primary);
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .value-card p {
+            font-size: 0.85rem;
+            color: var(--clr-text-muted);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Next Steps CTA */
+        .next-links-card {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.06), rgba(0, 0, 0, 0.4));
+            border: 1px solid var(--clr-primary);
+            border-radius: 18px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .next-links-card h3 {
+            font-family: var(--ff-heading);
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .next-links-card p {
+            color: var(--clr-text-muted);
+            max-width: 600px;
+            margin: 0 auto 1.8rem;
+            font-size: 0.95rem;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 900px) {
+            .about-bio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-photo-wrapper {
+                position: static;
+                max-width: 320px;
+                margin: 0 auto 2rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Elements -->
+    <div class="digital-bg"></div>
+    <div class="grid-overlay"></div>
+    <div class="scan-lines"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar scrolled">
+        <div class="container">
+            <a href="index.html" class="logo glitch-hover">M.<span>FOLARIN</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="a-propos.html" class="active">À Propos</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="projets.html">Projets</a></li>
+                <li><a href="parcours.html">Parcours</a></li>
+                <li><a href="distinctions.html">Distinctions</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="nav-available-badge">
+                <span class="available-dot"></span>
+                Disponible
+            </a>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Header -->
+        <header class="page-header">
+            <div class="container" data-aos="fade-up">
+                <div class="page-tag">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    Identité · Philosophie · Vision Technique
+                </div>
+                <h1 class="page-title">À propos de <span>moi</span></h1>
+                <p class="page-subtitle">Comprendre l'ingénierie sous le capot, bâtir des services fiables et sécuriser chaque interaction</p>
+                <p class="page-intro">
+                    Je suis Mourchid FOLARIN, étudiant en Licence 3 d'Informatique &amp; Télécommunications à l'INSTI Lokossa. Mon univers se situe au carrefour du développement Backend, de la cybersécurité offensive/défensive et des architectures réseaux.
+                </p>
+            </div>
+        </header>
+
+        <!-- Section Bio & Storytelling -->
+        <section class="about-main-section">
+            <div class="container">
+                <div class="about-bio-grid">
+                    <!-- Colonne Gauche : Photo Stratégique -->
+                    <div class="about-photo-wrapper" data-aos="fade-right">
+                        <div class="photo-card">
+                            <div class="photo-frame">
+                                <img src="Mourchid.insti.jpeg" alt="Mourchid FOLARIN"
+                                    onerror="this.src='mourchid.jpeg'">
+                            </div>
+                            <div class="photo-meta">
+                                <h3>Mourchid FOLARIN</h3>
+                                <p>Développeur Backend orienté Cybersécurité &amp; Réseaux</p>
+                                <div class="photo-status-badge">
+                                    <span class="pulse-dot"></span>
+                                    <span>Licence 3 · INSTI Lokossa</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mini carte repère -->
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--clr-border); border-radius: 16px; padding: 1.2rem; margin-top: 1.5rem; text-align: center;">
+                            <p style="font-size: 0.85rem; color: var(--clr-text-muted); margin-bottom: 0.8rem;">Envie de collaborer ou d'échanger sur un projet ?</p>
+                            <a href="contact.html" class="btn btn-outline" style="border: 1px solid var(--clr-primary); color: var(--clr-primary); padding: 0.5rem 1rem; font-size: 0.82rem; border-radius: 50px; text-decoration: none; display: inline-block;">
+                                Me contacter →
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Colonne Droite : Contenu Narratif Structuré -->
+                    <div class="bio-content" data-aos="fade-left">
+                        <!-- 1. Qui suis-je ? -->
+                        <article class="bio-block">
+                            <div class="bio-block-header">
+                                <div class="bio-icon">
+                                    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                </div>
+                                <h2>Qui suis-je ?</h2>
+                            </div>
+                            <p>
+                                Curieux de nature et animé par la compréhension profonde du fonctionnement des machines, j'ai débuté mon parcours technique par un <strong>Baccalauréat F3 (Électrotechnique)</strong> obtenu avec une moyenne de <strong>16,739/20 (Mention Très Bien)</strong>. Cette base m'a forgé une culture rigoureuse du matériel, des signaux électriques et de la logique booléenne.
+                            </p>
+                            <p>
+                                Aujourd'hui en <strong>Licence 3 d'Informatique et Télécommunications</strong> à l'Institut National Supérieur de Technologie Industrielle (INSTI) de Lokossa, j'applique cette rigueur au monde numérique à travers la programmation système, le développement de services web et l'investigation réseau.
+                            </p>
+                        </article>
+
+                        <!-- 2. Pourquoi le Backend ? -->
+                        <article class="bio-block">
+                            <div class="bio-block-header">
+                                <div class="bio-icon">
+                                    <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                                </div>
+                                <h2>Mon orientation Backend &amp; Architecture logicielle</h2>
+                            </div>
+                            <p>
+                                Ce qui me passionne dans l'informatique se situe du côté serveur : la modélisation de la donnée, la conception d'<strong>API REST</strong> structurées, la gestion des transactions SQL et l'assurance que les flux métier s'exécutent de façon déterministe et performante.
+                            </p>
+                            <p>
+                                Je travaille principalement avec <strong>PHP et le framework Laravel</strong> pour matérialiser ces logiques, en appliquant les patrons d'architecture MVC, le découpage en services et la validation stricte des entrées utilisateurs. Pour moi, un bon backend ne doit pas seulement "fonctionner", il doit être résilient face aux erreurs et conçu pour évoluer.
+                            </p>
+                        </article>
+
+                        <!-- 3. Cybersécurité & Réseaux -->
+                        <article class="bio-block">
+                            <div class="bio-block-header">
+                                <div class="bio-icon">
+                                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                </div>
+                                <h2>Cybersécurité &amp; Réseaux : Comprendre pour protéger</h2>
+                            </div>
+                            <p>
+                                Écrire du code sans considérer la menace est une faiblesse. C'est pourquoi j'investis continuellement du temps dans la <strong>cybersécurité offensive et défensive</strong> :
+                            </p>
+                            <div class="bio-highlight">
+                                <strong>La philosophie Secure Coding :</strong> Tester les vecteurs d'attaque courants (injections SQL, failles XSS, Broken Authentication, IDOR selon l'OWASP Top 10) pour corriger les vulnérabilités dès la conception du code applicatif.
+                            </div>
+                            <p>
+                                Côté infrastructure, j'utilise l'écosystème <strong>Linux (Debian/Ubuntu)</strong> en ligne de commande, je dissèque les échanges protocolaires (TCP/IP, DNS, HTTP/S, SSH) avec des outils comme <strong>Wireshark</strong> et <strong>Nmap</strong>, et j'expérimente le pentesting éthique sur des environnements contrôlés et des compétitions de type Capture The Flag (CTF).
+                            </p>
+                        </article>
+
+                        <!-- 4. Vision future : IoT & Systèmes Embarqués -->
+                        <article class="bio-block">
+                            <div class="bio-block-header">
+                                <div class="bio-icon">
+                                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                </div>
+                                <h2>Vision future : Sécurité des Systèmes Embarqués &amp; IoT</h2>
+                            </div>
+                            <p>
+                                Mon socle initial en électrotechnique F3 et mon expérience en tant que formateur en robotique Arduino au <strong>TechLab de Porto-Novo</strong> m'offrent une sensibilité particulière pour le monde physique connecté.
+                            </p>
+                            <p>
+                                À moyen terme, mon ambition est de faire converger mes compétences backend et cybersécurité vers la <strong>sécurisation des systèmes embarqués et des flux IoT</strong> : sécuriser les communications capteurs-serveurs, prévenir les attaques physiques et garantir l'intégrité du firmware dans les environnements industriels.
+                            </p>
+                        </article>
+
+                        <!-- 5. Méthodologie d'apprentissage & Compétitions -->
+                        <article class="bio-block">
+                            <div class="bio-block-header">
+                                <div class="bio-icon">
+                                    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                </div>
+                                <h2>Apprendre par la pratique, le terrain et le défi</h2>
+                            </div>
+                            <p>
+                                Je ne conçois pas l'apprentissage théorique sans confrontation immédiate avec le réel :
+                            </p>
+                            <div class="values-grid">
+                                <div class="value-card">
+                                    <h4>
+                                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                                        Laboratoires &amp; CTF
+                                    </h4>
+                                    <p>Tester des exploits, analyser des trames et débugger des failles sur des machines de lab pour comprendre les mécanismes réels.</p>
+                                </div>
+                                <div class="value-card">
+                                    <h4>
+                                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                        Hackathons &amp; Équipe
+                                    </h4>
+                                    <p>Concevoir des solutions fonctionnelles en 48h chrono sous forte contrainte de temps (6 compétitions &amp; podiums à mon actif).</p>
+                                </div>
+                                <div class="value-card">
+                                    <h4>
+                                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                                        Transmission &amp; Partage
+                                    </h4>
+                                    <p>Former des jeunes à la robotique et vulgariser la tech consolide mes propres acquis techniques.</p>
+                                </div>
+                                <div class="value-card">
+                                    <h4>
+                                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M16 12l-4-4-4 4M12 16V9"></path></svg>
+                                        Entrepreneuriat
+                                    </h4>
+                                    <p>Co-fonder Excellence Team m'enseigne la gestion de projet, la relation client et la tenue des délais contractuels.</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Navigation contextuelle vers les autres pages -->
+                <div class="next-links-card" data-aos="zoom-in">
+                    <h3>Explorez mes réalisations concrètes</h3>
+                    <p>Découvrez mes compétences techniques détaillées, les projets que j'ai construits ou l'historique complet de mes engagements.</p>
+                    <div class="cta-group">
+                        <a href="competences.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none;">
+                            <span>Voir mes compétences techniques →</span>
+                        </a>
+                        <a href="projets.html" class="btn btn-outline" style="border: 1px solid var(--clr-border); padding: 1rem 1.8rem; border-radius: 50px; color: var(--clr-text); text-decoration: none; font-size: 0.95rem;">
+                            <span>Découvrir mes projets →</span>
+                        </a>
+                        <a href="parcours.html" class="btn btn-outline" style="border: 1px solid var(--clr-border); padding: 1rem 1.8rem; border-radius: 50px; color: var(--clr-text); text-decoration: none; font-size: 0.95rem;">
+                            <span>Mon parcours &amp; leadership →</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Standardisé -->
+    <footer class="footer">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--clr-border);">
+                <div>
+                    <h4 style="font-family: var(--ff-heading); font-size: 1.15rem; color: var(--clr-text); margin-bottom: 0.2rem;">Mourchid FOLARIN</h4>
+                    <p style="font-size: 0.85rem; color: var(--clr-primary); margin: 0;">Développeur Backend orienté Cybersécurité &amp; Réseaux</p>
+                </div>
+                <div style="display: flex; gap: 1.5rem; font-size: 0.9rem;">
+                    <a href="https://github.com/mourchidfolarin" target="_blank" rel="noopener" style="color: var(--clr-text-muted); text-decoration: none; transition: var(--transition);">GitHub</a>
+                    <a href="https://www.linkedin.com/in/mourchid-folarin-283181347/" target="_blank" rel="noopener" style="color: var(--clr-text-muted); text-decoration: none; transition: var(--transition);">LinkedIn</a>
+                    <a href="contact.html" style="color: var(--clr-text-muted); text-decoration: none; transition: var(--transition);">Contact</a>
+                </div>
+            </div>
+            <div style="text-align: center; padding-top: 1.5rem; font-size: 0.82rem; color: var(--clr-text-muted);">
+                &copy; 2026 Mourchid FOLARIN. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // Custom Cursor
+        const cursor = document.querySelector('.cursor');
+        const follower = document.querySelector('.cursor-follower');
+        if (cursor && follower) {
+            document.addEventListener('mousemove', (e) => {
+                gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
+                gsap.to(follower, { x: e.clientX, y: e.clientY, duration: 0.3 });
+            });
+        }
+
+        // Mobile Nav Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                navToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+
+</html>
