@@ -2441,23 +2441,25 @@ span {
     flex-direction: column;
     align-items: center;
     position: relative;
+    perspective: 1000px;
 }
 
 .hero-portrait-circle-outer {
     position: relative;
-    width: 380px;
-    height: 380px;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
-    border: 2.5px solid #00df82;
-    box-shadow: 0 0 40px rgba(0, 223, 130, 0.35), inset 0 0 20px rgba(0, 223, 130, 0.15);
-    padding: 8px;
-    background: rgba(10, 15, 12, 0.8);
-    transition: all 0.4s ease;
+    border: 3px solid var(--clr-primary);
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.2);
+    padding: 0;
+    background: var(--clr-surface);
+    overflow: hidden;
+    transition: box-shadow 0.5s var(--transition);
 }
 
 .hero-portrait-circle-outer:hover {
-    box-shadow: 0 0 55px rgba(0, 223, 130, 0.55), inset 0 0 25px rgba(0, 223, 130, 0.25);
-    transform: scale(1.02);
+    box-shadow: 0 0 50px rgba(16, 185, 129, 0.4);
 }
 
 .hero-portrait-circle-inner {
@@ -2465,7 +2467,7 @@ span {
     height: 100%;
     border-radius: 50%;
     overflow: hidden;
-    background: #080808;
+    background: var(--clr-surface);
     position: relative;
 }
 
@@ -2473,14 +2475,8 @@ span {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 15%;
+    object-position: center center;
     display: block;
-    filter: contrast(1.05) brightness(1.02);
-    transition: transform 0.4s ease;
-}
-
-.hero-portrait-circle-outer:hover .hero-portrait-circle-inner img {
-    transform: scale(1.04);
 }
 
 /* Status Capsule Under Portrait */
@@ -2672,8 +2668,7 @@ span {
         justify-content: center;
     }
     .hero-portrait-circle-outer {
-        width: 300px;
-        height: 300px;
+        max-width: 300px;
     }
     .hero-status-capsule-bar {
         font-size: 0.72rem;
