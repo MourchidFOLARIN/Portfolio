@@ -369,6 +369,24 @@ document.addEventListener('DOMContentLoaded', () => {
             url: "https://contravo.excellenceteam.site/"
         },
 
+        'teamhub': {
+            title: "WINE — TeamHub",
+            image: "teamhub.png",
+            desc: "Plateforme d’équipe d’Excellence Team, publiée sur teamhub.excellenceteam.site. Mourchid FOLARIN en est le backend : projets, tâches, chat et clients dans un seul espace.",
+            problem: "Les décisions se noient dans WhatsApp, le suivi client tient dans Excel, et personne ne voit les tâches de la semaine.",
+            features: [
+                "Projets avec jalons, fichiers et avancement calculé",
+                "Kanban : sous-tâches, échéances et rappels",
+                "Chat temps réel, un canal par projet et des messages privés",
+                "CRM : contacts, pipeline, et un client gagné devient un projet",
+                "Rôles admin, chef de projet, membre et invité",
+                "Isolation des organisations : les données sont filtrées côté serveur"
+            ],
+            security: "Un invité ne voit que les projets partagés avec lui. Les données d’une organisation ne sont pas accessibles aux autres.",
+            tech: ["Next.js", "API REST", "Temps réel", "CRM"],
+            url: "https://teamhub.excellenceteam.site/"
+        },
+
         'student-success': {
             title: "Prédiction de Réussite Scolaire",
             image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
