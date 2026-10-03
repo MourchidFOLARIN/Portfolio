@@ -1,5 +1,7 @@
 .gemini/
 node_modules/
+vendor/
+.env
 .DS_Store
 Thumbs.db
 *.log

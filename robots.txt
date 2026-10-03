@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /process.php
 
 Sitemap: https://portfolio-production-3c70.up.railway.app/sitemap.xml

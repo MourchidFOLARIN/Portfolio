@@ -559,6 +559,14 @@ span {
     gap: 1.5rem;
 }
 
+.form-honeypot {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 .form-group input,
 .form-group textarea {
     width: 100%;

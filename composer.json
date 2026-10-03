@@ -1,0 +1,7 @@
+{
+  "name": "mourchid/portfolio",
+  "description": "Portfolio de Mourchid FOLARIN",
+  "require": {
+    "php": ">=8.3"
+  }
+}
