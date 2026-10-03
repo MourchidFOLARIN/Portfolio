@@ -535,9 +535,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 const formData = new FormData(contactForm);
-                const response = await fetch('process.php', {
+                const response = await fetch('/api/contact', {
                     method: 'POST',
-                    body: formData
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: formData.get('name'),
+                        email: formData.get('email'),
+                        message: formData.get('message'),
+                        hp_field: formData.get('hp_field')
+                    })
                 });
 
                 const result = await response.json();

@@ -626,6 +626,10 @@
                         <div class="form-group">
                             <textarea name="message" placeholder="Votre Message" rows="5" required></textarea>
                         </div>
+                        <div class="form-honeypot" aria-hidden="true">
+                            <label for="hp_field">Société</label>
+                            <input type="text" id="hp_field" name="hp_field" tabindex="-1" autocomplete="off">
+                        </div>
                         <div id="contact-status" class="contact-status"></div>
                         <button type="submit" class="btn btn-primary">Envoyer le message</button>
                     </form>
