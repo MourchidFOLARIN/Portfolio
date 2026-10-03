@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Workstation Parallax (The "Dingue" touch)
-    const photoContainer = document.querySelector('.photo-container');
+    const photoContainer = document.querySelector('.hero-portrait-circle-outer, .photo-container');
     if (photoContainer) {
         document.addEventListener('mousemove', (e) => {
             const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
