@@ -2830,6 +2830,7 @@ span {
     font-family: var(--ff-heading);
     font-weight: 700;
     font-size: 0.95rem;
+    line-height: 1;
     padding: 0.95rem 1.8rem;
     border-radius: 50px;
     border: none;
@@ -2839,6 +2840,11 @@ span {
     gap: 0.6rem;
     box-shadow: 0 10px 25px rgba(16, 185, 129, 0.35), 0 0 15px rgba(16, 185, 129, 0.2);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-cal-glow span,
+.btn-cyber-outline span {
+    color: inherit !important;
 }
 
 .btn-cal-glow svg {
@@ -2862,6 +2868,7 @@ span {
     font-family: var(--ff-heading);
     font-weight: 600;
     font-size: 0.95rem;
+    line-height: 1;
     padding: 0.95rem 1.6rem;
     border-radius: 50px;
     text-decoration: none;
