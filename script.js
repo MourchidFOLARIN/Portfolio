@@ -351,6 +351,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // --- Project Modal Logic ---
     const projectsData = {
+        'contravo': {
+            title: "Contravo — Devis, contrats, clients",
+            image: "contravo.png",
+            desc: "Bureau numérique d’Excellence Team, en test à Cotonou. Mourchid FOLARIN en est le backend : le parcours devis, signature, facture et paiement.",
+            problem: "Un devis envoyé sur WhatsApp se perd, ne se signe pas, et le paiement n’est pas vérifié.",
+            features: [
+                "API des devis, contrats et factures, avec numérotation et PDF",
+                "Lien de signature sans compte pour le client, à durée limitée",
+                "Empreinte SHA-256, horodatage et trace de chaque étape du dossier",
+                "Encaissement Mobile Money et carte en FCFA via GeniusPay, vérifié avant de marquer la facture payée",
+                "Données PostgreSQL (Supabase) et fichiers sur Cloudflare R2",
+                "Annuaire : classement de prestataires par besoin, avis approuvés et budget"
+            ],
+            security: "Le règlement est confirmé par le serveur, pas par une capture d’écran. Le document signé est scellé pour prouver qu’il n’a pas changé.",
+            tech: ["Next.js", "PostgreSQL", "API REST", "Supabase", "GeniusPay", "AWS"],
+            url: "https://contravo.excellenceteam.site/"
+        },
+
         'student-success': {
             title: "Prédiction de Réussite Scolaire",
             image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
