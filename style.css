@@ -18,6 +18,12 @@
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Les attributs width/height des images servent au ratio (pas de saut de mise en page) ;
+   la hauteur réelle reste pilotée par le CSS de chaque bloc. */
+img {
+    height: auto;
+}
+
 * {
     margin: 0;
     padding: 0;

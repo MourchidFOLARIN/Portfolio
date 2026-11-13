@@ -353,7 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectsData = {
         'contravo': {
             title: "Contravo — Devis, contrats, clients",
-            image: "contravo.png",
+            image: "assets/img/contravo.webp",
             desc: "Bureau numérique d’Excellence Team, en test à Cotonou. Mourchid FOLARIN en est le backend : le parcours devis, signature, facture et paiement.",
             problem: "Un devis envoyé sur WhatsApp se perd, ne se signe pas, et le paiement n’est pas vérifié.",
             features: [
@@ -371,7 +371,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         'teamhub': {
             title: "WINE — TeamHub",
-            image: "teamhub.png",
+            image: "assets/img/teamhub.webp",
             desc: "Plateforme d’équipe d’Excellence Team, publiée sur teamhub.excellenceteam.site. Mourchid FOLARIN en est le backend : projets, tâches, chat et clients dans un seul espace.",
             problem: "Les décisions se noient dans WhatsApp, le suivi client tient dans Excel, et personne ne voit les tâches de la semaine.",
             features: [
@@ -425,7 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         'api-security': {
             title: "Sécurité API & Architecture Backend Laravel",
-            image: "Top Device Security Tips_ Safeguard Your Digital Life.jpeg",
+            image: "assets/img/api-security.webp",
             desc: "Conception d'une architecture API REST complète et durcie pour des services applicatifs modernes avec Laravel et PHP.",
             problem: "Construire un backend modulaire capable de protéger les données sensibles et d'empêcher les abus d'utilisation.",
             features: [
@@ -461,7 +461,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         'academix': {
             title: "AcademiX — Plateforme Éducative (Hackathon IFRI)",
-            image: "Academix.png",
+            image: "assets/img/academix.webp",
             desc: "Plateforme d'aide à l'apprentissage et à la révision conçue et développée en équipe lors d'un hackathon universitaire.",
             problem: "Permettre aux étudiants d'organiser leurs supports de cours et de tester leurs connaissances de façon interactive.",
             features: [
