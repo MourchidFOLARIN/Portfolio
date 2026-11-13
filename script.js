@@ -669,7 +669,7 @@ const sandboxCommands = {
     'contact': `
 <div class="sandbox-res-info">📬 CONTACT DIRECT :</div>
   • Email     : <a href="mailto:mourchidolawale@gmail.com" style="color:var(--clr-primary)">mourchidolawale@gmail.com</a>
-  • LinkedIn  : <a href="https://www.linkedin.com/in/mourchid-folarin-283181347/" target="_blank" style="color:var(--clr-primary)">Mourchid FOLARIN</a>
+  • LinkedIn  : <a href="https://www.linkedin.com/in/mourchid-folarin-60b711374/" target="_blank" style="color:var(--clr-primary)">Mourchid FOLARIN</a>
   • GitHub    : <a href="https://github.com/mourchidfolarin" target="_blank" style="color:var(--clr-primary)">github.com/mourchidfolarin</a>
   • Cal.com   : Réservation directe de visioconférence disponible sur la page
 `
