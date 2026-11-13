@@ -687,9 +687,38 @@ function initCyberSandbox() {
 }
 
 // ==========================================================================
-// CONTACT FORM LOGIC (Web3Forms — serverless, no backend required)
+// FORMULAIRE DE CONTACT
+// 1. Envoi par la fonction Vercel /api/contact (Resend, clé côté serveur).
+// 2. Si la fonction n'est pas configurée (503) ou absente (404, ex. serveur
+//    statique local), repli sur Web3Forms. La clé d'accès Web3Forms est
+//    publique par conception : elle identifie le formulaire, elle n'est pas
+//    un secret.
 // ==========================================================================
 const WEB3FORMS_ACCESS_KEY = 'a2b3ebad-e1aa-44a5-ab05-8b33cb896ee6';
+
+async function sendViaApi(fields) {
+    const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(fields)
+    });
+    let data = {};
+    try { data = await response.json(); } catch (e) { data = {}; }
+    return { status: response.status, ok: response.ok && data.success === true, message: data.message };
+}
+
+async function sendViaWeb3Forms(fields) {
+    const formData = new FormData();
+    formData.append('access_key', WEB3FORMS_ACCESS_KEY);
+    formData.append('name', fields.name);
+    formData.append('email', fields.email);
+    formData.append('subject', fields.subject ? 'Portfolio : ' + fields.subject : 'Nouveau message depuis le portfolio');
+    formData.append('message', fields.message);
+    const response = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData });
+    let data = {};
+    try { data = await response.json(); } catch (e) { data = {}; }
+    return { status: response.status, ok: response.ok && data.success === true, message: data.message };
+}
 
 function initContactForm() {
     const form = document.getElementById('contact-form');
@@ -716,7 +745,12 @@ function initContactForm() {
         }
 
         const formData = new FormData(form);
-        formData.append('access_key', WEB3FORMS_ACCESS_KEY);
+        const fields = {
+            name: String(formData.get('name') || ''),
+            email: String(formData.get('email') || ''),
+            subject: String(formData.get('subject') || ''),
+            message: String(formData.get('message') || '')
+        };
 
         const originalHtml = submitBtn ? submitBtn.innerHTML : '';
         if (submitBtn) {
@@ -726,17 +760,21 @@ function initContactForm() {
         showStatus('Envoi de votre message…', 'success');
 
         try {
-            const response = await fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                body: formData
-            });
-            const data = await response.json();
+            let result;
+            try {
+                result = await sendViaApi(fields);
+            } catch (apiError) {
+                result = { status: 0, ok: false };
+            }
+            if (!result.ok && (result.status === 503 || result.status === 404 || result.status === 405 || result.status === 0)) {
+                result = await sendViaWeb3Forms(fields);
+            }
 
-            if (response.ok && data.success) {
+            if (result.ok) {
                 showStatus('Message envoyé avec succès ! Je vous répondrai sous 24h ouvrées.', 'success');
                 form.reset();
             } else {
-                showStatus('Erreur : ' + (data.message || 'envoi impossible. Merci de réessayer.'), 'error');
+                showStatus('Erreur : ' + (result.message || 'envoi impossible. Merci de réessayer.'), 'error');
             }
         } catch (error) {
             showStatus('Une erreur réseau est survenue. Merci de vérifier votre connexion et de réessayer.', 'error');
