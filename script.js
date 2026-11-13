@@ -725,20 +725,21 @@ const sandboxCommands = {
 
     'stack': `
 <div class="sandbox-res-info">🛠️ ARCHITECTURE TECHNIQUE :</div>
-  [Backend]     PHP 8.2+, Laravel 11, Architecture MVC, MySQL, Eloquent, JWT
+  [Backend]     PHP 8.2+, Laravel 11 à 13, Architecture MVC, MySQL, Eloquent, JWT
+  [DevOps]      Docker Compose, durcissement de conteneurs, Vercel
   [Sécurité]    OWASP Top 10, Burp Suite, Nmap, Kali Linux, Secure Coding
   [Systèmes]    Linux Debian/Ubuntu, TCP/IP, Wireshark, Bash Scripting, SSH
   [IA & Data]   Python, Scikit-Learn (Random Forest), Pandas, Streamlit
 `,
 
     'security-audit': `
-<div class="sandbox-res-info">[AUDIT] Lancement du diagnostic de sécurité OWASP Top 10...</div>
+<div class="sandbox-res-info">[AUDIT] Pratiques appliquées dans mes API (démonstration, pas un scan réel)...</div>
   • Vérification Injections SQL (Prepared Statements) : <span class="sandbox-res-success">[PROTÉGÉ ✓]</span>
   • Contrôle XSS & Sanitization des entrées          : <span class="sandbox-res-success">[VALIDÉ ✓]</span>
-  • Politiques CORS & Headers CSP                     : <span class="sandbox-res-success">[DURCI ✓]</span>
+  • En-têtes HTTP de ce site (CSP, HSTS, anti-iframe) : <span class="sandbox-res-success">[ACTIFS ✓]</span> <span style="color:var(--clr-text-muted)">(vercel.json)</span>
   • Authentification sans état par JWT                : <span class="sandbox-res-success">[SÉCURISÉ ✓]</span>
   • Rate Limiting & Protection Brute Force            : <span class="sandbox-res-success">[ACTIF ✓]</span>
-<div class="sandbox-res-success">✓ Rapport : Architecture conforme aux meilleures pratiques de Secure Coding.</div>
+<div class="sandbox-res-dim">Note : la CSP de ce portfolio autorise encore les scripts inline ('unsafe-inline'), utilisés par les pages et le widget Cal.com.</div>
 `,
 
     'projects': `
@@ -747,6 +748,7 @@ const sandboxCommands = {
   2. <strong>AcademiX IFRI</strong>         -> Plateforme collaborative révisée en 48h Hackathon
   3. <strong>Fraud Guard AI</strong>        -> Détection transactions suspectes via Random Forest
   4. <strong>ExcellenceLink</strong>        -> Centralisation et validation sécurisée d'URLs
+  5. <strong>Souk.dev</strong>              -> Moteur de déploiement Docker Compose, conteneurs durcis
   <span style="color:var(--clr-text-muted)">Tapez ou cliquez sur les cartes ci-dessous pour ouvrir les fiches détaillées.</span>
 `,
 
@@ -879,6 +881,10 @@ function initContactForm() {
     });
 }
 
+function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
 window.execSandboxCmd = function (rawCmd) {
     const output = document.getElementById('sandbox-output');
     if (!output) return;
@@ -898,7 +904,7 @@ window.execSandboxCmd = function (rawCmd) {
     // Append Command Line
     const cmdLine = document.createElement('div');
     cmdLine.className = 'sandbox-line';
-    cmdLine.innerHTML = `<span class="sandbox-prompt-tag">mourchid@cyber-hub:~$</span> <span class="sandbox-cmd-text">${rawCmd}</span>`;
+    cmdLine.innerHTML = `<span class="sandbox-prompt-tag">mourchid@cyber-hub:~$</span> <span class="sandbox-cmd-text">${escapeHtml(rawCmd)}</span>`;
     output.appendChild(cmdLine);
 
     // Append Response
@@ -910,7 +916,7 @@ window.execSandboxCmd = function (rawCmd) {
     } else if (cmd === '') {
         resLine.innerHTML = '';
     } else {
-        resLine.innerHTML = `<span style="color:#ef4444">Commande inconnue: "${rawCmd}".</span> Tapez <strong style="color:var(--clr-primary)">'help'</strong> pour voir les commandes reconnues.`;
+        resLine.innerHTML = `<span style="color:#ef4444">Commande inconnue: "${escapeHtml(rawCmd)}".</span> Tapez <strong style="color:var(--clr-primary)">'help'</strong> pour voir les commandes reconnues.`;
     }
 
     output.appendChild(resLine);
@@ -944,42 +950,43 @@ async function startScan() {
     scanning.style.display = 'flex';
     dataSection.style.display = 'none';
 
-    // Fetch Real IP and Location with multiple reliable fallbacks
-    let userIp = 'Collecte...';
-    let userLoc = 'Cotonou, Benin';
-
-    try {
-        // Provider 1: ipapi.co
-        const res = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
-        if (res.ok) {
-            const data = await res.json();
-            if (data.ip) {
-                userIp = data.ip;
-                userLoc = (data.city && data.country_name) ? `${data.city}, ${data.country_name}` : (data.country_name || 'Bénin');
-            }
+    // Le navigateur du visiteur interroge directement un service public
+    // (ipapi.co, puis ipwho.is, puis ipify) pour afficher SA propre IP.
+    // Le résultat est seulement affiché : rien n'est envoyé ni enregistré
+    // par ce site (pas de requête vers le portfolio, pas de stockage local).
+    let userIp = 'Indisponible';
+    let userLoc = 'Inconnue';
+    const providers = [
+        async () => {
+            const r = await fetch('https://ipapi.co/json/', { cache: 'no-store', credentials: 'omit', referrerPolicy: 'no-referrer' });
+            if (!r.ok) throw new Error('ipapi');
+            const d = await r.json();
+            if (!d.ip) throw new Error('ipapi');
+            return { ip: d.ip, loc: [d.city, d.country_name].filter(Boolean).join(', ') };
+        },
+        async () => {
+            const r = await fetch('https://ipwho.is/', { cache: 'no-store', credentials: 'omit', referrerPolicy: 'no-referrer' });
+            if (!r.ok) throw new Error('ipwho');
+            const d = await r.json();
+            if (!d.ip) throw new Error('ipwho');
+            return { ip: d.ip, loc: [d.city, d.country].filter(Boolean).join(', ') };
+        },
+        async () => {
+            const r = await fetch('https://api.ipify.org?format=json', { cache: 'no-store', credentials: 'omit', referrerPolicy: 'no-referrer' });
+            if (!r.ok) throw new Error('ipify');
+            const d = await r.json();
+            if (!d.ip) throw new Error('ipify');
+            return { ip: d.ip, loc: '' };
         }
-    } catch (e1) {
+    ];
+    for (const provider of providers) {
         try {
-            // Provider 2: ipwho.is
-            const res2 = await fetch('https://ipwho.is/', { cache: 'no-store' });
-            if (res2.ok) {
-                const data2 = await res2.json();
-                if (data2.ip) {
-                    userIp = data2.ip;
-                    userLoc = (data2.city && data2.country) ? `${data2.city}, ${data2.country}` : 'Cotonou, Benin';
-                }
-            }
-        } catch (e2) {
-            try {
-                // Provider 3: ipify
-                const res3 = await fetch('https://api.ipify.org?format=json');
-                if (res3.ok) {
-                    const data3 = await res3.json();
-                    if (data3.ip) userIp = data3.ip;
-                }
-            } catch (e3) {
-                userIp = '2a09:bac5:52b:2c5a::46b:5e';
-            }
+            const found = await provider();
+            userIp = found.ip;
+            if (found.loc) userLoc = found.loc;
+            break;
+        } catch (e) {
+            // service suivant
         }
     }
 
@@ -987,6 +994,8 @@ async function startScan() {
     if (ipElem) ipElem.textContent = userIp;
     const locElem = document.getElementById('v-loc');
     if (locElem) locElem.textContent = userLoc;
+    const secElem = document.getElementById('v-sec');
+    if (secElem) secElem.textContent = window.location.protocol === 'https:' ? 'HTTPS (TLS)' : 'HTTP (non chiffré)';
 
     // Accurate Browser & OS detection
     const ua = navigator.userAgent;
