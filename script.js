@@ -366,7 +366,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             security: "Le règlement est confirmé par le serveur, pas par une capture d’écran. Le document signé est scellé pour prouver qu’il n’a pas changé.",
             tech: ["Next.js", "PostgreSQL", "API REST", "Supabase", "GeniusPay", "AWS"],
-            url: "https://contravo.excellenceteam.site/"
+            status: "Démo temporairement indisponible (contravo.excellenceteam.site ne répond pas pour le moment)."
         },
 
         'teamhub': {
@@ -384,7 +384,98 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             security: "Un invité ne voit que les projets partagés avec lui. Les données d’une organisation ne sont pas accessibles aux autres.",
             tech: ["Next.js", "API REST", "Temps réel", "CRM"],
-            url: "https://teamhub.excellenceteam.site/"
+            github: "https://github.com/octavebahoun/TeamHub",
+            status: "Démo temporairement indisponible (teamhub.excellenceteam.site ne répond pas pour le moment)."
+        },
+
+        'soukdev': {
+            title: "Souk.dev — Marché & entraide des devs africains",
+            image: "assets/img/soukdev.webp",
+            desc: "Plateforme collaborative : dans l’Échange, les devs postent leurs bugs et se proposent des correctifs ; dans le Store, ils publient leurs applis, qu’une boutique ou une association peut déployer en sa propre copie. Mourchid FOLARIN y a construit le moteur de déploiement Docker Compose.",
+            problem: "Lancer la copie d’une appli ou tester un correctif sans serveur à soi, sans risque pour les autres copies.",
+            features: [
+                "Moteur de déploiement : clone du dépôt GitHub, validation du manifeste soukdev.json, puis docker compose up",
+                "Liste blanche des options Compose : network_mode, privileged et volumes hôte refusés",
+                "Durcissement des conteneurs : cap_drop ALL, no-new-privileges, limite de processus par formule",
+                "Un réseau isolé par copie, limites mémoire et CPU selon la formule",
+                "Copie de test gratuite de deux heures pour voir un correctif tourner avant de l’accepter",
+                "État du déploiement poussé en temps réel (Reverb)"
+            ],
+            security: "Le fichier Compose d’un dev n’est jamais exécuté tel quel : il est vérifié, puis durci avant le lancement.",
+            tech: ["Laravel 13", "PHP 8.4", "React 19", "TypeScript", "Docker Compose", "Reverb"],
+            github: "https://github.com/octavebahoun/Souk.dev",
+            url: "https://soukdev.shop/"
+        },
+
+        'tontinechain': {
+            title: "TontineChain — Tontine, IA & Blockchain",
+            image: "assets/img/tontinechain.webp",
+            desc: "Backend Laravel d’une plateforme de tontine présentée au Hackathon MIABE 2026 : authentification, analyse du risque, blockchain Polygon et paiements Mobile Money.",
+            problem: "Dans une tontine, un membre qui ne cotise plus met tout le groupe en difficulté, et les paiements ne laissent pas de trace fiable.",
+            features: [
+                "Architecture orientée services au-dessus de Laravel 12",
+                "RiskAnalysisService : score de confiance des membres avant chaque cycle",
+                "BlockchainService : preuves de paiement sur Polygon PoS, transactions sans frais pour l’utilisateur via un relayer",
+                "PaymentService : Mobile Money (MTN, Moov) via FedaPay",
+                "Alertes et OTP par SMS et WhatsApp (Infobip)",
+                "Documentation de l’API avec Swagger"
+            ],
+            security: "Tokens API Sanctum et connexion par code à usage unique (OTP) envoyé par SMS ou WhatsApp.",
+            tech: ["Laravel 12", "PHP", "Sanctum", "Solidity", "Polygon", "FedaPay", "Swagger"],
+            github: "https://github.com/MourchidFOLARIN/TontineChain",
+            url: "https://tontine-chain-three.vercel.app/"
+        },
+
+        'kernel': {
+            title: "Kernel — Discussion tech & atelier de chiffrement",
+            image: "assets/img/kernel.webp",
+            desc: "Plateforme de discussion pour une communauté tech, qui sert aussi de support à une présentation sur le chiffrement symétrique : l’administrateur choisit l’algorithme en direct, et un compte « attaquant » observe le trafic local.",
+            problem: "Rendre concret, devant un public, l’effet du choix d’un algorithme de chiffrement sur ce qu’un attaquant peut lire.",
+            features: [
+                "Salons de discussion et comptes membres, administrateur et attaquant",
+                "Choix de l’algorithme de chiffrement en direct par l’administrateur",
+                "Mode démo : vue « coulisses » et démonstration de force brute sur DES",
+                "Base SQLite créée au démarrage avec des comptes de démonstration",
+                "Conçu pour un hotspot ou un LAN de labo, participants informés"
+            ],
+            security: "Mots de passe hachés avec Argon2, cookies de session signés. Usage limité à un réseau que l’on contrôle, avec un cadre éthique écrit.",
+            tech: ["Python", "FastAPI", "SQLAlchemy", "Jinja2", "Argon2", "SQLite"],
+            github: "https://github.com/MourchidFOLARIN/kernel"
+        },
+
+        'classcast': {
+            title: "ClassCast — Diffusion d’écran en classe",
+            image: "assets/img/classcast.webp",
+            desc: "Le PC du professeur diffuse son écran sur le réseau local : chaque étudiant ouvre une adresse dans son navigateur, saisit un code et voit l’écran en direct. Aucune connexion internet, rien à installer chez les étudiants.",
+            problem: "Dans un amphi sans vidéoprojecteur lisible ni internet, les étudiants du fond ne voient pas l’écran du professeur.",
+            features: [
+                "Capture d’écran (mss) et envoi uniquement quand l’image change",
+                "Accès par code de salle, QR code et nom mDNS classe.local",
+                "Pause, arrêt, pointeur laser ou surlignage dessiné sur l’image",
+                "Partage de PDF et questions anonymes, gardés en mémoire seulement",
+                "Installation hors ligne depuis un dossier de wheels",
+                "Réglages qualité, images par seconde et largeur en direct"
+            ],
+            security: "Page professeur et routes de contrôle limitées à 127.0.0.1, 5 essais de code par minute et par IP, rien écrit sur disque. À ne jamais exposer sur internet.",
+            tech: ["Python", "Flask", "waitress", "mss", "Pillow", "zeroconf"],
+            github: "https://github.com/MourchidFOLARIN/classcast"
+        },
+
+        'radar': {
+            title: "Sentinel-ESP32 — Radar de détection & suivi",
+            image: "assets/img/radar.webp",
+            desc: "Radar sentinelle autonome sur ESP32 : balayage par servomoteur, télémètre ultrasons HC-SR04, détecteur PIR, verrouillage et poursuite de la cible, et tableau de bord web temps réel.",
+            problem: "Détecter une présence humaine dans une zone et la suivre, sans fausses alertes dues aux murs et aux meubles.",
+            features: [
+                "Mode « Lock & Track » : balayage à 180° puis poursuite angulaire de la cible",
+                "Cartographie différentielle de l’environnement fixe pour filtrer les faux échos",
+                "Tableau de bord HTML5 Canvas diffusé en WebSockets",
+                "Point d’accès Wi-Fi généré par l’ESP32",
+                "Buzzer modulé selon la proximité, modes armé / désarmé et journal d’intrusion"
+            ],
+            security: "Fonctionne sur son propre réseau Wi-Fi, sans dépendre d’internet.",
+            tech: ["ESP32", "C++", "Arduino", "PlatformIO", "WebSockets", "HTML5 Canvas"],
+            github: "https://github.com/MourchidFOLARIN/radar"
         },
 
         'student-success': {
@@ -577,7 +668,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span>Voir le projet en direct →</span>
                 </a>`;
             } else {
-                btnsHtml += `<span style="color: var(--clr-text-muted); font-size: 0.85rem; align-self: center;">(Démo en environnement de développement / local)</span>`;
+                const note = data.status || '(Démo en environnement de développement / local)';
+                btnsHtml += `<span style="color: var(--clr-text-muted); font-size: 0.85rem; align-self: center;">${note}</span>`;
             }
             modalFooter.innerHTML = btnsHtml;
         }

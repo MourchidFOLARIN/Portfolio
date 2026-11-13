@@ -3580,3 +3580,17 @@ span {
     }
 }
 
+
+
+/* Démo hors ligne sur une carte projet */
+.project-demo-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid rgba(245, 158, 11, 0.45);
+    border-radius: 999px;
+    color: #f59e0b;
+    font-size: 0.72rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
