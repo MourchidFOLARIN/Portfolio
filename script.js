@@ -718,7 +718,7 @@ const sandboxCommands = {
     'whoami': `
 <div class="sandbox-res-success">👤 Mourchid FOLARIN</div>
   - Statut       : Étudiant Licence 3 Informatique & Télécoms (INSTI Lokossa)
-  - Rôles        : Co-fondateur & DG d'Excellence Team | Responsable de promotion L3
+  - Rôles        : Co-fondateur & Directeur Général d'Excellence Team | Responsable de promotion L3
   - Spécialité   : Conception Backend résilient, API durcies & Sécurité applicative
   - Localisation : Lokossa / Cotonou, Bénin (Disponible Remote & Déplacements)
 `,
@@ -754,7 +754,7 @@ const sandboxCommands = {
 
     'distinctions': `
 <div class="sandbox-res-info">🏆 PALMARÈS & COMPÉTITIONS :</div>
-  • 🥈 2e Place   : Technova Challenge 2024 (Projet LeTwin)
+  • 🥈 2e Place   : Technova Challenge 2024 (Projet LeTwin, marque de vêtements)
   • 🥈 2e Place   : EPITNET Hackathon (IA & Santé)
   • 🏅 Demi-Final : HackByIFRI (AcademiX en 48h)
   • 🥉 3e Place   : Opération Nova CTF (Sécurité offensive & CTF)
