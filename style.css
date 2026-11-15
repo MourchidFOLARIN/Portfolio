@@ -3647,7 +3647,6 @@ span {
     }
 
     /* Les éléments de grille ne doivent pas imposer leur largeur minimale. */
-    .container > *,
     [class*="-grid"] > * {
         min-width: 0;
     }
@@ -3692,5 +3691,28 @@ span {
         align-items: center;
         min-height: 44px;
         padding: 0 0.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .close-modal,
+    .close-project-modal {
+        min-width: 44px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sandbox-cli-input {
+        min-height: 44px;
+    }
+}
+
+/* Titre de l'accueil : « Cybersécurité | » dépassait de 14 px en 360 px. */
+@media (max-width: 480px) {
+    .hero-mockup-h1 {
+        font-size: clamp(2.1rem, 10.5vw, 3rem);
+        letter-spacing: -1px;
     }
 }
