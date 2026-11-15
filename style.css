@@ -946,7 +946,12 @@ span {
 .nav-toggle {
     display: none;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 6px;
+    min-width: 44px;
+    min-height: 44px;
+    margin-right: -7px;
     cursor: pointer;
     z-index: 1001;
 }

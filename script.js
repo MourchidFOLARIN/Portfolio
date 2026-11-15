@@ -335,7 +335,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
 
-    if (navToggle && navLinks) {
+    // Les pages branchent déjà le menu dans leur script inline : sans ce
+    // garde-fou, deux écouteurs s'annulaient et le menu ne s'ouvrait pas.
+    if (navToggle && navLinks && !navToggle.dataset.navBound) {
+        navToggle.dataset.navBound = '1';
         navToggle.addEventListener('click', () => {
             navToggle.classList.toggle('active');
             navLinks.classList.toggle('active');

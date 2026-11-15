@@ -269,7 +269,7 @@
                 <span class="available-dot"></span>
                 Disponible
             </a>
-            <div class="nav-toggle">
+            <div class="nav-toggle" role="button" tabindex="0" aria-label="Ouvrir le menu" aria-expanded="false">
                 <span></span>
                 <span></span>
             </div>
@@ -467,10 +467,22 @@
         // Mobile Nav Toggle
         const navToggle = document.querySelector('.nav-toggle');
         const navLinks = document.querySelector('.nav-links');
-        if (navToggle && navLinks) {
+        if (navToggle && navLinks && !navToggle.dataset.navBound) {
+            navToggle.dataset.navBound = '1'; // script.js ne doit pas rebrancher le même clic
             navToggle.addEventListener('click', () => {
                 navToggle.classList.toggle('active');
                 navLinks.classList.toggle('active');
+                navToggle.setAttribute('aria-expanded', navLinks.classList.contains('active') ? 'true' : 'false');
+            });
+            navToggle.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); navToggle.click(); }
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navToggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                });
             });
         }
     </script>
