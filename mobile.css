@@ -364,7 +364,7 @@ iframe {
     }
 
     .modal-body {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 1.5rem;
         padding: 3.75rem 1.25rem 1.5rem;
     }
@@ -577,5 +577,60 @@ iframe {
     .vision-card {
         padding: 1.4rem !important;
         font-size: 1rem !important;
+    }
+}
+
+/* Pied de page (mise en page en ligne) : centré et empilé sur téléphone. */
+@media (max-width: 768px) {
+    .footer .container > div:first-child {
+        flex-direction: column !important;
+        justify-content: center !important;
+        text-align: center;
+        gap: 0.75rem !important;
+    }
+
+    .footer .container > div:first-child > div:last-child {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.25rem 1.25rem !important;
+    }
+}
+
+/* Fenêtre projet : le contenu ne dépasse plus à droite. */
+@media (max-width: 768px) {
+    .modal-body > *,
+    .project-modal-info,
+    .project-modal-image {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .project-modal-image {
+        height: auto;
+    }
+
+    .project-modal-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .project-modal-info h3 {
+        font-size: clamp(1.35rem, 6.5vw, 1.75rem);
+        line-height: 1.25;
+    }
+
+    .modal-footer {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .modal-footer .btn {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
+    /* Menu : fond opaque (le flou n'est pas fiable dans la barre sous Safari). */
+    .nav-links {
+        background: #050505;
     }
 }
