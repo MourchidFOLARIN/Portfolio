@@ -3657,3 +3657,40 @@ span {
         overflow-wrap: break-word;
     }
 }
+
+
+/* Cibles tactiles d'au moins 44 px sur mobile */
+@media (max-width: 768px) {
+    .sandbox-cmd-chip,
+    .filter-btn,
+    .btn,
+    .btn-outline,
+    .project-btn-detail,
+    .project-link-icon {
+        min-height: 44px;
+    }
+
+    .sandbox-cmd-chip {
+        padding: 0.55rem 0.9rem;
+    }
+
+    .project-link-icon {
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+    }
+
+    .footer a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 0 0.25rem;
+    }
+}
