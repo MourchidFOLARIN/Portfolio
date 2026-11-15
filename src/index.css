@@ -1,0 +1,36 @@
+/* Point d'entrée des styles.
+   Tailwind fournit le reset et les utilitaires ; le design (palette d'origine
+   conservée : noir, émeraude #10b981, bleu #3b82f6) vit dans src/styles/,
+   un fichier par zone du site. Les jetons de couleur sont définis dans
+   styles/base.css et exposés à Tailwind ci-dessous (text-primary, bg-surface…). */
+@import 'tailwindcss' source('.');
+@import 'lenis/dist/lenis.css';
+
+@import './styles/base.css';
+@import './styles/ui.css';
+@import './styles/nav.css';
+@import './styles/home.css';
+@import './styles/pages.css';
+@import './styles/dialogs.css';
+@import './styles/footer.css';
+@import './styles/motion.css';
+@import './styles/responsive.css';
+
+@theme inline {
+    --font-display: var(--ff-display);
+    --font-sans: var(--ff-body);
+    --font-serif: var(--ff-accent);
+    --font-mono: var(--ff-mono);
+
+    --color-bg: var(--bg);
+    --color-surface: var(--surface);
+    --color-ink: var(--text);
+    --color-ink-2: var(--text-2);
+    --color-muted: var(--muted);
+    --color-faint: var(--faint);
+    --color-line: var(--line);
+    --color-primary: var(--primary);
+    --color-secondary: var(--secondary);
+
+    --ease-out-expo: var(--ease);
+}

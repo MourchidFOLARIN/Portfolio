@@ -1,0 +1,140 @@
+/* Fiche technique d'un projet (fenêtre <dialog>) */
+@layer components {
+    dialog {
+        padding: 0;
+        border: 0;
+        color: var(--muted);
+        background: transparent;
+    }
+
+    dialog::backdrop {
+        background: rgba(0, 0, 0, 0.72);
+    }
+
+    dialog[open] {
+        animation: fadeUp 0.35s var(--ease);
+    }
+
+    html.has-dialog {
+        overflow: hidden;
+    }
+
+    .modal {
+        width: min(880px, calc(100% - 24px));
+        max-height: calc(100dvh - 32px);
+        margin: auto;
+        border-radius: 24px;
+        border: 1px solid var(--line-2);
+        background: #0b0b0b;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    .modal__close {
+        position: absolute;
+        z-index: 2;
+        top: 12px;
+        right: 12px;
+        background: rgba(5, 5, 5, 0.85);
+    }
+
+    .modal__media {
+        aspect-ratio: 16 / 7;
+        overflow: hidden;
+        border-bottom: 1px solid var(--line);
+        background: #0a0a0a;
+    }
+
+    .modal__media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    .modal__body {
+        padding: clamp(22px, 4vw, 36px);
+    }
+
+    .modal__title {
+        margin-top: 14px;
+        font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.4rem);
+        letter-spacing: -0.04em;
+    }
+
+    .modal__desc {
+        margin-top: 12px;
+        font-size: 15.5px;
+    }
+
+    .modal__grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+        gap: 28px;
+        margin-top: 28px;
+    }
+
+    .modal h3 {
+        margin-bottom: 14px;
+        font: 500 11px/1 var(--ff-mono);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--faint);
+    }
+
+    .modal__side {
+        display: grid;
+        gap: 14px;
+        align-content: start;
+    }
+
+    .box {
+        padding: 14px 16px;
+        border-radius: 12px;
+        font-size: 14.5px;
+        line-height: 1.6;
+        color: var(--text-2);
+    }
+
+    .box b {
+        display: block;
+        margin-bottom: 4px;
+        font: 600 11px/1.4 var(--ff-mono);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+    .box--blue {
+        border: 1px solid rgba(59, 130, 246, 0.25);
+    }
+
+    .box--blue b {
+        color: #60a5fa;
+    }
+
+    .box--green {
+        border: 1px solid var(--primary-line);
+    }
+
+    .box--green b {
+        color: var(--primary);
+    }
+
+    .box--warn {
+        border: 1px solid rgba(251, 191, 36, 0.25);
+    }
+
+    .box--warn b {
+        color: var(--warn);
+    }
+
+    .modal__actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        margin-top: 28px;
+        padding-top: 22px;
+        border-top: 1px solid var(--line);
+    }
+}

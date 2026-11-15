@@ -1,0 +1,82 @@
+/* Animations d'entrée en CSS : visibles avant même le chargement du JavaScript */
+@layer components {
+    .hero-fade {
+        animation: fadeUp 0.8s var(--ease) both;
+        animation-delay: var(--d, 0s);
+    }
+
+    @keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(16px);
+        }
+    }
+
+    @keyframes discIn {
+        from {
+            opacity: 0;
+            scale: 0.55;
+        }
+    }
+
+    @keyframes portraitIn {
+        from {
+            opacity: 0;
+            translate: -50% 48px;
+        }
+    }
+
+    @keyframes pulse {
+        50% {
+            opacity: 0.35;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+    }
+
+    @keyframes chipIn {
+        from {
+            opacity: 0;
+            scale: 0.8;
+        }
+    }
+
+    @keyframes float {
+        50% {
+            transform: translateY(-8px);
+        }
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes blink {
+        50% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes rise {
+        from {
+            transform: translateY(105%);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+}

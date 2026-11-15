@@ -1,0 +1,474 @@
+/* Éléments communs : mise en page, titres, boutons, étiquettes, cartes */
+@layer components {
+    .container {
+        width: 100%;
+        max-width: calc(var(--container) + 2 * var(--gutter));
+        margin-inline: auto;
+        padding-inline: var(--gutter);
+    }
+
+    .section {
+        padding-block: var(--section-y);
+    }
+
+    .section--flush-top {
+        padding-top: 0;
+    }
+
+    .center {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    /* Titres */
+    .kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font: 500 12px/1 var(--ff-mono);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--faint);
+    }
+
+    .kicker__num {
+        color: var(--primary);
+    }
+
+    .kicker__line {
+        width: 32px;
+        height: 1px;
+        background: var(--line-2);
+    }
+
+    .title {
+        margin-top: 18px;
+        font-size: clamp(2.2rem, 1.5rem + 3vw, 4rem);
+        letter-spacing: -0.04em;
+        line-height: 1;
+    }
+
+    .accent {
+        font-family: var(--ff-accent);
+        font-style: italic;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+        color: var(--primary);
+        font-size: 1.06em;
+    }
+
+    .lead {
+        font-size: clamp(1.05rem, 1rem + 0.25vw, 1.15rem);
+        line-height: 1.7;
+    }
+
+    .section-head {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
+        align-items: end;
+        gap: 20px 64px;
+        margin-bottom: clamp(36px, 4vw, 52px);
+    }
+
+    /* Boutons */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        height: 50px;
+        padding: 0 22px;
+        border-radius: 999px;
+        border: 1px solid var(--line-2);
+        color: var(--text);
+        font: 600 15px/1 var(--ff-body);
+        white-space: nowrap;
+        transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    .btn:hover {
+        border-color: rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.04);
+    }
+
+    .btn__icon {
+        display: inline-flex;
+        transition: transform 0.25s var(--ease);
+    }
+
+    .btn:hover .btn__icon {
+        transform: translateX(3px);
+    }
+
+    .btn--primary {
+        border-color: transparent;
+        background: var(--primary);
+        color: var(--on-primary);
+    }
+
+    .btn--primary:hover {
+        border-color: transparent;
+        background: var(--primary-hi);
+    }
+
+    .btn--light {
+        border-color: transparent;
+        background: #fff;
+        color: var(--bg);
+    }
+
+    .btn--light:hover {
+        border-color: transparent;
+        background: #e6e6e6;
+    }
+
+    .btn--sm {
+        height: 42px;
+        padding: 0 18px;
+        font-size: 14px;
+    }
+
+    .btn[disabled] {
+        opacity: 0.6;
+        cursor: wait;
+    }
+
+    .icon-btn {
+        display: inline-grid;
+        place-items: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 1px solid var(--line-2);
+        color: var(--text);
+        transition: border-color 0.2s, color 0.2s;
+    }
+
+    .icon-btn:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+    }
+
+    .link-arrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--text);
+        font-weight: 600;
+        font-size: 15px;
+    }
+
+    .link-arrow .i {
+        color: var(--primary);
+    }
+
+    /* Étiquettes et pastilles */
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .tag {
+        display: inline-flex;
+        align-items: center;
+        height: 26px;
+        padding: 0 10px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        font: 500 11.5px/1 var(--ff-mono);
+        color: var(--muted);
+        white-space: nowrap;
+    }
+
+    .badge {
+        display: inline-flex;
+        align-items: center;
+        height: 26px;
+        padding: 0 10px;
+        border-radius: 999px;
+        border: 1px solid var(--line-2);
+        font: 500 11.5px/1 var(--ff-mono);
+        color: var(--muted);
+        white-space: nowrap;
+    }
+
+    .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        height: 34px;
+        padding: 0 14px 0 12px;
+        border-radius: 999px;
+        border: 1px solid var(--primary-line);
+        color: var(--text-2);
+        font-size: 13.5px;
+        font-weight: 500;
+    }
+
+    .dot {
+        width: 7px;
+        height: 7px;
+        flex: none;
+        border-radius: 50%;
+        background: var(--primary);
+    }
+
+    .place {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 28px;
+        padding: 0 11px;
+        border-radius: 999px;
+        border: 1px solid var(--line-2);
+        font: 600 11.5px/1 var(--ff-mono);
+        color: var(--text-2);
+        white-space: nowrap;
+    }
+
+    .place--podium {
+        border-color: transparent;
+        background: var(--primary);
+        color: var(--on-primary);
+    }
+
+    .place--final {
+        border-color: var(--primary-line);
+        color: var(--primary);
+    }
+
+    .place--live {
+        border-color: rgba(59, 130, 246, 0.3);
+        color: #93c5fd;
+    }
+
+    /* Cartes */
+    .card {
+        display: flex;
+        flex-direction: column;
+        padding: 26px;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--line);
+        background: var(--surface);
+        transition: border-color 0.25s;
+    }
+
+    .card:hover {
+        border-color: var(--line-2);
+    }
+
+    .card__title {
+        margin-top: 22px;
+        font-size: 19px;
+        letter-spacing: -0.02em;
+    }
+
+    .card__text {
+        margin-top: 10px;
+        font-size: 14.5px;
+    }
+
+    .card .tags {
+        margin-top: auto;
+        padding-top: 20px;
+    }
+
+    .icon-box {
+        display: grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        background: var(--primary-soft);
+        color: var(--primary);
+    }
+
+    .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .grid-4 {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .checklist {
+        display: grid;
+        gap: 10px;
+    }
+
+    .checklist li {
+        display: flex;
+        gap: 12px;
+        font-size: 15px;
+        line-height: 1.55;
+        color: var(--text-2);
+    }
+
+    .checklist li::before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        flex: none;
+        margin-top: 9px;
+        border-radius: 50%;
+        background: var(--primary);
+    }
+
+    .page-fallback {
+        min-height: 100vh;
+    }
+
+    /* ---------- Éléments animés partagés (hero, en-têtes, appel à l'action) ---------- */
+    /* Orbite en pointillés qui tourne lentement, avec un point lumineux */
+    .orbit {
+        position: absolute;
+        border-radius: 50%;
+        border: 1px dashed rgba(16, 185, 129, 0.35);
+        pointer-events: none;
+        animation: fadeIn 1s ease 0.5s both, spin 60s linear infinite;
+    }
+
+    .orbit::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: -4px;
+        width: 8px;
+        height: 8px;
+        margin-top: -4px;
+        border-radius: 50%;
+        background: var(--primary);
+        box-shadow: 0 0 12px var(--primary);
+    }
+
+    .chip-float {
+        position: absolute;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        height: 34px;
+        padding: 0 13px 0 11px;
+        border-radius: 999px;
+        border: 1px solid var(--line-2);
+        background: rgba(12, 12, 12, 0.88);
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+        font: 500 12.5px/1 var(--ff-mono);
+        color: var(--text);
+        white-space: nowrap;
+        box-shadow: 0 14px 30px -14px rgba(0, 0, 0, 0.9);
+        animation:
+            chipIn 0.7s var(--ease) var(--d, 1s) both,
+            float 6s ease-in-out calc(var(--d, 1s) + 0.7s) infinite;
+    }
+
+    .chip-float::before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--primary);
+    }
+
+    .chip-float--blue::before {
+        background: var(--secondary);
+    }
+
+    /* Pastille tournante « Disponible » */
+    .ring-badge {
+        position: absolute;
+        z-index: 3;
+        display: grid;
+        place-items: center;
+        width: 112px;
+        height: 112px;
+        border-radius: 50%;
+        border: 1px solid var(--line-2);
+        background: rgba(10, 10, 10, 0.88);
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+        animation: chipIn 0.8s var(--ease) 0.9s both;
+        transition: border-color 0.2s;
+    }
+
+    .ring-badge:hover {
+        border-color: var(--primary-line);
+    }
+
+    .ring-badge__text {
+        position: absolute;
+        inset: 7px;
+        width: calc(100% - 14px);
+        height: calc(100% - 14px);
+        animation: spin 22s linear infinite;
+    }
+
+    .ring-badge__text text {
+        font: 600 9.5px var(--ff-mono);
+        fill: var(--text-2);
+    }
+
+    .ring-badge__core {
+        display: grid;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--primary);
+        color: var(--on-primary);
+        transition: transform 0.3s var(--ease);
+    }
+
+    .ring-badge:hover .ring-badge__core {
+        transform: rotate(45deg);
+    }
+
+    /* Halo émeraude qui suit le pointeur sur les cartes */
+    .card {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        --mx: 50%;
+        --my: -20%;
+    }
+
+    .card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: radial-gradient(380px circle at var(--mx) var(--my), rgba(16, 185, 129, 0.1), transparent 45%);
+        opacity: 0;
+        transition: opacity 0.35s;
+        pointer-events: none;
+    }
+
+    .card:hover {
+        border-color: rgba(16, 185, 129, 0.28);
+    }
+
+    .card:hover::before {
+        opacity: 1;
+    }
+
+    /* Ligne qui se remplit au défilement (frise, chapitres) */
+    .scroll-line {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        width: 2px;
+        margin-left: -1px;
+        background: linear-gradient(var(--primary), var(--primary-hi));
+        box-shadow: 0 0 12px rgba(16, 185, 129, 0.5);
+        transform-origin: top;
+        pointer-events: none;
+    }
+}
