@@ -3416,6 +3416,12 @@ span {
     margin-top: 2.5rem;
 }
 
+/* Résultat mis en avant : toute la largeur de la grille */
+.distinction-card-featured {
+    grid-column: 1 / -1;
+    border-color: rgba(16, 185, 129, 0.45);
+}
+
 .distinction-card-cyber {
     background: rgba(18, 18, 18, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.08);

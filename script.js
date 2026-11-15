@@ -757,6 +757,7 @@ const sandboxCommands = {
 
     'distinctions': `
 <div class="sandbox-res-info">🏆 PALMARÈS & COMPÉTITIONS :</div>
+  • 🏁 27e / 1 014 : CSCTF 2026 « Total Warfare » (Chronos Security, CTF international, équipe Granted, top 3 %)
   • 🥈 2e Place   : Technova Challenge 2024 (Projet LeTwin, marque de vêtements)
   • 🥈 2e Place   : EPITNET Hackathon (IA & Santé)
   • 🏅 Demi-Final : HackByIFRI (AcademiX en 48h)
